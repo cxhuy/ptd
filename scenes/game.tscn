@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=5 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Texture2D" uid="uid://bf7ls4k68i8td" path="res://sprites/walls.svg" id="1_cy8yf"]
+[ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyenq"]
 size = Vector2(100, 1080)
@@ -30,3 +31,6 @@ polygon = PackedVector2Array(585, 790, 827.5, 993, 827.5, 1080, 585, 1080)
 
 [node name="RightSlope" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(1335, 790, 1091.5, 993, 1091.5, 1080, 1335, 1080)
+
+[node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
+position = Vector2(753, -89)
