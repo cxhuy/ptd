@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhfj71qo8alo3"]
+
+[ext_resource type="Texture2D" uid="uid://cmmgrv8ajvgos" path="res://sprites/flipper.svg" id="1_2jgv5"]
+
+[node name="LeftFlipper" type="RigidBody2D"]
+rotation = 3.14159
+freeze = true
+
+[node name="FlipperSprite" type="Sprite2D" parent="."]
+position = Vector2(-40.75, 0)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_2jgv5")
+
+[node name="FlipperCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-40.75, 0)
+scale = Vector2(0.4, 0.4)
+polygon = PackedVector2Array(-124, -10, -127, -4, -127, 2.76568, -124, 10, -116, 15, 106, 25, 113, 23, 119, 19, 124, 12, 127, 4, 127, -4, 124, -13, 117, -21, 107, -25, -116, -15)
