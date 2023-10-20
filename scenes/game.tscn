@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=7 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Texture2D" uid="uid://bf7ls4k68i8td" path="res://sprites/walls.svg" id="1_cy8yf"]
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
+[ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/rightFlipper.tscn" id="3_mdsrv"]
+[ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/leftFlipper.tscn" id="3_mqu62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyenq"]
 size = Vector2(100, 1080)
@@ -34,3 +36,11 @@ polygon = PackedVector2Array(1335, 790, 1091.5, 993, 1091.5, 1080, 1335, 1080)
 
 [node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
 position = Vector2(753, -89)
+
+[node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
+position = Vector2(821.5, 1001)
+rotation = 3.83972
+
+[node name="RightFlipper" parent="." instance=ExtResource("3_mdsrv")]
+position = Vector2(1097.5, 1001)
+rotation = -0.698132
