@@ -5,6 +5,7 @@ func _process(delta):
 	var enemiesInRange = $AttackRange.get_overlapping_bodies()
 	if enemiesInRange.size() > 0:
 		look_at(getFirstEnemy(enemiesInRange).global_position)
+	get_node("SwitchSprite").global_rotation = 0
 
 
 func getFirstEnemy(enemiesInRange):
