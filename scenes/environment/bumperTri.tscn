@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4gh8a7lq7lqu"]
+[gd_scene load_steps=4 format=3 uid="uid://d4gh8a7lq7lqu"]
 
 [ext_resource type="Texture2D" uid="uid://cs2vfjk23ahpp" path="res://sprites/environment/bumper/bumperTri.svg" id="1_e4vip"]
 [ext_resource type="Script" path="res://scripts/environment/bumperTri.gd" id="1_oye4p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xds5m"]
+bounce = 1.0
 
 [node name="BumperTri" type="Node2D"]
 
@@ -16,6 +19,7 @@ polygon = PackedVector2Array(54, -84, 54, 32, -45, 89)
 [node name="Bumper" type="RigidBody2D" parent="."]
 collision_layer = 16
 collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_xds5m")
 max_contacts_reported = 1
 contact_monitor = true
 freeze = true
