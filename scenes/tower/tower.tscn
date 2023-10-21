@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmdvm8jdx2sl3"]
+
+[ext_resource type="Texture2D" uid="uid://vv8dx6nj4b75" path="res://sprites/towers/basic_tower/base.svg" id="1_04dyi"]
+[ext_resource type="Texture2D" uid="uid://dg8tvkyrmwqix" path="res://sprites/towers/basic_tower/barrel.svg" id="2_md3l5"]
+[ext_resource type="Texture2D" uid="uid://b25lkiwisn31" path="res://sprites/towers/basic_tower/turret.svg" id="3_1b80j"]
+[ext_resource type="Texture2D" uid="uid://iu5snjhufk02" path="res://sprites/towers/basic_tower/default.svg" id="4_six8w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8gnok"]
+radius = 25.0
+
+[node name="Tower" type="Node2D"]
+
+[node name="Base" type="RigidBody2D" parent="."]
+freeze = true
+freeze_mode = 1
+
+[node name="BaseSprite" type="Sprite2D" parent="Base"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_04dyi")
+
+[node name="BaseCollision" type="CollisionShape2D" parent="Base"]
+shape = SubResource("CircleShape2D_8gnok")
+
+[node name="BarrelSprite" type="Sprite2D" parent="."]
+position = Vector2(-32, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_md3l5")
+
+[node name="TurretSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_1b80j")
+
+[node name="SwitchSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_six8w")
