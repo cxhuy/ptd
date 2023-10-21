@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://br3yaktf2wky"]
+[gd_scene load_steps=5 format=3 uid="uid://br3yaktf2wky"]
 
+[ext_resource type="Script" path="res://scripts/ball/ballSmall.gd" id="1_8swct"]
 [ext_resource type="Texture2D" uid="uid://6fphf5hl05fd" path="res://sprites/ball.svg" id="1_t86no"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb1tu"]
@@ -16,6 +17,7 @@ physics_material_override = SubResource("PhysicsMaterial_tb1tu")
 gravity_scale = 2.0
 max_contacts_reported = 1
 contact_monitor = true
+script = ExtResource("1_8swct")
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_32cl0")
@@ -24,3 +26,8 @@ shape = SubResource("CircleShape2D_32cl0")
 modulate = Color(0, 1, 0, 1)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_t86no")
+
+[node name="Duration" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Duration" to="." method="_on_timer_timeout"]
