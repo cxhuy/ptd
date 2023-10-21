@@ -5,16 +5,9 @@ var currentWave: int = 1
 var enemySpawnFinish: bool = false
 var inGame: bool = false
 
-#func _on_spawn_timer_timeout():
-#	var enemyPath: PathFollow2D = PathFollow2D.new()
-#	enemyPath.set_loop(false)
-#	var enemyInstance := enemy.instantiate()
-#	enemyPath.add_child(enemyInstance)
-#	self.add_child(enemyPath)
 
 func _process(delta):
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
-		print("done")
 		enemySpawnFinish = false
 		inGame = false
 		currentWave += 1

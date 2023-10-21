@@ -90,9 +90,6 @@ modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(960, 540)
 texture = ExtResource("1_pf6s4")
 
-[node name="SpawnTimer" type="Timer" parent="Enemies"]
-autostart = true
-
 [node name="Tower" parent="." instance=ExtResource("8_vrbsv")]
 position = Vector2(926, 365)
 
@@ -121,5 +118,4 @@ offset_right = 1807.5
 offset_bottom = 1030.0
 
 [connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
-[connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="WaveStartButton" to="Enemies" method="_on_wave_start_button_pressed"]
