@@ -35,6 +35,14 @@ rightFlip={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Walls"
+2d_physics/layer_2="Slopes"
+2d_physics/layer_3="Ball"
+2d_physics/layer_4="Flipper"
+2d_physics/layer_5="Bumper"
+
 [physics]
 
 common/physics_ticks_per_second=240

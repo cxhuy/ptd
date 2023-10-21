@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=10 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/walls.svg" id="1_cy8yf"]
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/leftFlipper.tscn" id="3_mqu62"]
+[ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/bumper.tscn" id="5_l2te3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
 bounce = 0.1
@@ -24,6 +25,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_cy8yf")
 
 [node name="Walls" type="RigidBody2D" parent="."]
+collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_u6bn6")
 freeze = true
 
@@ -35,11 +37,13 @@ shape = SubResource("RectangleShape2D_pyenq")
 position = Vector2(1385, 540)
 shape = SubResource("RectangleShape2D_iih53")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+[node name="TopWall(Test)" type="CollisionShape2D" parent="Walls"]
 position = Vector2(960, 25)
 shape = SubResource("RectangleShape2D_jarcq")
 
 [node name="Slopes" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 freeze = true
 
 [node name="LeftSlope" type="CollisionPolygon2D" parent="Slopes"]
@@ -50,6 +54,8 @@ polygon = PackedVector2Array(1335, 790, 1091.5, 993, 1091.5, 1080, 1335, 1080)
 
 [node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
 position = Vector2(750, 100)
+collision_layer = 4
+collision_mask = 27
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(821.5, 1001)
@@ -58,3 +64,6 @@ rotation = 3.83972
 [node name="RightFlipper" parent="." instance=ExtResource("3_mdsrv")]
 position = Vector2(1097.5, 1001)
 rotation = -0.698132
+
+[node name="Bumper" parent="." instance=ExtResource("5_l2te3")]
+position = Vector2(744, 474)

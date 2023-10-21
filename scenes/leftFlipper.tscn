@@ -5,6 +5,8 @@
 
 [node name="LeftFlipper" type="CharacterBody2D"]
 rotation = 3.14159
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_eth3r")
 
 [node name="FlipperSprite" type="Sprite2D" parent="."]

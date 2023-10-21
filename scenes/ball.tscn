@@ -10,8 +10,12 @@ bounce = 0.1
 radius = 15.0
 
 [node name="Ball" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_tb1tu")
 gravity_scale = 2.0
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ejfi7")
