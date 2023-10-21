@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxgvfj5w8qap"
-path="res://.godot/imported/walls.svg-2d9bb341b28eef80a5059ed09b8761be.ctex"
+uid="uid://de3wnhjxlsvmr"
+path="res://.godot/imported/bumper.svg-9e26a9785e88f6f1ce4605e0fa5b4350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/walls.svg"
-dest_files=["res://.godot/imported/walls.svg-2d9bb341b28eef80a5059ed09b8761be.ctex"]
+source_file="res://sprites/environment/bumper/bumper.svg"
+dest_files=["res://.godot/imported/bumper.svg-9e26a9785e88f6f1ce4605e0fa5b4350.ctex"]
 
 [params]
 

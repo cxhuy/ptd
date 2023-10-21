@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de3wnhjxlsvmr"
-path="res://.godot/imported/bumper.svg-b470245e8d87957ef8e7a64453fb02e8.ctex"
+uid="uid://cmmgrv8ajvgos"
+path="res://.godot/imported/flipper.svg-96c418ce9233d5d732679f7bd74d4356.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bumper.svg"
-dest_files=["res://.godot/imported/bumper.svg-b470245e8d87957ef8e7a64453fb02e8.ctex"]
+source_file="res://sprites/flipper/flipper.svg"
+dest_files=["res://.godot/imported/flipper.svg-96c418ce9233d5d732679f7bd74d4356.ctex"]
 
 [params]
 

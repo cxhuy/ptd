@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://b4thv8xq7r6q"]
 
-[ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/walls.svg" id="1_cy8yf"]
+[ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/environment/walls/walls.svg" id="1_o7217"]
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
-[ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/rightFlipper.tscn" id="3_mdsrv"]
-[ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/leftFlipper.tscn" id="3_mqu62"]
-[ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/bumper.tscn" id="5_l2te3"]
+[ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
+[ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
+[ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/environment/bumper.tscn" id="5_l2te3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
 bounce = 0.1
@@ -22,7 +22,7 @@ size = Vector2(1920, 50)
 
 [node name="WallsSprite" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_cy8yf")
+texture = ExtResource("1_o7217")
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_mask = 4

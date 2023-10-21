@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmmgrv8ajvgos"
-path="res://.godot/imported/flipper.svg-5943974a82572a470cfedba9fb683233.ctex"
+uid="uid://dqxgvfj5w8qap"
+path="res://.godot/imported/walls.svg-6c56d9d7f4a98068609f4bb0b0c4defe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/flipper.svg"
-dest_files=["res://.godot/imported/flipper.svg-5943974a82572a470cfedba9fb683233.ctex"]
+source_file="res://sprites/environment/walls/walls.svg"
+dest_files=["res://.godot/imported/walls.svg-6c56d9d7f4a98068609f4bb0b0c4defe.ctex"]
 
 [params]
 
