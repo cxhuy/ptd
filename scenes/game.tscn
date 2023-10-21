@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=17 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/environment/bumper.tscn" id="5_l2te3"]
 [ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
 [ext_resource type="PackedScene" uid="uid://dmdvm8jdx2sl3" path="res://scenes/tower/tower.tscn" id="8_vrbsv"]
+[ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="11_kxay0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
-bounce = 0.1
+bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyenq"]
 size = Vector2(100, 1080)
@@ -100,6 +101,13 @@ autostart = true
 position = Vector2(922, 336)
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="BumperTri" parent="." instance=ExtResource("11_kxay0")]
+position = Vector2(1220, 725)
+
+[node name="BumperTri2" parent="." instance=ExtResource("11_kxay0")]
+position = Vector2(700, 725)
+scale = Vector2(-1, 1)
 
 [connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
