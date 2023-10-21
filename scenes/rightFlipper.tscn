@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d23liiq5o3xd"]
+[gd_scene load_steps=3 format=3 uid="uid://d23liiq5o3xd"]
 
+[ext_resource type="Script" path="res://scripts/rightFlipper.gd" id="1_i6fn8"]
 [ext_resource type="Texture2D" uid="uid://cmmgrv8ajvgos" path="res://sprites/flipper.svg" id="1_p4jl6"]
 
-[node name="RightFlipper" type="RigidBody2D"]
-freeze = true
+[node name="RightFlipper" type="CharacterBody2D"]
+script = ExtResource("1_i6fn8")
 
 [node name="FlipperSprite" type="Sprite2D" parent="."]
 position = Vector2(-40.75, 0)
