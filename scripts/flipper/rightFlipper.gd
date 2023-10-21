@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var isPressed: bool = false
-var startAngle: int = -40
-var maxAngle: int = 50
+var startAngle: int = -30
+var maxAngle: int = 60
 
 
 func _physics_process(delta):

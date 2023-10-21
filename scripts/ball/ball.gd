@@ -3,8 +3,8 @@ extends RigidBody2D
 var ballSmall := preload("res://scenes/ballSmall.tscn")
 
 
-func _on_body_entered(body):
-	shootBallSmall()
+#func _on_body_entered(body):
+#	shootBallSmall()
 
 
 func shootBallSmall():

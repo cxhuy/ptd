@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
-[ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/environment/walls/walls.svg" id="1_o7217"]
 [ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
+[ext_resource type="Texture2D" uid="uid://cp8u04lb01gvk" path="res://sprites/environment/walls/walls2.svg" id="2_2y03n"]
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
@@ -34,7 +34,7 @@ script = ExtResource("1_81tkb")
 
 [node name="WallsSprite" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_o7217")
+texture = ExtResource("2_2y03n")
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_mask = 4
@@ -63,21 +63,23 @@ collision_mask = 4
 freeze = true
 
 [node name="LeftSlope" type="CollisionPolygon2D" parent="Slopes"]
-polygon = PackedVector2Array(585, 790, 827.5, 993, 827.5, 1080, 585, 1080)
+polygon = PackedVector2Array(585, 800, 773.53, 906.5, 773.53, 1080, 585, 1080)
 
 [node name="RightSlope" type="CollisionPolygon2D" parent="Slopes"]
-polygon = PackedVector2Array(1335, 790, 1091.5, 993, 1091.5, 1080, 1335, 1080)
+polygon = PackedVector2Array(1335, 800, 1146.53, 906.5, 1146.53, 1080, 1335, 1080)
 
 [node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
 position = Vector2(750, 100)
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
-position = Vector2(821.5, 1001)
-rotation = 3.83972
+position = Vector2(773.53, 928)
+rotation = 3.66519
+scale = Vector2(2, 2)
 
 [node name="RightFlipper" parent="." instance=ExtResource("3_mdsrv")]
-position = Vector2(1097.5, 1001)
-rotation = -0.698132
+position = Vector2(1146.53, 928)
+rotation = -0.523599
+scale = Vector2(2, 2)
 
 [node name="Bumper" parent="." instance=ExtResource("5_l2te3")]
 position = Vector2(734, 474)
@@ -87,6 +89,7 @@ curve = SubResource("Curve2D_13sw7")
 script = ExtResource("6_ceuvg")
 
 [node name="PathSprite" type="Sprite2D" parent="Enemies"]
+modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(960, 540)
 texture = ExtResource("1_pf6s4")
 

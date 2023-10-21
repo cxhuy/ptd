@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://domq6x0q4mfk1"]
 
 [ext_resource type="Script" path="res://scripts/ball/ball.gd" id="1_agjdh"]
-[ext_resource type="Texture2D" uid="uid://6fphf5hl05fd" path="res://sprites/ball.svg" id="1_odmrh"]
+[ext_resource type="Texture2D" uid="uid://wvf2yr2xahu7" path="res://sprites/ball2.svg" id="2_j7d7n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb1tu"]
 friction = 0.2
@@ -24,6 +24,6 @@ shape = SubResource("CircleShape2D_ejfi7")
 
 [node name="BallSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_odmrh")
+texture = ExtResource("2_j7d7n")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
