@@ -49,7 +49,6 @@ shape = SubResource("RectangleShape2D_iih53")
 [node name="TopWall(Test)" type="CollisionShape2D" parent="Walls"]
 position = Vector2(960, 25)
 shape = SubResource("RectangleShape2D_jarcq")
-disabled = true
 
 [node name="Slopes" type="RigidBody2D" parent="."]
 collision_layer = 2

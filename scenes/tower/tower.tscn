@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmdvm8jdx2sl3"]
+[gd_scene load_steps=7 format=3 uid="uid://dmdvm8jdx2sl3"]
 
 [ext_resource type="Texture2D" uid="uid://vv8dx6nj4b75" path="res://sprites/towers/basic_tower/base.svg" id="1_04dyi"]
+[ext_resource type="Script" path="res://scripts/tower/base.gd" id="1_t6bgj"]
 [ext_resource type="Texture2D" uid="uid://dg8tvkyrmwqix" path="res://sprites/towers/basic_tower/barrel.svg" id="2_md3l5"]
 [ext_resource type="Texture2D" uid="uid://b25lkiwisn31" path="res://sprites/towers/basic_tower/turret.svg" id="3_1b80j"]
 [ext_resource type="Texture2D" uid="uid://iu5snjhufk02" path="res://sprites/towers/basic_tower/default.svg" id="4_six8w"]
@@ -11,8 +12,13 @@ radius = 25.0
 [node name="Tower" type="Node2D"]
 
 [node name="Base" type="RigidBody2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+max_contacts_reported = 1
+contact_monitor = true
 freeze = true
 freeze_mode = 1
+script = ExtResource("1_t6bgj")
 
 [node name="BaseSprite" type="Sprite2D" parent="Base"]
 scale = Vector2(0.2, 0.2)
@@ -33,3 +39,5 @@ texture = ExtResource("3_1b80j")
 [node name="SwitchSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_six8w")
+
+[connection signal="body_entered" from="Base" to="Base" method="_on_body_entered"]

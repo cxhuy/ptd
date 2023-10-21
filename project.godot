@@ -42,6 +42,8 @@ rightFlip={
 2d_physics/layer_3="Ball"
 2d_physics/layer_4="Flipper"
 2d_physics/layer_5="Bumper"
+2d_physics/layer_6="Tower"
+2d_physics/layer_7="Enemy"
 
 [physics]
 
