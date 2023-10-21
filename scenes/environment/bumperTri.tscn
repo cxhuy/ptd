@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/environment/bumperTri.gd" id="1_oye4p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xds5m"]
-bounce = 1.0
+bounce = 0.7
 
 [node name="BumperTri" type="Node2D"]
 
