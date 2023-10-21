@@ -49,6 +49,7 @@ addBall={
 2d_physics/layer_5="Bumper"
 2d_physics/layer_6="Tower"
 2d_physics/layer_7="Enemy"
+2d_physics/layer_8="Projectiles"
 
 [physics]
 

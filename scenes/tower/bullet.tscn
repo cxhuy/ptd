@@ -8,6 +8,8 @@ radius = 64.0
 
 [node name="Bullet" type="Area2D"]
 scale = Vector2(0.1, 0.1)
+collision_layer = 128
+collision_mask = 64
 script = ExtResource("1_u4uh5")
 
 [node name="BulletCollision" type="CollisionShape2D" parent="."]
@@ -15,3 +17,5 @@ shape = SubResource("CircleShape2D_uico6")
 
 [node name="BulletSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_0giwx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
