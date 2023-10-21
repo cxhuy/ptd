@@ -34,6 +34,7 @@ animations = [{
 }]
 
 [node name="Tower" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ug5qu")
 
 [node name="Base" type="RigidBody2D" parent="."]
