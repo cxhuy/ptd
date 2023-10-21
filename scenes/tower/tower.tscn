@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmdvm8jdx2sl3"]
+[gd_scene load_steps=11 format=3 uid="uid://dmdvm8jdx2sl3"]
 
 [ext_resource type="Texture2D" uid="uid://vv8dx6nj4b75" path="res://sprites/towers/basic_tower/base.svg" id="1_04dyi"]
 [ext_resource type="Script" path="res://scripts/tower/base.gd" id="1_t6bgj"]
@@ -6,12 +6,32 @@
 [ext_resource type="Texture2D" uid="uid://dg8tvkyrmwqix" path="res://sprites/towers/basic_tower/barrel.svg" id="2_md3l5"]
 [ext_resource type="Texture2D" uid="uid://b25lkiwisn31" path="res://sprites/towers/basic_tower/turret.svg" id="3_1b80j"]
 [ext_resource type="Texture2D" uid="uid://iu5snjhufk02" path="res://sprites/towers/basic_tower/default.svg" id="4_six8w"]
+[ext_resource type="Texture2D" uid="uid://cye4fvqe6pv35" path="res://sprites/towers/basic_tower/collision.svg" id="6_om7i7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gnok"]
 radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_34hor"]
 radius = 180.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bngoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_om7i7")
+}],
+"loop": true,
+"name": &"collision",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_six8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_ug5qu")
@@ -42,15 +62,15 @@ rotation = 3.14159
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_1b80j")
 
-[node name="SwitchSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_six8w")
-
 [node name="AttackRange" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 64
 
 [node name="RangeCollision" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_34hor")
+
+[node name="SwitchSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_bngoj")
 
 [connection signal="body_entered" from="Base" to="Base" method="_on_body_entered"]
