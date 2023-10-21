@@ -54,8 +54,6 @@ polygon = PackedVector2Array(1335, 790, 1091.5, 993, 1091.5, 1080, 1335, 1080)
 
 [node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
 position = Vector2(750, 100)
-collision_layer = 4
-collision_mask = 27
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(821.5, 1001)
@@ -66,4 +64,4 @@ position = Vector2(1097.5, 1001)
 rotation = -0.698132
 
 [node name="Bumper" parent="." instance=ExtResource("5_l2te3")]
-position = Vector2(744, 474)
+position = Vector2(734, 474)
