@@ -20,6 +20,10 @@ size = Vector2(100, 1080)
 size = Vector2(1920, 50)
 
 [sub_resource type="Curve2D" id="Curve2D_13sw7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 959, 0, 0, 0, 0, 0, 960, 126, 0, 0, 0, 0, 868, 127, 0, 0, 0, 0, 867, 206, 0, 0, 0, 0, 1140, 208, 0, 0, 0, 0, 1141, 300, 0, 0, 0, 0, 700, 301, 0, 0, 0, 0, 700, 435, 0, 0, 0, 0, 1259, 437, 0, 0, 0, 0, 1260, 619, 0, 0, 0, 0, 830, 620, 0, 0, 0, 0, 830, 719, 0, 0, 0, 0, 1077, 720, 0, 0, 0, 0, 1077, 810, 0, 0, 0, 0, 960, 810, 0, 0, 0, 0, 960, 1080)
+}
+point_count = 16
 
 [node name="Game" type="Node2D"]
 
@@ -69,9 +73,9 @@ rotation = -0.698132
 [node name="Bumper" parent="." instance=ExtResource("5_l2te3")]
 position = Vector2(734, 474)
 
-[node name="EnemyPath" type="Path2D" parent="."]
+[node name="Enemies" type="Path2D" parent="."]
 curve = SubResource("Curve2D_13sw7")
 
-[node name="PathSprite" type="Sprite2D" parent="EnemyPath"]
+[node name="PathSprite" type="Sprite2D" parent="Enemies"]
 position = Vector2(960, 540)
 texture = ExtResource("1_pf6s4")
