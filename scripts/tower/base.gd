@@ -16,8 +16,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Balls"):
-		var direction: Vector2 = (position - body.position).normalized()
-		body.apply_impulse(direction * 1500)
+		var direction: Vector2 = (self.global_position - body.global_position).normalized()
+		body.apply_impulse(direction * -1500)
 		switchDuration = 5
 		var bulletInstance = bullet.instantiate()
 		bulletInstance.set_global_position(get_parent().global_position)
