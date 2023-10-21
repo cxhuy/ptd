@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=12 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/environment/walls/walls.svg" id="1_o7217"]
+[ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
@@ -17,6 +18,8 @@ size = Vector2(100, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jarcq"]
 size = Vector2(1920, 50)
+
+[sub_resource type="Curve2D" id="Curve2D_13sw7"]
 
 [node name="Game" type="Node2D"]
 
@@ -65,3 +68,10 @@ rotation = -0.698132
 
 [node name="Bumper" parent="." instance=ExtResource("5_l2te3")]
 position = Vector2(734, 474)
+
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_13sw7")
+
+[node name="PathSprite" type="Sprite2D" parent="EnemyPath"]
+position = Vector2(960, 540)
+texture = ExtResource("1_pf6s4")
