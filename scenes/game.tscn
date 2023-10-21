@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=16 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/environment/walls/walls.svg" id="1_o7217"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
+[ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
 [ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/environment/bumper.tscn" id="5_l2te3"]
 [ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
 [ext_resource type="PackedScene" uid="uid://dmdvm8jdx2sl3" path="res://scenes/tower/tower.tscn" id="8_vrbsv"]
@@ -38,7 +39,11 @@ texture = ExtResource("1_o7217")
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_u6bn6")
+max_contacts_reported = 1
+contact_monitor = true
 freeze = true
+freeze_mode = 1
+script = ExtResource("3_pflrw")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(535, 540)
@@ -93,4 +98,5 @@ position = Vector2(922, 336)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
