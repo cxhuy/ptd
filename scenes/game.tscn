@@ -114,5 +114,12 @@ position = Vector2(1214, 195)
 [node name="Tower5" parent="." instance=ExtResource("8_vrbsv")]
 position = Vector2(760, 236)
 
+[node name="WaveStartButton" type="Button" parent="."]
+offset_left = 1557.5
+offset_top = 930.0
+offset_right = 1807.5
+offset_bottom = 1030.0
+
 [connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="WaveStartButton" to="Enemies" method="_on_wave_start_button_pressed"]
