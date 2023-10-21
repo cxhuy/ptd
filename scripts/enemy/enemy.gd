@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var enemyId: int = 0
 var enemy: Dictionary = {
-	0: {"speed": 50, "health": 10},
+	0: {"speed": 40, "health": 10},
 }
 var speed: int
 var health: int
