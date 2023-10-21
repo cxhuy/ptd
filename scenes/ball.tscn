@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://domq6x0q4mfk1"]
+[gd_scene load_steps=5 format=3 uid="uid://domq6x0q4mfk1"]
 
+[ext_resource type="Script" path="res://scripts/ball/ball.gd" id="1_agjdh"]
 [ext_resource type="Texture2D" uid="uid://6fphf5hl05fd" path="res://sprites/ball.svg" id="1_odmrh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb1tu"]
@@ -7,7 +8,7 @@ friction = 0.2
 bounce = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejfi7"]
-radius = 9.0
+radius = 12.5
 
 [node name="Ball" type="RigidBody2D" groups=["Balls"]]
 collision_layer = 4
@@ -16,10 +17,13 @@ physics_material_override = SubResource("PhysicsMaterial_tb1tu")
 gravity_scale = 2.0
 max_contacts_reported = 1
 contact_monitor = true
+script = ExtResource("1_agjdh")
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ejfi7")
 
 [node name="BallSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.175, 0.175)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_odmrh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
