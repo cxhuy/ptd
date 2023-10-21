@@ -19,7 +19,8 @@ func _on_body_entered(body):
 		var direction: Vector2 = (self.global_position - body.global_position).normalized()
 		body.apply_impulse(direction * -1500)
 		switchDuration = 5
-		var bulletInstance = bullet.instantiate()
-		bulletInstance.set_global_position(get_parent().global_position)
-		bulletInstance.set_global_rotation_degrees(get_parent().global_rotation_degrees)
-		get_tree().get_root().get_node("Game").get_node("Projectiles").add_child(bulletInstance)
+		if get_parent().isEnemyInRange:
+			var bulletInstance = bullet.instantiate()
+			bulletInstance.set_global_position(get_parent().global_position)
+			bulletInstance.set_global_rotation_degrees(get_parent().global_rotation_degrees)
+			get_tree().get_root().get_node("Game").get_node("Projectiles").add_child(bulletInstance)

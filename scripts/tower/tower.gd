@@ -1,10 +1,17 @@
 extends Node2D
 
+var isEnemyInRange = false
+
 
 func _process(delta):
 	var enemiesInRange = $AttackRange.get_overlapping_bodies()
 	if enemiesInRange.size() > 0:
+		isEnemyInRange = true
+		$BarrelSprite.position = Vector2(32, 0)
 		look_at(getFirstEnemy(enemiesInRange).global_position)
+	else:
+		isEnemyInRange = false
+		$BarrelSprite.position = Vector2(16, 0)		
 	get_node("SwitchSprite").global_rotation = 0
 
 
