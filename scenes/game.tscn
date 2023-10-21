@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=13 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Texture2D" uid="uid://dqxgvfj5w8qap" path="res://sprites/environment/walls/walls.svg" id="1_o7217"]
 [ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="PackedScene" uid="uid://blwg2kwssqdvp" path="res://scenes/environment/bumper.tscn" id="5_l2te3"]
+[ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
 bounce = 0.1
@@ -47,6 +48,7 @@ shape = SubResource("RectangleShape2D_iih53")
 [node name="TopWall(Test)" type="CollisionShape2D" parent="Walls"]
 position = Vector2(960, 25)
 shape = SubResource("RectangleShape2D_jarcq")
+disabled = true
 
 [node name="Slopes" type="RigidBody2D" parent="."]
 collision_layer = 2
@@ -75,7 +77,13 @@ position = Vector2(734, 474)
 
 [node name="Enemies" type="Path2D" parent="."]
 curve = SubResource("Curve2D_13sw7")
+script = ExtResource("6_ceuvg")
 
 [node name="PathSprite" type="Sprite2D" parent="Enemies"]
 position = Vector2(960, 540)
 texture = ExtResource("1_pf6s4")
+
+[node name="SpawnTimer" type="Timer" parent="Enemies"]
+autostart = true
+
+[connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
