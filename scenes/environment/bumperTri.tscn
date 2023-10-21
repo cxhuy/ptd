@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4gh8a7lq7lqu"]
+
+[ext_resource type="Texture2D" uid="uid://cs2vfjk23ahpp" path="res://sprites/environment/bumper/bumperTri.svg" id="1_e4vip"]
+
+[node name="BumperTri" type="Node2D"]
+
+[node name="Triangle" type="RigidBody2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+freeze = true
+
+[node name="TriangleCollision" type="CollisionPolygon2D" parent="Triangle"]
+polygon = PackedVector2Array(54, -84, 54, 32, -45, 89)
+
+[node name="Bumper" type="RigidBody2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+max_contacts_reported = 1
+contact_monitor = true
+freeze = true
+freeze_mode = 1
+
+[node name="BumperCollision" type="CollisionPolygon2D" parent="Bumper"]
+polygon = PackedVector2Array(-53, 93, 54, -94, 54, -84, -45, 89)
+
+[node name="BumperTriSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_e4vip")
