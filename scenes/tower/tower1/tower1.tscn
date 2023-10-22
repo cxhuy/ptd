@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd35e8o254y55"]
+
+[ext_resource type="Texture2D" uid="uid://cjwuho37icpiv" path="res://sprites/towers/tower1/tower1_off.svg" id="1_yfsca"]
+[ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_vm1s7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxqam"]
+radius = 128.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbktn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yfsca")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vm1s7")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Tower1" type="Node2D"]
+
+[node name="Base" type="RigidBody2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+max_contacts_reported = 1
+contact_monitor = true
+freeze = true
+freeze_mode = 1
+
+[node name="BaseCollision" type="CollisionShape2D" parent="Base"]
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CircleShape2D_bxqam")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_cbktn")
+animation = &"on"

@@ -1,6 +1,6 @@
 extends Panel
 
-var tower := preload("res://scenes/tower/tower_test/tower.tscn")
+var tower := preload("res://scenes/tower/tower1/tower1.tscn")
 
 
 func _on_gui_input(event):
@@ -18,4 +18,4 @@ func _on_gui_input(event):
 		get_child(1).queue_free()
 		get_tree().get_root().get_node("Game").add_child(towerInstance)
 		towerInstance.set_global_position(dropPos)
-		towerInstance.get_node("AttackRangeVisual").hide()
+#		towerInstance.get_node("AttackRangeVisual").hide()
