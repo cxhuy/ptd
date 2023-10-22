@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5qmwu8hgbnv2"]
+[gd_scene load_steps=4 format=3 uid="uid://b5qmwu8hgbnv2"]
 
 [ext_resource type="Script" path="res://scripts/towerAdd.gd" id="1_c8akx"]
-[ext_resource type="Texture2D" uid="uid://iu5snjhufk02" path="res://sprites/towers/basic_tower/default.svg" id="1_emspr"]
+[ext_resource type="Texture2D" uid="uid://ccnh8h1cw8fyw" path="res://sprites/towers/tower1/tower1_ui.png" id="2_dlex3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw7x8"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="TowerAdd" type="Panel"]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sw7x8")
 script = ExtResource("1_c8akx")
 
 [node name="TowerSprite" type="Sprite2D" parent="."]
 position = Vector2(50, 50)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_emspr")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_dlex3")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
