@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=4 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="PackedScene" uid="uid://b5qmwu8hgbnv2" path="res://scenes/towerAdd.tscn" id="1_178qx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f73e0"]
+
+[sub_resource type="SystemFont" id="SystemFont_yroje"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
 
 [node name="UI" type="CanvasLayer"]
 
@@ -19,6 +23,16 @@ offset_right = 507.0
 offset_bottom = 1040.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
+
+[node name="Label" type="Label" parent="Panel/FlowContainer"]
+custom_minimum_size = Vector2(430, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_yroje")
+theme_override_font_sizes/font_size = 70
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TowerAdd" parent="Panel/FlowContainer" instance=ExtResource("1_178qx")]
 layout_mode = 2
