@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=14 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
-[ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
-[ext_resource type="Texture2D" uid="uid://cp8u04lb01gvk" path="res://sprites/environment/walls/walls2.svg" id="2_2y03n"]
+[ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
@@ -24,7 +23,7 @@ size = Vector2(1920, 50)
 
 [sub_resource type="Curve2D" id="Curve2D_13sw7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 959, 0, 0, 0, 0, 0, 960, 126, 0, 0, 0, 0, 868, 127, 0, 0, 0, 0, 867, 206, 0, 0, 0, 0, 1140, 208, 0, 0, 0, 0, 1141, 300, 0, 0, 0, 0, 700, 301, 0, 0, 0, 0, 700, 435, 0, 0, 0, 0, 1259, 437, 0, 0, 0, 0, 1260, 619, 0, 0, 0, 0, 830, 620, 0, 0, 0, 0, 830, 719, 0, 0, 0, 0, 1077, 720, 0, 0, 0, 0, 1077, 810, 0, 0, 0, 0, 960, 810, 0, 0, 0, 0, 960, 1080)
+"points": PackedVector2Array(0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 960, 128, 0, 0, 0, 0, 866, 128, 0, 0, 0, 0, 866, 199, 0, 0, 0, 0, 1151, 198, 0, 0, 0, 0, 1150, 292, 0, 0, 0, 0, 700, 292, 0, 0, 0, 0, 700, 457, 0, 0, 0, 0, 1221, 457, 0, 0, 0, 0, 1221, 644, 0, 0, 0, 0, 818, 644, 0, 0, 0, 0, 818, 715, 0, 0, 0, 0, 1079, 715, 0, 0, 0, 0, 1079, 810, 0, 0, 0, 0, 961, 809, 0, 0, 0, 0, 961, 1082)
 }
 point_count = 16
 
@@ -33,7 +32,7 @@ script = ExtResource("1_81tkb")
 
 [node name="WallsSprite" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_2y03n")
+texture = ExtResource("2_0ejdm")
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_mask = 4
@@ -62,10 +61,10 @@ collision_mask = 4
 freeze = true
 
 [node name="LeftSlope" type="CollisionPolygon2D" parent="Slopes"]
-polygon = PackedVector2Array(585, 800, 773.53, 906.5, 773.53, 1080, 585, 1080)
+polygon = PackedVector2Array(585, 785, 773.53, 903, 773.53, 1080, 585, 1080)
 
 [node name="RightSlope" type="CollisionPolygon2D" parent="Slopes"]
-polygon = PackedVector2Array(1335, 800, 1146.53, 906.5, 1146.53, 1080, 1335, 1080)
+polygon = PackedVector2Array(1335, 785, 1146.53, 903, 1146.53, 1080, 1335, 1080)
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(773.53, 928)
@@ -81,18 +80,13 @@ scale = Vector2(2, 2)
 curve = SubResource("Curve2D_13sw7")
 script = ExtResource("6_ceuvg")
 
-[node name="PathSprite" type="Sprite2D" parent="Enemies"]
-modulate = Color(1, 1, 1, 0.196078)
-position = Vector2(960, 540)
-texture = ExtResource("1_pf6s4")
-
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="BumperTri" parent="." instance=ExtResource("11_kxay0")]
-position = Vector2(1220, 725)
+position = Vector2(1227, 720)
 
 [node name="BumperTri2" parent="." instance=ExtResource("11_kxay0")]
-position = Vector2(700, 725)
+position = Vector2(693, 720)
 scale = Vector2(-1, 1)
 
 [node name="WaveStartButton" type="Button" parent="."]

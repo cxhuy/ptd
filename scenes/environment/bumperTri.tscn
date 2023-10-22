@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4gh8a7lq7lqu"]
 
-[ext_resource type="Texture2D" uid="uid://cs2vfjk23ahpp" path="res://sprites/environment/bumper/bumperTri.svg" id="1_e4vip"]
+[ext_resource type="Texture2D" uid="uid://ckk7njntwp82p" path="res://sprites/environment/bumper/bumperTri.svg" id="1_e4vip"]
 [ext_resource type="Script" path="res://scripts/environment/bumperTri.gd" id="1_oye4p"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xds5m"]
@@ -14,7 +14,8 @@ collision_mask = 4
 freeze = true
 
 [node name="TriangleCollision" type="CollisionPolygon2D" parent="Triangle"]
-polygon = PackedVector2Array(54, -84, 54, 32, -45, 89)
+position = Vector2(0, 2)
+polygon = PackedVector2Array(56, -87, 56, 30, -45, 89)
 
 [node name="Bumper" type="RigidBody2D" parent="."]
 collision_layer = 16
@@ -27,7 +28,7 @@ freeze_mode = 1
 script = ExtResource("1_oye4p")
 
 [node name="BumperCollision" type="CollisionPolygon2D" parent="Bumper"]
-polygon = PackedVector2Array(-53, 93, 54, -94, 54, -84, -45, 89)
+polygon = PackedVector2Array(-56, 98, 56, -98, 56, -86, -46, 92)
 
 [node name="BumperTriSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_e4vip")
