@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=17 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
 [ext_resource type="PackedScene" uid="uid://dmdvm8jdx2sl3" path="res://scenes/tower/tower.tscn" id="8_vrbsv"]
 [ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="11_kxay0"]
+[ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
 bounce = 0.5
@@ -117,6 +118,8 @@ offset_top = 930.0
 offset_right = 1807.5
 offset_bottom = 1030.0
 text = "Start Wave"
+
+[node name="UI" parent="." instance=ExtResource("11_tjs23")]
 
 [connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="pressed" from="WaveStartButton" to="Enemies" method="_on_wave_start_button_pressed"]
