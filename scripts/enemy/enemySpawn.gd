@@ -1,6 +1,7 @@
 extends Path2D
 
 var enemy := preload("res://scenes/enemy/enemy.tscn")
+var ball := preload("res://scenes/ball.tscn")
 var currentWave: int = 1
 var enemySpawnFinish: bool = false
 var inGame: bool = false
@@ -10,12 +11,21 @@ func _process(delta):
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
 		enemySpawnFinish = false
 		inGame = false
+		get_tree().call_group("Balls", "queue_free")
 		currentWave += 1
+	
+	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
+		var ballInstance = ball.instantiate()
+		ballInstance.set_global_position(Vector2(616, 583))
+		add_child(ballInstance)
 
 
 func _on_wave_start_button_pressed():
 	if !inGame:
 		startWave(currentWave)
+		var ballInstance := ball.instantiate()
+		ballInstance.set_global_position(Vector2(616, 583))
+		add_child(ballInstance)
 		inGame = true
 
 
