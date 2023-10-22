@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg8tvkyrmwqix"
-path="res://.godot/imported/barrel.svg-8106bc0a628f2112274f80fd383933f2.ctex"
+path="res://.godot/imported/barrel.svg-b1775dd52ebceede7e97e895d32a4654.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/towers/basic_tower/barrel.svg"
-dest_files=["res://.godot/imported/barrel.svg-8106bc0a628f2112274f80fd383933f2.ctex"]
+source_file="res://sprites/towers/tower_test/barrel.svg"
+dest_files=["res://.godot/imported/barrel.svg-b1775dd52ebceede7e97e895d32a4654.ctex"]
 
 [params]
 

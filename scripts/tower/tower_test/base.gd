@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @onready var anim = get_node("../SwitchSprite")
 
-var bullet := preload("res://scenes/tower/bullet.tscn")
+var bullet := preload("res://scenes/tower/tower_test/bullet.tscn")
 var switchDuration: int = 0
 
 

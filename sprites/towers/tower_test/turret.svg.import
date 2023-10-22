@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cye4fvqe6pv35"
-path="res://.godot/imported/collision.svg-9cdb5cb297dd4ef2744fc2811ece33d8.ctex"
+uid="uid://b25lkiwisn31"
+path="res://.godot/imported/turret.svg-3e683a71de3d4a3ca25fabfa6efd6fa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/towers/basic_tower/collision.svg"
-dest_files=["res://.godot/imported/collision.svg-9cdb5cb297dd4ef2744fc2811ece33d8.ctex"]
+source_file="res://sprites/towers/tower_test/turret.svg"
+dest_files=["res://.godot/imported/turret.svg-3e683a71de3d4a3ca25fabfa6efd6fa5.ctex"]
 
 [params]
 

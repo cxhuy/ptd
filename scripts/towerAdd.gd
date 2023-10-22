@@ -1,6 +1,6 @@
 extends Panel
 
-var tower := preload("res://scenes/tower/tower.tscn")
+var tower := preload("res://scenes/tower/tower_test/tower.tscn")
 
 
 func _on_gui_input(event):
