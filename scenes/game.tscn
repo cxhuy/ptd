@@ -98,5 +98,4 @@ text = "Start Wave"
 
 [node name="UI" parent="." instance=ExtResource("11_tjs23")]
 
-[connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="pressed" from="WaveStartButton" to="Enemies" method="_on_wave_start_button_pressed"]

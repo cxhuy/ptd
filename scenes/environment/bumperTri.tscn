@@ -32,5 +32,3 @@ polygon = PackedVector2Array(-56, 98, 56, -98, 56, -86, -46, 92)
 
 [node name="BumperTriSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_e4vip")
-
-[connection signal="body_entered" from="Bumper" to="Bumper" method="_on_body_entered"]
