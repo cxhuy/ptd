@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tocsq2uslpo6"]
+
+[ext_resource type="Texture2D" uid="uid://bu0rvg2tttknq" path="res://sprites/towers/tower1/tower1_explosion.png" id="1_fn6sq"]
+[ext_resource type="Script" path="res://scripts/tower/tower1/explosion.gd" id="1_ye0kj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mggna"]
+radius = 128.0
+
+[node name="Explosion" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
+script = ExtResource("1_ye0kj")
+
+[node name="ExplosionSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+texture = ExtResource("1_fn6sq")
+
+[node name="ExplosionCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mggna")
