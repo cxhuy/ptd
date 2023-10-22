@@ -116,6 +116,7 @@ offset_left = 1557.5
 offset_top = 930.0
 offset_right = 1807.5
 offset_bottom = 1030.0
+text = "Start Wave"
 
 [connection signal="body_entered" from="Walls" to="Walls" method="_on_body_entered"]
 [connection signal="pressed" from="WaveStartButton" to="Enemies" method="_on_wave_start_button_pressed"]
