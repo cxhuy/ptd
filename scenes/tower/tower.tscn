@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmdvm8jdx2sl3"]
+[gd_scene load_steps=12 format=3 uid="uid://dmdvm8jdx2sl3"]
 
 [ext_resource type="Texture2D" uid="uid://vv8dx6nj4b75" path="res://sprites/towers/basic_tower/base.svg" id="1_04dyi"]
 [ext_resource type="Script" path="res://scripts/tower/base.gd" id="1_t6bgj"]
@@ -32,6 +32,13 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocgsi"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 180
+corner_radius_top_right = 180
+corner_radius_bottom_right = 180
+corner_radius_bottom_left = 180
 
 [node name="Tower" type="Node2D"]
 scale = Vector2(1.5, 1.5)
@@ -73,5 +80,13 @@ shape = SubResource("CircleShape2D_34hor")
 [node name="SwitchSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_bngoj")
+
+[node name="AttackRangeVisual" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.313726)
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ocgsi")
 
 [connection signal="body_entered" from="Base" to="Base" method="_on_body_entered"]
