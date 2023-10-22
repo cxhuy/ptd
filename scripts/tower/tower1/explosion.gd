@@ -1,5 +1,7 @@
 extends Area2D
 
+var damage: int = 5
+
 
 func _ready():
 	self.global_position = get_parent().global_position
@@ -11,3 +13,7 @@ func _ready():
 	tween.tween_property(self, "modulate:a", 0, 0.2)	
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
+
+
+func _on_body_entered(body):
+	body.damage(damage)
