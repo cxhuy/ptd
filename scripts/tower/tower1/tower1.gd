@@ -22,3 +22,9 @@ func _on_base_body_entered(body):
 		var explosionInstance := explosion.instantiate()
 		add_child(explosionInstance)
 		explosionInstance.set_global_position(self.global_position)
+		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
+		tween.tween_property(anim, "scale", Vector2(0.3, 0.3), 0.07)	
+		await get_tree().create_timer(0.2).timeout
+		tween = create_tween().set_trans(Tween.TRANS_CIRC)
+		tween.tween_property(anim, "scale", Vector2(0.35, 0.35), 0.28)	
+		await get_tree().create_timer(0.2).timeout
