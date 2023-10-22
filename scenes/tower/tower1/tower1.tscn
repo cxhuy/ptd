@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd35e8o254y55"]
+[gd_scene load_steps=6 format=3 uid="uid://cd35e8o254y55"]
 
+[ext_resource type="Script" path="res://scripts/tower/tower1/tower1.gd" id="1_by5fh"]
 [ext_resource type="Texture2D" uid="uid://cjwuho37icpiv" path="res://sprites/towers/tower1/tower1_off.svg" id="1_yfsca"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_vm1s7"]
 
@@ -26,6 +27,7 @@ animations = [{
 }]
 
 [node name="Tower1" type="Node2D"]
+script = ExtResource("1_by5fh")
 
 [node name="Base" type="RigidBody2D" parent="."]
 collision_layer = 32
@@ -39,7 +41,9 @@ freeze_mode = 1
 scale = Vector2(0.35, 0.35)
 shape = SubResource("CircleShape2D_bxqam")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PatternSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_cbktn")
 animation = &"on"
+
+[connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]
