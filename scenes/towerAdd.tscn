@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5qmwu8hgbnv2"]
+[gd_scene load_steps=3 format=3 uid="uid://b5qmwu8hgbnv2"]
 
+[ext_resource type="Script" path="res://scripts/towerAdd.gd" id="1_c8akx"]
 [ext_resource type="Texture2D" uid="uid://iu5snjhufk02" path="res://sprites/towers/basic_tower/default.svg" id="1_emspr"]
 
 [node name="TowerAdd" type="Panel"]
 custom_minimum_size = Vector2(96, 96)
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_c8akx")
 
 [node name="TowerSprite" type="Sprite2D" parent="."]
 position = Vector2(48, 48)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_emspr")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
