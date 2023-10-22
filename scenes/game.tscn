@@ -1,14 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=15 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://ctppyjudyoga8" path="res://sprites/environment/paths/enemy_path.png" id="1_pf6s4"]
 [ext_resource type="Texture2D" uid="uid://cp8u04lb01gvk" path="res://sprites/environment/walls/walls2.svg" id="2_2y03n"]
-[ext_resource type="PackedScene" uid="uid://domq6x0q4mfk1" path="res://scenes/ball.tscn" id="2_nc3n3"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
 [ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
-[ext_resource type="PackedScene" uid="uid://dmdvm8jdx2sl3" path="res://scenes/tower/tower.tscn" id="8_vrbsv"]
 [ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="11_kxay0"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
@@ -69,9 +67,6 @@ polygon = PackedVector2Array(585, 800, 773.53, 906.5, 773.53, 1080, 585, 1080)
 [node name="RightSlope" type="CollisionPolygon2D" parent="Slopes"]
 polygon = PackedVector2Array(1335, 800, 1146.53, 906.5, 1146.53, 1080, 1335, 1080)
 
-[node name="Ball" parent="." instance=ExtResource("2_nc3n3")]
-position = Vector2(616, 583)
-
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(773.53, 928)
 rotation = 3.66519
@@ -91,9 +86,6 @@ modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(960, 540)
 texture = ExtResource("1_pf6s4")
 
-[node name="Tower" parent="." instance=ExtResource("8_vrbsv")]
-position = Vector2(926, 365)
-
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="BumperTri" parent="." instance=ExtResource("11_kxay0")]
@@ -102,15 +94,6 @@ position = Vector2(1220, 725)
 [node name="BumperTri2" parent="." instance=ExtResource("11_kxay0")]
 position = Vector2(700, 725)
 scale = Vector2(-1, 1)
-
-[node name="Tower2" parent="." instance=ExtResource("8_vrbsv")]
-position = Vector2(1161, 372)
-
-[node name="Tower3" parent="." instance=ExtResource("8_vrbsv")]
-position = Vector2(1214, 195)
-
-[node name="Tower5" parent="." instance=ExtResource("8_vrbsv")]
-position = Vector2(760, 236)
 
 [node name="WaveStartButton" type="Button" parent="."]
 offset_left = 1557.5
