@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d23liiq5o3xd"]
 
 [ext_resource type="Script" path="res://scripts/flipper/rightFlipper.gd" id="1_h5jm0"]
-[ext_resource type="Texture2D" uid="uid://cmmgrv8ajvgos" path="res://sprites/flipper/flipper.svg" id="2_7cphv"]
+[ext_resource type="Texture2D" uid="uid://cuc627q8s63l3" path="res://sprites/flipper/flipper.svg" id="2_7cphv"]
 
 [node name="RightFlipper" type="CharacterBody2D"]
 collision_layer = 8
@@ -9,11 +9,11 @@ collision_mask = 4
 script = ExtResource("1_h5jm0")
 
 [node name="FlipperSprite" type="Sprite2D" parent="."]
-position = Vector2(-40.75, 0)
+position = Vector2(-40.43, 0)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_7cphv")
 
 [node name="FlipperCollision" type="CollisionPolygon2D" parent="."]
-position = Vector2(-40.75, 0)
+position = Vector2(-40.43, 0)
 scale = Vector2(0.4, 0.4)
 polygon = PackedVector2Array(-124, -10, -127, -4, -127, 2.76568, -124, 10, -116, 15, 106, 25, 113, 23, 119, 19, 124, 12, 127, 4, 127, -4, 124, -13, 117, -21, 107, -25, -116, -15)
