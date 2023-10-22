@@ -2,6 +2,7 @@ extends Area2D
 
 
 func _ready():
+	self.global_position = get_parent().global_position
 	self.scale = Vector2(0, 0)
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.2)	
