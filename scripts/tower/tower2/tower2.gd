@@ -44,9 +44,12 @@ func _on_base_body_entered(body):
 		
 func getEnemiesSortedByProgress(enemiesInRange):
 	if enemiesInRange.size() >= 2:
-		var enemiesSortedByProgress = enemiesInRange
-		enemiesSortedByProgress.sort_custom(sortByProgress)
-		return enemiesSortedByProgress
+		var enemiesInRangeSorted = enemiesInRange
+		enemiesInRangeSorted.sort_custom(sortByProgress)
+		var allEnemiesSorted = get_tree().get_nodes_in_group("Enemies")
+		allEnemiesSorted.sort_custom(sortByProgress)
+		var firstIndex: int = allEnemiesSorted.find(enemiesInRangeSorted[0])
+		return allEnemiesSorted.slice(firstIndex, firstIndex + 20)
 	else:
 		return enemiesInRange
 	
