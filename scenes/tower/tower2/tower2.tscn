@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://3fh5irk0bbiw"]
+[gd_scene load_steps=8 format=3 uid="uid://3fh5irk0bbiw"]
 
 [ext_resource type="Texture2D" uid="uid://dqd6auv4gujsd" path="res://sprites/towers/tower2/tower2_off.svg" id="1_04r05"]
 [ext_resource type="Script" path="res://scripts/tower/tower2/tower2.gd" id="1_v87lx"]
@@ -26,12 +26,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rungb"]
+radius = 200.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcf0v"]
 bg_color = Color(0, 0, 0, 0.313726)
-corner_radius_top_left = 128
-corner_radius_top_right = 128
-corner_radius_bottom_right = 128
-corner_radius_bottom_left = 128
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
 [node name="tower2" type="Node2D"]
 script = ExtResource("1_v87lx")
@@ -55,14 +58,17 @@ sprite_frames = SubResource("SpriteFrames_dry23")
 animation = &"on"
 
 [node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 64
 
 [node name="AttackRangeCollision" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_rungb")
 
 [node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
-offset_left = -128.0
-offset_top = -128.0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mcf0v")
 
 [connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]
