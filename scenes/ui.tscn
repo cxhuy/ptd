@@ -19,15 +19,15 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_f73e0")
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 77.0
+offset_left = 117.0
 offset_top = 40.0
-offset_right = 507.0
+offset_right = 467.0
 offset_bottom = 1040.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
 [node name="Label" type="Label" parent="Panel/FlowContainer"]
-custom_minimum_size = Vector2(430, 100)
+custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_yroje")
