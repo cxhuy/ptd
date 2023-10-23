@@ -4,7 +4,7 @@ var towerAdd := preload("res://scenes/towerAdd.tscn")
 
 
 func _ready():
-	for i in range(2):
+	for i in range(5):
 		var towerAddInstance = towerAdd.instantiate()
 		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
 		towerAddInstance.tower = tower		
