@@ -3,6 +3,7 @@ extends Area2D
 @onready var lightningEffect := $LightningEffect
 
 var enemiesSortedByProgress
+var damage: int = 5
 
 
 func _ready():	
@@ -17,6 +18,8 @@ func _ready():
 			var nextPointPos: Vector2 = enemiesSortedByProgress[i + 1].global_position - self.global_position
 			var midPointPos: Vector2 = (currPointPos + nextPointPos) / 2
 			lightningEffect.add_point(midPointPos + Vector2(randi_range(-50, 50), randi_range(-50, 50)))
+		
+		enemiesSortedByProgress[i].damage(damage)
 		
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(self, "modulate:a", 0, 1)	
