@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5n8nrvgqhna"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower2/lightning.gd" id="1_i60cv"]
+
+[node name="Lightning" type="Area2D"]
+script = ExtResource("1_i60cv")
+
+[node name="LightningEffect" type="Line2D" parent="."]
+default_color = Color(0, 0, 1, 1)
