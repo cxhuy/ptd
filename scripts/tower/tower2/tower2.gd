@@ -43,7 +43,7 @@ func _on_base_body_entered(body):
 		
 		
 func getEnemiesSortedByProgress(enemiesInRange):
-	if enemiesInRange.size() >= 2:
+	if enemiesInRange.size() != 0:
 		var enemiesInRangeSorted = enemiesInRange
 		enemiesInRangeSorted.sort_custom(sortByProgress)
 		var allEnemiesSorted = get_tree().get_nodes_in_group("Enemies")
