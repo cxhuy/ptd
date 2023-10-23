@@ -1,7 +1,5 @@
 extends Area2D
 
-var damage: int = 5
-
 
 func _ready():
 	self.global_position = get_parent().global_position
@@ -16,4 +14,4 @@ func _ready():
 
 
 func _on_body_entered(body):
-	body.damage(damage)
+	body.damage(Data.towerStats[1]["damage"])
