@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b43h8tscdgkdw"
-path="res://.godot/imported/tower4_ui.svg-36669f7b634fc2847f881b01b9141e06.ctex"
+uid="uid://ci6ke51h14i17"
+path="res://.godot/imported/tower1_ui.png-0a6702bf8afdebe1fb3e3b61f9277b1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/towers/tower4/tower4_ui.svg"
-dest_files=["res://.godot/imported/tower4_ui.svg-36669f7b634fc2847f881b01b9141e06.ctex"]
+source_file="res://sprites/towers/tower1/tower1_ui.png"
+dest_files=["res://.godot/imported/tower1_ui.png-0a6702bf8afdebe1fb3e3b61f9277b1e.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

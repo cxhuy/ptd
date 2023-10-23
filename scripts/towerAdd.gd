@@ -6,7 +6,7 @@ var towerId
 
 func _ready():
 	$TowerSprite.texture = \
-		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.svg")
+		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.png")
 	$TowerQuantity.text = "x" + str(Data.towerQuantity[towerId - 1])
 
 
