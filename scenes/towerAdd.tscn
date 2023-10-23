@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5qmwu8hgbnv2"]
+[gd_scene load_steps=5 format=3 uid="uid://b5qmwu8hgbnv2"]
 
 [ext_resource type="Script" path="res://scripts/towerAdd.gd" id="1_c8akx"]
 
@@ -12,6 +12,10 @@ corner_radius_bottom_left = 15
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nvmtk"]
 load_path = "res://.godot/imported/tower1_ui.png-0a6702bf8afdebe1fb3e3b61f9277b1e.ctex"
 
+[sub_resource type="SystemFont" id="SystemFont_0m5id"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
+
 [node name="TowerAdd" type="Panel"]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 40.0
@@ -23,5 +27,15 @@ script = ExtResource("1_c8akx")
 position = Vector2(50, 50)
 scale = Vector2(0.3, 0.3)
 texture = SubResource("CompressedTexture2D_nvmtk")
+
+[node name="TowerQuantity" type="Label" parent="."]
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 100.0
+theme_override_fonts/font = SubResource("SystemFont_0m5id")
+theme_override_font_sizes/font_size = 20
+text = "x99"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
