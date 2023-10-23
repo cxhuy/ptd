@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj5n8nrvgqhna"]
+[gd_scene load_steps=4 format=3 uid="uid://dj5n8nrvgqhna"]
 
 [ext_resource type="Script" path="res://scripts/tower/tower2/lightning.gd" id="1_i60cv"]
+
+[sub_resource type="Curve" id="Curve_kjgyu"]
+_data = [Vector2(0, 1), 0.0, -10.0, 0, 0, Vector2(0.25, 1), -10.0, -10.0, 0, 0, Vector2(0.5, 1), -10.0, -10.0, 0, 0, Vector2(0.75, 1), -10.0, -10.0, 0, 0, Vector2(0.967825, 0.997627), -10.0, 0.0, 0, 0, Vector2(1, 0.304126), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_v5b4f"]
+offsets = PackedFloat32Array(0, 0.298013, 0.668874, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.52549, 0.333333, 1, 1, 0, 0, 1, 1, 0.52549, 0.333333, 1, 1)
 
 [node name="Lightning" type="Area2D"]
 script = ExtResource("1_i60cv")
 
 [node name="LightningEffect" type="Line2D" parent="."]
-default_color = Color(0, 0, 1, 1)
+width_curve = SubResource("Curve_kjgyu")
+default_color = Color(0, 0, 1, 0.588235)
+gradient = SubResource("Gradient_v5b4f")
+joint_mode = 2
