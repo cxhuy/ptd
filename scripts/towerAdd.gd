@@ -1,10 +1,16 @@
 extends Panel
 
-var tower := preload("res://scenes/tower/tower1/tower1.tscn")
+var tower
+var towerId
+
+
+func _ready():
+	$TowerSprite.texture = \
+		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.svg")
 
 
 func _on_gui_input(event):
-	var towerInstance := tower.instantiate()
+	var towerInstance = tower.instantiate()
 	
 	if event is InputEventMouseButton and event.button_mask == 1:
 		add_child(towerInstance)
