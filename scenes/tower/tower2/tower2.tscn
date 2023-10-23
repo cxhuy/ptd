@@ -54,7 +54,11 @@ scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_dry23")
 animation = &"on"
 
-[node name="AttackRangeVisual" type="Panel" parent="."]
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="AttackRangeCollision" type="CollisionShape2D" parent="AttackRange"]
+
+[node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
 offset_left = -128.0
 offset_top = -128.0
 offset_right = 128.0
