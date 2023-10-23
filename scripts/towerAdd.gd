@@ -11,7 +11,11 @@ func _ready():
 
 
 func _on_gui_input(event):
-	var towerInstance = tower.instantiate()
+	var towerInstance
+	
+	if event is InputEventMouseButton:
+		towerInstance = tower.instantiate()
+		
 	if event is InputEventMouseButton and event.button_mask == 1:
 		add_child(towerInstance)
 		towerInstance.process_mode = Node.PROCESS_MODE_DISABLED
