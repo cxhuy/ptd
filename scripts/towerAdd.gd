@@ -18,4 +18,4 @@ func _on_gui_input(event):
 		get_child(1).queue_free()
 		get_tree().get_root().get_node("Game").add_child(towerInstance)
 		towerInstance.set_global_position(dropPos)
-#		towerInstance.get_node("AttackRangeVisual").hide()
+		towerInstance.get_node("AttackRangeVisual").hide()
