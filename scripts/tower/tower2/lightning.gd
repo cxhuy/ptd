@@ -12,6 +12,8 @@ func _ready():
 	lightningEffect.add_point(Vector2(0, 0))
 	
 	for i in range(enemiesSortedByProgress.size()):
+		if enemiesSortedByProgress[i] == null: 
+			continue
 		var currPointPos: Vector2 = enemiesSortedByProgress[i].global_position - self.global_position
 		lightningEffect.add_point(currPointPos)	
 		if i != enemiesSortedByProgress.size() - 1:

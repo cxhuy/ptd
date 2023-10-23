@@ -55,5 +55,12 @@ func getEnemiesSortedByProgress(enemiesInRange):
 	
 
 func sortByProgress(enemy1, enemy2):
-	return enemy1.get_parent().get_progress() > enemy2.get_parent().get_progress()
+	if enemy1 != null and enemy2 != null:
+		return enemy1.get_parent().get_progress() > enemy2.get_parent().get_progress()
+	elif enemy1 == null and enemy2 != null:
+		return enemy2
+	elif enemy2 == null and enemy1 != null:
+		return enemy1
+	else: 
+		return null
 	
