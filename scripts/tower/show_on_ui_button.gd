@@ -2,7 +2,7 @@ extends Button
 
 
 func _on_pressed():
-	get_tree().get_root().get_node("Game/UI").updateTowerData(get_parent().towerId, self)
+	get_tree().get_root().get_node("Game/UI").updateTowerData(get_parent().towerId, get_parent())
 
 
 func _on_mouse_entered():
