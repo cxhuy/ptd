@@ -67,6 +67,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_io0e8")
 [node name="ShowOnUIButton" parent="." instance=ExtResource("4_urilb")]
 
 [connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]
-[connection signal="mouse_entered" from="ShowOnUIButton" to="." method="_on_show_on_ui_button_mouse_entered"]
-[connection signal="mouse_exited" from="ShowOnUIButton" to="." method="_on_show_on_ui_button_mouse_exited"]
-[connection signal="pressed" from="ShowOnUIButton" to="." method="_on_show_on_ui_button_pressed"]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfafs05c60ign"]
+[gd_scene load_steps=3 format=3 uid="uid://cfafs05c60ign"]
+
+[ext_resource type="Script" path="res://scripts/tower/show_on_ui_button.gd" id="1_ychnq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frbt2"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -19,3 +21,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_frbt2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_frbt2")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_frbt2")
 theme_override_styles/focus = SubResource("StyleBoxFlat_frbt2")
+script = ExtResource("1_ychnq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

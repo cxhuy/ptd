@@ -4,6 +4,7 @@ extends Node2D
 var explosion := preload("res://scenes/tower/tower1/explosion.tscn")
 
 var switchDuration: int = 0
+var towerId: int = 1
 
 
 func _process(delta):
@@ -27,15 +28,3 @@ func _on_base_body_entered(body):
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.35, 0.35), 0.28)	
 		await get_tree().create_timer(0.2).timeout
-
-
-func _on_show_on_ui_button_pressed():
-	get_tree().get_root().get_node("Game/UI").updateTowerData(1, self)
-
-
-func _on_show_on_ui_button_mouse_entered():
-	$AttackRange/AttackRangeVisual.show()
-
-
-func _on_show_on_ui_button_mouse_exited():
-	$AttackRange/AttackRangeVisual.hide()
