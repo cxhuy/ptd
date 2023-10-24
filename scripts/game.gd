@@ -34,6 +34,8 @@ func _process(delta):
 		get_tree().call_group("Balls", "queue_free")
 		Data.currentWave += 1
 		waveStartButton.disabled = false
+		$UI.updateRightUI()
+		
 	
 	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
 		var ballInstance = ball.instantiate()

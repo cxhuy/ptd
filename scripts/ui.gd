@@ -15,6 +15,7 @@ func _ready():
 		$LeftUI/Inventory.add_child(towerAddInstance)
 	
 	updateTowerData(1)
+	updateRightUI()
 
 
 func updateTowerData(towerId: int, towerToDelete = null):
@@ -53,6 +54,11 @@ func updateTowerData(towerId: int, towerToDelete = null):
 	else:
 		$LeftUI/TowerData/Buttons/DeleteButton.disabled = false		
 	self.towerToDelete = towerToDelete
+	
+
+func updateRightUI():
+	$RightUI/RightUIContainer/Stage.text = "Stage " + str(Data.currentStage)
+	$RightUI/RightUIContainer/Wave.text = "Wave " + str(Data.currentWave)
 
 
 func _on_upgrade_button_pressed():
