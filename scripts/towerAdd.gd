@@ -31,8 +31,9 @@ func _on_gui_input(event):
 	elif event is InputEventMouseButton and event.button_mask == 0 and Data.towerData[towerId]["quantity"] > 0:
 		get_node("../../../TowerLimit").hide()
 		var dropPos: Vector2 = get_child(2).global_position
+		var placementAllowed: bool = get_child(2).towerPlacementAllowed
 		get_child(2).queue_free()
-		if get_tree().get_nodes_in_group("Towers").size() <= Data.towerLimit and \
+		if placementAllowed and get_tree().get_nodes_in_group("Towers").size() <= Data.towerLimit and \
 		Data.towerData[towerId]["quantity"] > 0:		
 			get_tree().get_root().get_node("Game").add_child(towerInstance)
 			towerInstance.get_node("ShowOnUIButton").set_mouse_filter(0)

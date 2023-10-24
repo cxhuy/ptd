@@ -5,6 +5,7 @@ var explosion := preload("res://scenes/tower/tower1/explosion.tscn")
 
 var switchDuration: int = 0
 var towerId: int = 1
+var towerPlacementAllowed: bool = false
 var towerPlaced: bool = false
 
 
@@ -18,8 +19,10 @@ func _process(delta):
 	if !towerPlaced:
 		if $Base/BaseArea.get_overlapping_areas().size() > 0:
 			self.modulate = Color("ff7664")
-		else:	
+			towerPlacementAllowed = false
+		else:
 			self.modulate = Color("ffffff")
+			towerPlacementAllowed = true
 
 
 func _on_base_body_entered(body):
