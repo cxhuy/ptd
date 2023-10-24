@@ -24,6 +24,7 @@ func updateTowerData(towerId: int):
 	$Panel/TowerData/TowerName.text = towerData["name"]
 	$Panel/TowerData/TowerImage/TowerSprite.texture = \
 		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_on.svg")
+	$Panel/TowerData/TowerImage/TowerLevel.text = "Lv." + str(towerData["level"])
 	$Panel/TowerData/TowerDesc.text = towerData["description"]	
 	var towerStats: String
 	for stat in towerData["stats"]:
