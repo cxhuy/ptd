@@ -2,6 +2,7 @@ extends Node2D
 
 var ball = preload("res://scenes/ball.tscn")
 var enemy := preload("res://scenes/enemy/enemy.tscn")
+var currentStage: int = 1
 var currentWave: int = 1
 var enemySpawnFinish: bool = false
 var inGame: bool = false
@@ -65,7 +66,7 @@ func spawnEnemies(wavePattern):
 			var enemyInstance := enemy.instantiate()
 			enemyInstance.enemyId = enemyId
 			enemyPath.add_child(enemyInstance)
-			$EnemyPath.add_child(enemyPath)
+			get_node("Stage" + str(currentStage) + "/EnemyPath").add_child(enemyPath)
 			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true
 

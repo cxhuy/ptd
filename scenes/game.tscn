@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=12 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
-[ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="11_kxay0"]
+[ext_resource type="PackedScene" uid="uid://ce13rpmlxnx0u" path="res://scenes/stages/stage1.tscn" id="7_631ud"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
@@ -19,12 +19,6 @@ size = Vector2(100, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jarcq"]
 size = Vector2(1920, 50)
-
-[sub_resource type="Curve2D" id="Curve2D_13sw7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 960, 128, 0, 0, 0, 0, 866, 128, 0, 0, 0, 0, 866, 199, 0, 0, 0, 0, 1151, 198, 0, 0, 0, 0, 1150, 292, 0, 0, 0, 0, 700, 292, 0, 0, 0, 0, 700, 457, 0, 0, 0, 0, 1221, 457, 0, 0, 0, 0, 1221, 644, 0, 0, 0, 0, 818, 644, 0, 0, 0, 0, 818, 715, 0, 0, 0, 0, 1079, 715, 0, 0, 0, 0, 1079, 810, 0, 0, 0, 0, 961, 809, 0, 0, 0, 0, 961, 1082)
-}
-point_count = 16
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_81tkb")
@@ -75,16 +69,8 @@ position = Vector2(1146.53, 928)
 rotation = -0.523599
 scale = Vector2(2, 2)
 
-[node name="EnemyPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_13sw7")
-
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="BumperTri" parent="." instance=ExtResource("11_kxay0")]
-position = Vector2(1227, 720)
-
-[node name="BumperTri2" parent="." instance=ExtResource("11_kxay0")]
-position = Vector2(693, 720)
-scale = Vector2(-1, 1)
-
 [node name="UI" parent="." instance=ExtResource("11_tjs23")]
+
+[node name="Stage1" parent="." instance=ExtResource("7_631ud")]
