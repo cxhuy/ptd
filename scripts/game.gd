@@ -16,7 +16,7 @@ func _input(event):
 
 func loadStage(stageId: int):
 	if stageId > 1:
-		get_node("Stage" + str(stageId)).queue_free()
+		get_node("Stage" + str(stageId - 1)).queue_free()
 	var stage := load("res://scenes/stages/stage" + str(stageId) + ".tscn")
 	self.add_child(stage.instantiate())
 
@@ -38,6 +38,7 @@ func _process(delta):
 		if Data.currentWave == 9:
 			Data.currentStage += 1
 			Data.currentWave = 1
+			loadStage(Data.currentStage)
 		else:
 			Data.currentWave += 1
 		

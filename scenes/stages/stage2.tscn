@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp1jb7wna0ubn"]
+
+[ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="1_fhht6"]
+
+[sub_resource type="Curve2D" id="Curve2D_13sw7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 960, 128, 0, 0, 0, 0, 866, 128, 0, 0, 0, 0, 866, 199, 0, 0, 0, 0, 1151, 198, 0, 0, 0, 0, 1150, 292, 0, 0, 0, 0, 700, 292, 0, 0, 0, 0, 700, 457, 0, 0, 0, 0, 1221, 457, 0, 0, 0, 0, 1221, 644, 0, 0, 0, 0, 818, 644, 0, 0, 0, 0, 818, 715, 0, 0, 0, 0, 1079, 715, 0, 0, 0, 0, 1079, 810, 0, 0, 0, 0, 961, 809, 0, 0, 0, 0, 961, 1082)
+}
+point_count = 16
+
+[node name="Stage1" type="Node2D"]
+
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_13sw7")
+
+[node name="BumperTri" parent="." instance=ExtResource("1_fhht6")]
+position = Vector2(1227, 720)
+
+[node name="BumperTri2" parent="." instance=ExtResource("1_fhht6")]
+position = Vector2(693, 720)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="BumperTri3" parent="." instance=ExtResource("1_fhht6")]
+position = Vector2(1227, 400)
+
+[node name="BumperTri4" parent="." instance=ExtResource("1_fhht6")]
+position = Vector2(693, 400)
+rotation = 3.14159
+scale = Vector2(1, -1)
