@@ -16,7 +16,7 @@ func _ready():
 	updateTowerData(1)
 
 
-func updateTowerData(towerId: int):
+func updateTowerData(towerId: int, towerToDelete = null):
 	currentTowerId = towerId
 	var towerData: Dictionary =  Data.towerData[towerId]
 	$Panel/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
@@ -46,6 +46,11 @@ func updateTowerData(towerId: int):
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = true
 	else:
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = false
+		
+	if towerToDelete == null:
+		$Panel/TowerData/Buttons/DeleteButton.disabled = true
+	else:
+		$Panel/TowerData/Buttons/DeleteButton.disabled = false		
 
 
 func _on_upgrade_button_pressed():

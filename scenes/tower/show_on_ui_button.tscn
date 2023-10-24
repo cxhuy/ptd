@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfafs05c60ign"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frbt2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[node name="ShowOnUIButton" type="Button"]
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_frbt2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_frbt2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frbt2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_frbt2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_frbt2")
