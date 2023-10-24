@@ -7,11 +7,13 @@ var towerId
 func _ready():
 	$TowerSprite.texture = \
 		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.png")
-	$TowerQuantity.text = "x" + str(Data.towerQuantity[towerId - 1])
+	$TowerQuantity.text = "x" + str(Data.towerData[towerId]["quantity"])
 
 
 func _on_gui_input(event):
 	var towerInstance
+	
+	get_node("../../../").updateTowerData(towerId)
 	
 	if event is InputEventMouseButton:
 		towerInstance = tower.instantiate()
@@ -26,9 +28,10 @@ func _on_gui_input(event):
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		var dropPos: Vector2 = get_child(2).global_position
 		get_child(2).queue_free()
-		if Data.towerQuantity[towerId - 1] > 0:		
+		if Data.towerData[towerId]["quantity"] > 0:		
 			get_tree().get_root().get_node("Game").add_child(towerInstance)
 			towerInstance.set_global_position(dropPos)
 			towerInstance.get_node("AttackRange/AttackRangeVisual").hide()
-			Data.towerQuantity[towerId - 1] -= 1
-			$TowerQuantity.text = "x" + str(Data.towerQuantity[towerId - 1])
+			Data.towerData[towerId]["quantity"] -= 1
+			$TowerQuantity.text = "x" + str(Data.towerData[towerId]["quantity"] )
+			get_node("../../../").updateTowerData(towerId)
