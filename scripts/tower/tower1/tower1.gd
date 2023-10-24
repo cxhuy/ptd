@@ -9,6 +9,12 @@ var towerPlacementAllowed: bool = false
 var towerPlaced: bool = false
 
 
+func _ready():
+	var base = preload("res://scenes/tower/base.tscn")
+	add_child(base.instantiate())
+	get_node("Base").connect("body_entered", _on_base_body_entered)
+
+
 func _process(delta):
 	if switchDuration == 0:
 		anim.play("off")
@@ -38,5 +44,3 @@ func _on_base_body_entered(body):
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.35, 0.35), 0.28)	
 		await get_tree().create_timer(0.2).timeout
-	if body.is_in_group("NoTowerArea"):
-		Data.canPlaceTower = false

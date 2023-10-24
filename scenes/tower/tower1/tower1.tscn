@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd35e8o254y55"]
+[gd_scene load_steps=7 format=3 uid="uid://cd35e8o254y55"]
 
 [ext_resource type="Script" path="res://scripts/tower/tower1/tower1.gd" id="1_by5fh"]
 [ext_resource type="Texture2D" uid="uid://cjwuho37icpiv" path="res://sprites/towers/tower1/tower1_off.svg" id="1_yfsca"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_vm1s7"]
 [ext_resource type="PackedScene" uid="uid://cfafs05c60ign" path="res://scenes/tower/show_on_ui_button.tscn" id="4_urilb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bxqam"]
-radius = 128.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbktn"]
 animations = [{
@@ -37,26 +34,6 @@ corner_radius_bottom_left = 128
 [node name="Tower1" type="Node2D" groups=["Towers"]]
 script = ExtResource("1_by5fh")
 
-[node name="Base" type="RigidBody2D" parent="."]
-collision_layer = 32
-collision_mask = 4
-max_contacts_reported = 1
-contact_monitor = true
-freeze = true
-freeze_mode = 1
-
-[node name="BaseCollision" type="CollisionShape2D" parent="Base"]
-scale = Vector2(0.35, 0.35)
-shape = SubResource("CircleShape2D_bxqam")
-
-[node name="BaseArea" type="Area2D" parent="Base"]
-collision_layer = 32
-collision_mask = 288
-
-[node name="BaseCollision" type="CollisionShape2D" parent="Base/BaseArea"]
-scale = Vector2(0.35, 0.35)
-shape = SubResource("CircleShape2D_bxqam")
-
 [node name="PatternSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.35, 0.35)
@@ -73,5 +50,3 @@ offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_io0e8")
 
 [node name="ShowOnUIButton" parent="." instance=ExtResource("4_urilb")]
-
-[connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]
