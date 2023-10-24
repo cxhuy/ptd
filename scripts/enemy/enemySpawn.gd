@@ -7,6 +7,11 @@ var enemySpawnFinish: bool = false
 var inGame: bool = false
 
 
+func _ready():
+	var waveStartButton := get_node("../UI/RightUI/RightUIContainer/WaveStartButton")
+	waveStartButton.connect("pressed", _on_wave_start_button_pressed)
+
+
 func _process(delta):
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
 		enemySpawnFinish = false

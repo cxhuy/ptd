@@ -76,6 +76,7 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_vnuum"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h0e8"]
 bg_color = Color(0, 0, 0, 0)
