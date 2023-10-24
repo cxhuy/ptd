@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=13 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
-[ext_resource type="Script" path="res://scripts/enemy/enemySpawn.gd" id="6_ceuvg"]
 [ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="11_kxay0"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
@@ -76,9 +75,8 @@ position = Vector2(1146.53, 928)
 rotation = -0.523599
 scale = Vector2(2, 2)
 
-[node name="Enemies" type="Path2D" parent="."]
+[node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_13sw7")
-script = ExtResource("6_ceuvg")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
