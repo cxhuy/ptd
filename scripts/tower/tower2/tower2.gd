@@ -64,4 +64,6 @@ func sortByProgress(enemy1, enemy2):
 		return enemy1
 	else: 
 		return null
-	
+
+func _on_show_on_ui_button_pressed():
+	get_tree().get_root().get_node("Game/UI").updateTowerData(2, self)
