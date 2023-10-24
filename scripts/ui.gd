@@ -32,11 +32,17 @@ func updateTowerData(towerId: int):
 		match stat:
 			"damage": statString = "Damage: "
 			"targetEnemies": statString = "Target Enemies: "
-		towerStats += statString + str(towerData["stats"][stat]) + "\n"
+		towerStats += statString + str(towerData["stats"][stat][towerData["level"] - 1]) + "\n"
 	$Panel/TowerData/TowerStats.text = towerStats
-	$Panel/TowerData/Buttons/UpgradeButton.text = \
-		"Upgrade\n" + str(towerData["quantity"]) + " / " + str(Data.upgradeRequired[towerData["level"]])
-	if towerData["quantity"] < Data.upgradeRequired[towerData["level"]]:
+	
+	if towerData["level"] < 9:
+		$Panel/TowerData/Buttons/UpgradeButton.text = \
+			"Upgrade\n" + str(towerData["quantity"]) + " / " + str(Data.upgradeRequired[towerData["level"]])
+	else:
+		$Panel/TowerData/Buttons/UpgradeButton.text = "Max Level"
+		
+	if towerData["level"] < 9 and towerData["quantity"] < Data.upgradeRequired[towerData["level"]] \
+	or towerData["level"] == 9:
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = true
 	else:
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = false
