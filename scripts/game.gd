@@ -2,8 +2,6 @@ extends Node2D
 
 var ball := preload("res://scenes/ball.tscn")
 var enemy := preload("res://scenes/enemy/enemy.tscn")
-var currentStage: int = 1
-var currentWave: int = 1
 var enemySpawnFinish: bool = false
 var inGame: bool = false
 var waveStartButton
@@ -34,7 +32,7 @@ func _process(delta):
 		enemySpawnFinish = false
 		inGame = false
 		get_tree().call_group("Balls", "queue_free")
-		currentWave += 1
+		Data.currentWave += 1
 		waveStartButton.disabled = false
 	
 	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
@@ -45,7 +43,7 @@ func _process(delta):
 
 func _on_wave_start_button_pressed():
 	if !inGame:
-		startWave(currentWave)
+		startWave(Data.currentWave)
 		var ballInstance := ball.instantiate()
 		ballInstance.set_global_position(Vector2(616, 583))
 		add_child(ballInstance)
@@ -74,7 +72,7 @@ func spawnEnemies(wavePattern):
 			var enemyInstance := enemy.instantiate()
 			enemyInstance.enemyId = enemyId
 			enemyPath.add_child(enemyInstance)
-			get_node("Stage" + str(currentStage) + "/EnemyPath").add_child(enemyPath)
+			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
 			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true
 
