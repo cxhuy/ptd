@@ -30,6 +30,7 @@ func _on_gui_input(event):
 		get_child(2).queue_free()
 		if Data.towerData[towerId]["quantity"] > 0:		
 			get_tree().get_root().get_node("Game").add_child(towerInstance)
+			towerInstance.get_node("ShowOnUIButton").set_mouse_filter(0)
 			towerInstance.set_global_position(dropPos)
 			towerInstance.get_node("AttackRange/AttackRangeVisual").hide()
 			Data.towerData[towerId]["quantity"] -= 1
