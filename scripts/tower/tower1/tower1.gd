@@ -13,6 +13,11 @@ func _process(delta):
 	else:
 		anim.play("on")
 		switchDuration -= 1
+		
+	if $Base/BaseArea.get_overlapping_areas().size() > 0:
+		self.modulate = Color("ff7664")
+	else:	
+		self.modulate = Color("ffffff")
 
 
 func _on_base_body_entered(body):
@@ -28,3 +33,5 @@ func _on_base_body_entered(body):
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.35, 0.35), 0.28)	
 		await get_tree().create_timer(0.2).timeout
+	if body.is_in_group("NoTowerArea"):
+		Data.canPlaceTower = false

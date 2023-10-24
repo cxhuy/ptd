@@ -23,7 +23,7 @@ func _on_gui_input(event):
 		get_node("../../../").updateTowerData(towerId)		
 		if Data.towerData[towerId]["quantity"] > 0:
 			add_child(towerInstance)
-			towerInstance.process_mode = Node.PROCESS_MODE_DISABLED
+#			towerInstance.process_mode = Node.PROCESS_MODE_DISABLED
 		
 	elif event is InputEventMouseMotion and event.button_mask == 1 and Data.towerData[towerId]["quantity"] > 0:
 		get_child(2).global_position = event.global_position

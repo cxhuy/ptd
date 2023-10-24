@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=13 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
@@ -18,6 +18,12 @@ size = Vector2(100, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jarcq"]
 size = Vector2(1920, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3va3b"]
+size = Vector2(585, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1scik"]
+size = Vector2(752, 328)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_81tkb")
@@ -71,3 +77,19 @@ scale = Vector2(2, 2)
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("11_tjs23")]
+
+[node name="NoTowerArea" type="Area2D" parent="." groups=["NoTowerArea"]]
+collision_layer = 256
+collision_mask = 0
+
+[node name="LeftUI" type="CollisionShape2D" parent="NoTowerArea"]
+position = Vector2(292, 540)
+shape = SubResource("RectangleShape2D_3va3b")
+
+[node name="RightUI" type="CollisionShape2D" parent="NoTowerArea"]
+position = Vector2(1627, 540)
+shape = SubResource("RectangleShape2D_3va3b")
+
+[node name="GameBottom" type="CollisionShape2D" parent="NoTowerArea"]
+position = Vector2(960, 916)
+shape = SubResource("RectangleShape2D_1scik")
