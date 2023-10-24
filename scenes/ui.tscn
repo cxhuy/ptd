@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=14 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -15,6 +15,10 @@ font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ash"]
+
+[sub_resource type="SystemFont" id="SystemFont_v2m7n"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
 
 [sub_resource type="SystemFont" id="SystemFont_o2kyr"]
 font_names = PackedStringArray("SF Pro Rounded")
@@ -103,6 +107,19 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_r1ash")
 position = Vector2(175, 64)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nlksv")
+
+[node name="TowerLevel" type="Label" parent="Panel/TowerData/TowerImage"]
+custom_minimum_size = Vector2(190, 135)
+layout_mode = 0
+offset_left = 111.0
+offset_right = 151.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_v2m7n")
+theme_override_font_sizes/font_size = 30
+text = "Lv.10"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="TowerDesc" type="Label" parent="Panel/TowerData"]
 custom_minimum_size = Vector2(350, 0)
