@@ -31,3 +31,11 @@ func _on_base_body_entered(body):
 
 func _on_show_on_ui_button_pressed():
 	get_tree().get_root().get_node("Game/UI").updateTowerData(1, self)
+
+
+func _on_show_on_ui_button_mouse_entered():
+	$AttackRange/AttackRangeVisual.show()
+
+
+func _on_show_on_ui_button_mouse_exited():
+	$AttackRange/AttackRangeVisual.hide()
