@@ -51,7 +51,7 @@ func getEnemiesSortedByProgress(enemiesInRange):
 		allEnemiesSorted.sort_custom(sortByProgress)
 		var firstIndex: int = allEnemiesSorted.find(enemiesInRangeSorted[0])
 		return allEnemiesSorted.slice(firstIndex, \
-			firstIndex + Data.towerData[2]["stats"]["targetEnemies"][Data.towerData[2]["level"]] + 1)
+			firstIndex + Data.towerData[2]["stats"]["targetEnemies"][Data.towerData[2]["level"]])
 	else:
 		return enemiesInRange
 	
