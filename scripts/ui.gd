@@ -28,3 +28,7 @@ func updateTowerData(towerId: int):
 	$Panel/TowerData/TowerStats.text = towerStats
 	$Panel/TowerData/Buttons/UpgradeButton.text = \
 		"Upgrade\n" + str(towerData["quantity"]) + " / " + str(Data.upgradeRequired[towerData["level"]])
+	if towerData["quantity"] < Data.upgradeRequired[towerData["level"]]:
+		$Panel/TowerData/Buttons/UpgradeButton.disabled = true
+	else:
+		$Panel/TowerData/Buttons/UpgradeButton.disabled = false
