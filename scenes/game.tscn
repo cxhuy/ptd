@@ -94,6 +94,7 @@ offset_left = 1557.5
 offset_top = 930.0
 offset_right = 1807.5
 offset_bottom = 1030.0
+focus_mode = 0
 text = "Start Wave"
 
 [node name="UI" parent="." instance=ExtResource("11_tjs23")]
