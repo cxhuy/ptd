@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=12 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -16,9 +16,30 @@ font_weight = 500
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ash"]
 
+[sub_resource type="SystemFont" id="SystemFont_o2kyr"]
+font_names = PackedStringArray("SF Pro Rounded")
+
 [sub_resource type="SystemFont" id="SystemFont_34k4l"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
+
+[sub_resource type="SystemFont" id="SystemFont_4mbwx"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnant"]
+bg_color = Color(0.0392157, 0.933333, 0, 0.678431)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2bqs"]
+bg_color = Color(1, 0.24524, 0.187846, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -80,8 +101,8 @@ texture = ExtResource("2_nlksv")
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_34k4l")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = SubResource("SystemFont_o2kyr")
+theme_override_font_sizes/font_size = 25
 text = "Causes an explosion that damages nearby enemies"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -101,3 +122,42 @@ Target Enemies: 20
 Duration: 30"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Gap2" type="Label" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 20)
+layout_mode = 2
+
+[node name="Buttons" type="VFlowContainer" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+
+[node name="UpgradeButton" type="Button" parent="Panel/TowerStats/Buttons"]
+custom_minimum_size = Vector2(170, 70)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_4mbwx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_fnant")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fnant")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fnant")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fnant")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fnant")
+text = "Upgrade
+37 / 2"
+
+[node name="DeleteButton" type="Button" parent="Panel/TowerStats/Buttons"]
+custom_minimum_size = Vector2(170, 70)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_4mbwx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2bqs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n2bqs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bqs")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n2bqs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
+text = "Sell Tower
+"
