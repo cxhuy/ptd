@@ -5,10 +5,11 @@ var ball := preload("res://scenes/ball.tscn")
 var currentWave: int = 1
 var enemySpawnFinish: bool = false
 var inGame: bool = false
+var waveStartButton
 
 
 func _ready():
-	var waveStartButton := get_node("../UI/RightUI/RightUIContainer/WaveStartButton")
+	waveStartButton = get_node("../UI/RightUI/RightUIContainer/WaveStartButton")
 	waveStartButton.connect("pressed", _on_wave_start_button_pressed)
 
 
@@ -18,6 +19,7 @@ func _process(delta):
 		inGame = false
 		get_tree().call_group("Balls", "queue_free")
 		currentWave += 1
+		waveStartButton.disabled = false
 	
 	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
 		var ballInstance = ball.instantiate()
@@ -32,6 +34,7 @@ func _on_wave_start_button_pressed():
 		ballInstance.set_global_position(Vector2(616, 583))
 		add_child(ballInstance)
 		inGame = true
+		waveStartButton.disabled = true
 
 
 func startWave(wave):
