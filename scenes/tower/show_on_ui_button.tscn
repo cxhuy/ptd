@@ -13,6 +13,7 @@ offset_top = -45.0
 offset_right = 45.0
 offset_bottom = 45.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_frbt2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_frbt2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_frbt2")
