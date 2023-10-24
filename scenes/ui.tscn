@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=25 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -113,6 +113,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_kmjkp"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -317,6 +321,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yehqe")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yehqe")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_otqfv")
 text = "Start Wave"
+
+[node name="TowerLimit" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+offset_left = 585.0
+offset_right = 1335.0
+offset_bottom = 1080.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_kmjkp")
+theme_override_font_sizes/font_size = 100
+text = "1 / 9"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]
