@@ -15,6 +15,9 @@ func _input(event):
 
 
 func loadStage(stageId: int):
+	for tower in get_tree().get_nodes_in_group("Towers"):
+		tower.queue_free()
+	
 	if stageId > 1:
 		get_node("Stage" + str(stageId - 1)).queue_free()
 	var stage := load("res://scenes/stages/stage" + str(stageId) + ".tscn")
