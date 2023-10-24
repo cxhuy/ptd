@@ -9,4 +9,4 @@ func _ready():
 		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
 		towerAddInstance.tower = tower		
 		towerAddInstance.towerId = i + 1
-		$Panel/FlowContainer.add_child(towerAddInstance)
+		$Panel/Inventory.add_child(towerAddInstance)
