@@ -13,19 +13,19 @@ func _ready():
 func _on_gui_input(event):
 	var towerInstance
 	
-	get_node("../../../").updateTowerData(towerId)
-	
 	if event is InputEventMouseButton:
 		towerInstance = tower.instantiate()
 		
 	if event is InputEventMouseButton and event.button_mask == 1:
-		add_child(towerInstance)
-		towerInstance.process_mode = Node.PROCESS_MODE_DISABLED
+		get_node("../../../").updateTowerData(towerId)		
+		if Data.towerData[towerId]["quantity"] > 0:
+			add_child(towerInstance)
+			towerInstance.process_mode = Node.PROCESS_MODE_DISABLED
 		
-	elif event is InputEventMouseMotion and event.button_mask == 1:
+	elif event is InputEventMouseMotion and event.button_mask == 1 and Data.towerData[towerId]["quantity"] > 0:
 		get_child(2).global_position = event.global_position
 		
-	elif event is InputEventMouseButton and event.button_mask == 0:
+	elif event is InputEventMouseButton and event.button_mask == 0 and Data.towerData[towerId]["quantity"] > 0:
 		var dropPos: Vector2 = get_child(2).global_position
 		get_child(2).queue_free()
 		if Data.towerData[towerId]["quantity"] > 0:		
