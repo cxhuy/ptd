@@ -20,6 +20,10 @@ func _on_gui_input(event):
 		get_node("../../../TowerLimit").show()
 		get_node("../../../TowerLimit").text = \
 			str(get_tree().get_nodes_in_group("Towers").size()) + " / " + str(Data.towerLimit)	
+		if get_tree().get_nodes_in_group("Towers").size() < Data.towerLimit:
+			get_node("../../../TowerLimit").modulate = Color("00000064")
+		else:
+			get_node("../../../TowerLimit").modulate = Color("ff000064")
 		get_node("../../../").updateTowerData(towerId)		
 		if Data.towerData[towerId]["quantity"] > 0:
 			add_child(towerInstance)

@@ -324,11 +324,10 @@ text = "Start Wave"
 
 [node name="TowerLimit" type="Label" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0.392157)
+modulate = Color(0, 0, 0, 0.392157)
 offset_left = 585.0
 offset_right = 1335.0
 offset_bottom = 1080.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_kmjkp")
 theme_override_font_sizes/font_size = 100
 text = "1 / 9"
