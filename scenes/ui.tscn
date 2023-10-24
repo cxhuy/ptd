@@ -323,6 +323,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_otqfv")
 text = "Start Wave"
 
 [node name="TowerLimit" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.392157)
 offset_left = 585.0
 offset_right = 1335.0

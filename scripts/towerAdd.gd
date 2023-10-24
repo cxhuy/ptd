@@ -17,6 +17,9 @@ func _on_gui_input(event):
 		towerInstance = tower.instantiate()
 		
 	if event is InputEventMouseButton and event.button_mask == 1:
+		get_node("../../../TowerLimit").show()
+		get_node("../../../TowerLimit").text = \
+			str(get_tree().get_nodes_in_group("Towers").size()) + " / " + str(Data.towerLimit)	
 		get_node("../../../").updateTowerData(towerId)		
 		if Data.towerData[towerId]["quantity"] > 0:
 			add_child(towerInstance)
@@ -26,6 +29,7 @@ func _on_gui_input(event):
 		get_child(2).global_position = event.global_position
 		
 	elif event is InputEventMouseButton and event.button_mask == 0 and Data.towerData[towerId]["quantity"] > 0:
+		get_node("../../../TowerLimit").hide()
 		var dropPos: Vector2 = get_child(2).global_position
 		get_child(2).queue_free()
 		if Data.towerData[towerId]["quantity"] > 0:		
