@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=24 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
+[ext_resource type="Texture2D" uid="uid://cb1e7vlfhcta8" path="res://sprites/ui/tank.svg" id="3_1643c"]
+[ext_resource type="Texture2D" uid="uid://dq8i1svv4qeym" path="res://sprites/ui/health/5.svg" id="4_8yttj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
@@ -13,23 +15,28 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_q4rks"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ash"]
 
 [sub_resource type="SystemFont" id="SystemFont_v2m7n"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_o2kyr"]
 font_names = PackedStringArray("SF Pro Rounded")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_34k4l"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_4mbwx"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnant"]
 bg_color = Color(0.0392157, 0.933333, 0, 0.678431)
@@ -52,15 +59,69 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2wu3"]
+
+[sub_resource type="SystemFont" id="SystemFont_spiv3"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_j5hns"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
+
+[sub_resource type="SystemFont" id="SystemFont_vnuum"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h0e8"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yehqe"]
+bg_color = Color(0, 0, 0, 0.607843)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otqfv"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 0.196078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="LeftUI" type="Panel" parent="."]
 offset_right = 584.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_txrlt")
 
-[node name="Inventory" type="FlowContainer" parent="Panel"]
+[node name="Inventory" type="FlowContainer" parent="LeftUI"]
 layout_mode = 0
 offset_left = 117.0
 offset_top = 40.0
@@ -69,7 +130,7 @@ offset_bottom = 440.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="Label" type="Label" parent="Panel/Inventory"]
+[node name="Label" type="Label" parent="LeftUI/Inventory"]
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -79,7 +140,7 @@ text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TowerData" type="HFlowContainer" parent="Panel"]
+[node name="TowerData" type="HFlowContainer" parent="LeftUI"]
 layout_mode = 0
 offset_left = 117.0
 offset_top = 440.0
@@ -88,7 +149,7 @@ offset_bottom = 1080.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
-[node name="TowerName" type="Label" parent="Panel/TowerData"]
+[node name="TowerName" type="Label" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -98,17 +159,17 @@ text = "Explosion Tower"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TowerImage" type="Panel" parent="Panel/TowerData"]
+[node name="TowerImage" type="Panel" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 148)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_r1ash")
 
-[node name="TowerSprite" type="Sprite2D" parent="Panel/TowerData/TowerImage"]
+[node name="TowerSprite" type="Sprite2D" parent="LeftUI/TowerData/TowerImage"]
 position = Vector2(175, 64)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nlksv")
 
-[node name="TowerLevel" type="Label" parent="Panel/TowerData/TowerImage"]
+[node name="TowerLevel" type="Label" parent="LeftUI/TowerData/TowerImage"]
 custom_minimum_size = Vector2(190, 135)
 layout_mode = 0
 offset_left = 111.0
@@ -121,7 +182,7 @@ text = "Lv.10"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="TowerDesc" type="Label" parent="Panel/TowerData"]
+[node name="TowerDesc" type="Label" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -131,11 +192,11 @@ text = "Causes an explosion that damages nearby enemies"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Gap" type="Label" parent="Panel/TowerData"]
+[node name="Gap" type="Label" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="TowerStats" type="Label" parent="Panel/TowerData"]
+[node name="TowerStats" type="Label" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -147,16 +208,16 @@ Duration: 30"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Gap2" type="Label" parent="Panel/TowerData"]
+[node name="Gap2" type="Label" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 20)
 layout_mode = 2
 
-[node name="Buttons" type="VFlowContainer" parent="Panel/TowerData"]
+[node name="Buttons" type="VFlowContainer" parent="LeftUI/TowerData"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 10
 
-[node name="UpgradeButton" type="Button" parent="Panel/TowerData/Buttons"]
+[node name="UpgradeButton" type="Button" parent="LeftUI/TowerData/Buttons"]
 custom_minimum_size = Vector2(170, 70)
 layout_mode = 2
 focus_mode = 0
@@ -173,7 +234,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_fnant")
 text = "Upgrade
 37 / 2"
 
-[node name="DeleteButton" type="Button" parent="Panel/TowerData/Buttons"]
+[node name="DeleteButton" type="Button" parent="LeftUI/TowerData/Buttons"]
 custom_minimum_size = Vector2(170, 70)
 layout_mode = 2
 focus_mode = 0
@@ -189,5 +250,72 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2rjp5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
 text = "Delete"
 
-[connection signal="pressed" from="Panel/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="Panel/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]
+[node name="RightUI" type="Panel" parent="."]
+offset_left = 1336.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x2wu3")
+
+[node name="RightUIContainer" type="HFlowContainer" parent="RightUI"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 0
+offset_left = 117.0
+offset_top = 40.0
+offset_right = 467.0
+offset_bottom = 164.0
+
+[node name="Stage" type="Label" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_spiv3")
+theme_override_font_sizes/font_size = 100
+text = "Stage 1"
+horizontal_alignment = 1
+
+[node name="Wave" type="Label" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_j5hns")
+theme_override_font_sizes/font_size = 50
+text = "Wave 1"
+horizontal_alignment = 1
+
+[node name="Tank" type="Panel" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
+
+[node name="TankSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Tank"]
+position = Vector2(175, 225)
+texture = ExtResource("3_1643c")
+
+[node name="Health" type="Panel" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
+
+[node name="HealthSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Health"]
+position = Vector2(175, 100)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_8yttj")
+
+[node name="WaveStartButton" type="Button" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.196078)
+theme_override_fonts/font = SubResource("SystemFont_vnuum")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6h0e8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yehqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yehqe")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_otqfv")
+text = "Start Wave"
+
+[connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="LeftUI/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]

@@ -12,7 +12,7 @@ func _ready():
 		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
 		towerAddInstance.tower = tower		
 		towerAddInstance.towerId = i + 1
-		$Panel/Inventory.add_child(towerAddInstance)
+		$LeftUI/Inventory.add_child(towerAddInstance)
 	
 	updateTowerData(1)
 
@@ -20,13 +20,13 @@ func _ready():
 func updateTowerData(towerId: int, towerToDelete = null):
 	currentTowerId = towerId
 	var towerData: Dictionary =  Data.towerData[towerId]
-	$Panel/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
+	$LeftUI/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
 	
-	$Panel/TowerData/TowerName.text = towerData["name"]
-	$Panel/TowerData/TowerImage/TowerSprite.texture = \
+	$LeftUI/TowerData/TowerName.text = towerData["name"]
+	$LeftUI/TowerData/TowerImage/TowerSprite.texture = \
 		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_on.svg")
-	$Panel/TowerData/TowerImage/TowerLevel.text = "Lv." + str(towerData["level"])
-	$Panel/TowerData/TowerDesc.text = towerData["description"]	
+	$LeftUI/TowerData/TowerImage/TowerLevel.text = "Lv." + str(towerData["level"])
+	$LeftUI/TowerData/TowerDesc.text = towerData["description"]	
 	var towerStats: String
 	for stat in towerData["stats"]:
 		var statString: String
@@ -34,24 +34,24 @@ func updateTowerData(towerId: int, towerToDelete = null):
 			"damage": statString = "Damage: "
 			"targetEnemies": statString = "Target Enemies: "
 		towerStats += statString + str(towerData["stats"][stat][towerData["level"] - 1]) + "\n"
-	$Panel/TowerData/TowerStats.text = towerStats
+	$LeftUI/TowerData/TowerStats.text = towerStats
 	
 	if towerData["level"] < 9:
-		$Panel/TowerData/Buttons/UpgradeButton.text = \
+		$LeftUI/TowerData/Buttons/UpgradeButton.text = \
 			"Upgrade\n" + str(towerData["quantity"]) + " / " + str(Data.upgradeRequired[towerData["level"]])
 	else:
-		$Panel/TowerData/Buttons/UpgradeButton.text = "Max Level"
+		$LeftUI/TowerData/Buttons/UpgradeButton.text = "Max Level"
 		
 	if towerData["level"] < 9 and towerData["quantity"] < Data.upgradeRequired[towerData["level"]] \
 	or towerData["level"] == 9:
-		$Panel/TowerData/Buttons/UpgradeButton.disabled = true
+		$LeftUI/TowerData/Buttons/UpgradeButton.disabled = true
 	else:
-		$Panel/TowerData/Buttons/UpgradeButton.disabled = false
+		$LeftUI/TowerData/Buttons/UpgradeButton.disabled = false
 		
 	if towerToDelete == null:
-		$Panel/TowerData/Buttons/DeleteButton.disabled = true
+		$LeftUI/TowerData/Buttons/DeleteButton.disabled = true
 	else:
-		$Panel/TowerData/Buttons/DeleteButton.disabled = false		
+		$LeftUI/TowerData/Buttons/DeleteButton.disabled = false		
 	self.towerToDelete = towerToDelete
 
 
