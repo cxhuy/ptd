@@ -14,4 +14,5 @@ func _ready():
 
 
 func _on_body_entered(body):
-	body.damage(Data.towerData[1]["stats"]["damage"])
+	var towerData = Data.towerData[1]
+	body.damage(towerData["stats"]["damage"][towerData["level"]])

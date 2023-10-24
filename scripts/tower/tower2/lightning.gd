@@ -20,7 +20,7 @@ func _ready():
 			var midPointPos: Vector2 = (currPointPos + nextPointPos) / 2
 			lightningEffect.add_point(midPointPos + Vector2(randi_range(-50, 50), randi_range(-50, 50)))
 		
-		enemiesSortedByProgress[i].damage(Data.towerData[2]["stats"]["damage"])
+		enemiesSortedByProgress[i].damage(Data.towerData[2]["stats"]["damage"][Data.towerData[2]["level"]])
 		
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(self, "modulate:a", 0, 1)	
