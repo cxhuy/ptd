@@ -169,3 +169,5 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_n2bqs")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
 text = "Sell Tower
 "
+
+[connection signal="pressed" from="Panel/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

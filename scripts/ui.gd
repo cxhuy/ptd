@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var towerAdd := preload("res://scenes/towerAdd.tscn")
 
+var currentTowerId: int
+
 
 func _ready():
 	for i in range(2):
@@ -10,10 +12,15 @@ func _ready():
 		towerAddInstance.tower = tower		
 		towerAddInstance.towerId = i + 1
 		$Panel/Inventory.add_child(towerAddInstance)
+	
+	updateTowerData(1)
 
 
 func updateTowerData(towerId: int):
+	currentTowerId = towerId
 	var towerData: Dictionary =  Data.towerData[towerId]
+	$Panel/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
+	
 	$Panel/TowerData/TowerName.text = towerData["name"]
 	$Panel/TowerData/TowerImage/TowerSprite.texture = \
 		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_on.svg")
@@ -32,3 +39,10 @@ func updateTowerData(towerId: int):
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = true
 	else:
 		$Panel/TowerData/Buttons/UpgradeButton.disabled = false
+
+
+func _on_upgrade_button_pressed():
+	var towerData: Dictionary =  Data.towerData[currentTowerId]
+	towerData["quantity"] -= Data.upgradeRequired[towerData["level"]]
+	towerData["level"] += 1
+	updateTowerData(currentTowerId)
