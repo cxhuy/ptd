@@ -2,6 +2,7 @@ extends Node2D
 
 var currentStage: int = 1
 var currentWave: int = 1
+var currentHealth: int = 5
 
 # Number of towers required for upgrading level
 const upgradeRequired: Array[int] = [0, 2, 4, 10, 20, 50, 100, 200, 400]
@@ -14,7 +15,7 @@ var towerData: Dictionary = {
 		"description": "Causes an explosion that damages nearby enemies",
 		
 		"level": 1,
-		"quantity": 3,
+		"quantity": 1000,
 		
 		"stats": {
 			"damage": [10, 15, 20, 25, 30, 40, 55, 75, 100]
@@ -25,7 +26,7 @@ var towerData: Dictionary = {
 		"description": "Shoots a chain of lightning that damages multiple enemies",	
 		
 		"level": 1,
-		"quantity": 30000,
+		"quantity": 1000,
 		
 		"stats": {
 			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],

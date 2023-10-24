@@ -59,6 +59,8 @@ func updateTowerData(towerId: int, towerToDelete = null):
 func updateRightUI():
 	$RightUI/RightUIContainer/Stage.text = "Stage " + str(Data.currentStage)
 	$RightUI/RightUIContainer/Wave.text = "Wave " + str(Data.currentWave)
+	$RightUI/RightUIContainer/Health/HealthSprite.texture = \
+		load("res://sprites/ui/health/" + str(Data.currentHealth) + ".svg")
 
 
 func _on_upgrade_button_pressed():
