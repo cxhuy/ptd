@@ -37,7 +37,7 @@ corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
 
-[node name="Tower2" type="Node2D"]
+[node name="Tower2" type="Node2D" groups=["Towers"]]
 script = ExtResource("1_v87lx")
 
 [node name="Base" type="RigidBody2D" parent="."]
