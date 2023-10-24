@@ -28,15 +28,23 @@ func _ready():
 
 
 func _process(delta):
+	# If wave finished
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
 		enemySpawnFinish = false
 		inGame = false
 		get_tree().call_group("Balls", "queue_free")
-		Data.currentWave += 1
 		waveStartButton.disabled = false
+		
+		if Data.currentWave == 9:
+			Data.currentStage += 1
+			Data.currentWave = 1
+		else:
+			Data.currentWave += 1
+		
 		$UI.updateRightUI()
 		
 	
+	# If ball is dropped add a new one
 	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
 		var ballInstance = ball.instantiate()
 		ballInstance.set_global_position(Vector2(616, 583))
