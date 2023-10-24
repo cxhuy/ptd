@@ -188,3 +188,4 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
 text = "Delete"
 
 [connection signal="pressed" from="Panel/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="Panel/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]

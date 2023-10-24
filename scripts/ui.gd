@@ -3,6 +3,7 @@ extends CanvasLayer
 var towerAdd := preload("res://scenes/towerAdd.tscn")
 
 var currentTowerId: int
+var towerToDelete
 
 
 func _ready():
@@ -51,6 +52,7 @@ func updateTowerData(towerId: int, towerToDelete = null):
 		$Panel/TowerData/Buttons/DeleteButton.disabled = true
 	else:
 		$Panel/TowerData/Buttons/DeleteButton.disabled = false		
+	self.towerToDelete = towerToDelete
 
 
 func _on_upgrade_button_pressed():
@@ -58,3 +60,9 @@ func _on_upgrade_button_pressed():
 	towerData["quantity"] -= Data.upgradeRequired[towerData["level"]]
 	towerData["level"] += 1
 	updateTowerData(currentTowerId)
+
+
+func _on_delete_button_pressed():
+	towerToDelete.queue_free()
+	towerToDelete = null
+	updateTowerData(currentTowerId)	
