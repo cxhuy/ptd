@@ -38,6 +38,7 @@ func _on_gui_input(event):
 			towerInstance.get_node("ShowOnUIButton").set_mouse_filter(0)
 			towerInstance.set_global_position(dropPos)
 			towerInstance.get_node("AttackRange/AttackRangeVisual").hide()
+			towerInstance.towerPlaced = true
 			Data.towerData[towerId]["quantity"] -= 1
 			$TowerQuantity.text = "x" + str(Data.towerData[towerId]["quantity"] )
 			get_node("../../../").updateTowerData(towerId)
