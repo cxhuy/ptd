@@ -6,6 +6,7 @@ var lightning := preload("res://scenes/tower/tower2/lightning.tscn")
 var switchDuration: int = 0
 var enemiesInRange
 var isEnemyInRange: bool = false
+var towerId: int = 2
 
 
 func _process(delta):
