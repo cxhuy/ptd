@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=8 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
+[ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f73e0"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
 [sub_resource type="SystemFont" id="SystemFont_yroje"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
 subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_q4rks"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ash"]
+
+[sub_resource type="SystemFont" id="SystemFont_34k4l"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -15,18 +26,18 @@ script = ExtResource("1_8qvsj")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 584.0
 offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f73e0")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_txrlt")
 
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+[node name="Inventory" type="FlowContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 117.0
 offset_top = 40.0
 offset_right = 467.0
-offset_bottom = 1040.0
+offset_bottom = 440.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="Label" type="Label" parent="Panel/FlowContainer"]
+[node name="Label" type="Label" parent="Panel/Inventory"]
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -35,3 +46,58 @@ theme_override_font_sizes/font_size = 70
 text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TowerStats" type="HFlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 440.0
+offset_right = 467.0
+offset_bottom = 1080.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TowerName" type="Label" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_q4rks")
+theme_override_font_sizes/font_size = 50
+text = "Explosion Tower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TowerImage" type="Panel" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 148)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r1ash")
+
+[node name="TowerSprite" type="Sprite2D" parent="Panel/TowerStats/TowerImage"]
+position = Vector2(175, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nlksv")
+
+[node name="TowerDesc" type="Label" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_34k4l")
+theme_override_font_sizes/font_size = 20
+text = "Causes an explosion that damages nearby enemies"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Gap" type="Label" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 20)
+layout_mode = 2
+
+[node name="TowerStats" type="Label" parent="Panel/TowerStats"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_34k4l")
+theme_override_font_sizes/font_size = 35
+text = "Damage: 10
+Target Enemies: 20
+Duration: 30"
+horizontal_alignment = 1
+autowrap_mode = 2
