@@ -1,6 +1,6 @@
 extends Node2D
 
-var ball = preload("res://scenes/ball.tscn")
+var ball := preload("res://scenes/ball.tscn")
 var enemy := preload("res://scenes/enemy/enemy.tscn")
 var currentStage: int = 1
 var currentWave: int = 1
@@ -17,6 +17,8 @@ func _input(event):
 
 
 func _ready():
+	var stage1 := preload("res://scenes/stages/stage1.tscn")
+	self.add_child(stage1.instantiate())
 	waveStartButton = get_node("UI/RightUI/RightUIContainer/WaveStartButton")
 	waveStartButton.connect("pressed", _on_wave_start_button_pressed)
 

@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=11 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
-[ext_resource type="PackedScene" uid="uid://ce13rpmlxnx0u" path="res://scenes/stages/stage1.tscn" id="7_631ud"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
@@ -72,5 +71,3 @@ scale = Vector2(2, 2)
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("11_tjs23")]
-
-[node name="Stage1" parent="." instance=ExtResource("7_631ud")]
