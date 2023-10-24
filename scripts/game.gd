@@ -16,9 +16,15 @@ func _input(event):
 		add_child(ballInstance)
 
 
+func loadStage(stageId: int):
+	if stageId > 1:
+		get_node("Stage" + str(stageId)).queue_free()
+	var stage := load("res://scenes/stages/stage" + str(stageId) + ".tscn")
+	self.add_child(stage.instantiate())
+
+
 func _ready():
-	var stage1 := preload("res://scenes/stages/stage1.tscn")
-	self.add_child(stage1.instantiate())
+	loadStage(1)
 	waveStartButton = get_node("UI/RightUI/RightUIContainer/WaveStartButton")
 	waveStartButton.connect("pressed", _on_wave_start_button_pressed)
 
