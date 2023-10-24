@@ -5,12 +5,13 @@ var enemy := preload("res://scenes/enemy/enemy.tscn")
 var enemySpawnFinish: bool = false
 var inGame: bool = false
 var waveStartButton
+var ballSpawnPos: Vector2 = Vector2(616, 770)
 
 
 func _input(event):
 	if Input.is_action_pressed("addBall"):
 		var ballInstance = ball.instantiate()
-		ballInstance.set_global_position(Vector2(616, 583))
+		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
 
 
@@ -51,7 +52,7 @@ func _process(delta):
 	# If ball is dropped add a new one
 	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
 		var ballInstance = ball.instantiate()
-		ballInstance.set_global_position(Vector2(616, 583))
+		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
 
 
@@ -89,4 +90,3 @@ func spawnEnemies(wavePattern):
 			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
 			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true
-
