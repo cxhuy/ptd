@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=13 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -29,6 +29,13 @@ font_weight = 600
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnant"]
 bg_color = Color(0.0392157, 0.933333, 0, 0.678431)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rjp5"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.678431)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -137,12 +144,13 @@ custom_minimum_size = Vector2(170, 70)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.662745, 0.662745, 0.662745, 1)
 theme_override_fonts/font = SubResource("SystemFont_4mbwx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fnant")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fnant")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fnant")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_fnant")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2rjp5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_fnant")
 text = "Upgrade
 37 / 2"
