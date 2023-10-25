@@ -53,6 +53,11 @@ func giveReward():
 			Data.towerData[towerUnlocked]["unlocked"] = true
 			$UI.updateTowerData(towerUnlocked)
 			
+			var rewardItemInstance = rewardItem.instantiate()
+			rewardItemInstance.get_node("RewardSprite").texture = \
+				load("res://sprites/towers/tower" + str(towerUnlocked) + "/tower" + str(towerUnlocked) + "_on.svg")
+			get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)	
+			
 	if Data.rewards[Data.currentStage][Data.currentWave].has("towerLimitIncrease"):
 		Data.towerLimit += Data.rewards[Data.currentStage][Data.currentWave]["towerLimitIncrease"]
 			

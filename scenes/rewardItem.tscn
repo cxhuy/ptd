@@ -21,6 +21,5 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = SubResource("SystemFont_hdely")
 theme_override_font_sizes/font_size = 25
-text = "x99"
 horizontal_alignment = 2
 vertical_alignment = 2
