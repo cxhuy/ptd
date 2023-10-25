@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
 [ext_resource type="Texture2D" uid="uid://cb1e7vlfhcta8" path="res://sprites/ui/tank.svg" id="3_1643c"]
-[ext_resource type="Texture2D" uid="uid://dq8i1svv4qeym" path="res://sprites/ui/health/5.svg" id="4_8yttj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
@@ -72,6 +71,9 @@ font_weight = 500
 subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y46hn"]
+load_path = "res://.godot/imported/5.svg-1d2ff56b0499e63d83e0db2240199e1e.ctex"
 
 [sub_resource type="SystemFont" id="SystemFont_vnuum"]
 font_names = PackedStringArray("SF Pro Rounded")
@@ -309,7 +311,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
 [node name="HealthSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Health"]
 position = Vector2(175, 100)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_8yttj")
+texture = SubResource("CompressedTexture2D_y46hn")
 
 [node name="WaveStartButton" type="Button" parent="RightUI/RightUIContainer"]
 custom_minimum_size = Vector2(350, 150)

@@ -63,7 +63,7 @@ func updateRightUI():
 	$RightUI/RightUIContainer/Stage.text = "Stage " + str(Data.currentStage)
 	$RightUI/RightUIContainer/Wave.text = "Wave " + str(Data.currentWave)
 	$RightUI/RightUIContainer/Health/HealthSprite.texture = \
-		load("res://sprites/ui/health/" + str(Data.currentHealth) + ".svg")
+		load("res://sprites/ui/health/health_" + str(Data.currentHealth) + ".png")
 
 
 func clearRewards():
