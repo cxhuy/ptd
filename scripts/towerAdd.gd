@@ -19,7 +19,7 @@ func _on_gui_input(event):
 		if event is InputEventMouseButton and event.button_mask == 1:
 			get_node("../../../TowerLimit").show()
 			get_node("../../../TowerLimit").text = \
-				str(get_tree().get_nodes_in_group("Towers").size()) + " / " + str(Data.towerLimit)	
+				str(get_tree().get_nodes_in_group("Towers").size() + 1) + " / " + str(Data.towerLimit)	
 			if get_tree().get_nodes_in_group("Towers").size() < Data.towerLimit:
 				get_node("../../../TowerLimit").modulate = Color("00000064")
 			else:
