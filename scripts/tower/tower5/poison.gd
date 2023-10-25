@@ -14,4 +14,5 @@ func _ready():
 
 
 func _on_body_entered(body):
-	body.poisonDuration = 240 * Data.towerData[5]["stats"]["duration"]
+	if body.poisonDuration == -1:
+		body.poisonDuration = 240 * Data.towerData[5]["stats"]["duration"][Data.towerData[5]["level"]]

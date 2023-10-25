@@ -9,7 +9,7 @@ var speed: int
 var health: int
 
 # Debuffs
-var poisonDuration: int = 0
+var poisonDuration: int = -1
 
 
 func _ready():
