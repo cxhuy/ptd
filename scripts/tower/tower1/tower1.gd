@@ -1,12 +1,13 @@
 extends Node2D
 
-@onready var anim := $PatternSprite
-var explosion := preload("res://scenes/tower/tower1/explosion.tscn")
-
 var switchDuration: int = 0
 var towerId: int = 1
 var towerPlacementAllowed: bool = false
 var towerPlaced: bool = false
+
+# Tower unique variables
+@onready var anim := $PatternSprite
+var explosion := preload("res://scenes/tower/tower1/explosion.tscn")
 
 
 func _ready():
