@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://0bwnm12tplio"]
+[gd_scene load_steps=3 format=3 uid="uid://0bwnm12tplio"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower3/beam.gd" id="1_abcf3"]
 
 [sub_resource type="Curve" id="Curve_yl8df"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.298832), -2.25703, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.150602), -1.92415, 0.0, 0, 0]
 point_count = 2
 
 [node name="Beam" type="Area2D"]
+script = ExtResource("1_abcf3")
 
 [node name="BeamLine" type="Line2D" parent="."]
 width_curve = SubResource("Curve_yl8df")
