@@ -13,6 +13,9 @@ func _ready():
 	var base = preload("res://scenes/tower/base.tscn")
 	add_child(base.instantiate())
 	get_node("Base").connect("body_entered", _on_base_body_entered)
+	
+	var showOnUIButton = preload("res://scenes/tower/show_on_ui_button.tscn")
+	add_child(showOnUIButton.instantiate())
 
 
 func _process(delta):
