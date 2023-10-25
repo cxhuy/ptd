@@ -8,6 +8,8 @@ var towerPlaced: bool = false
 # Tower unique variables
 var comet := preload("res://scenes/tower/tower6/comet.tscn")
 var cometCount: int = 0
+var duration: int = 240 * 4
+var deleteDuration: int = 120
 
 
 func _ready():
@@ -35,25 +37,58 @@ func _physics_process(delta):
 	if towerPlaced:
 		self.global_rotation_degrees += 1
 		$PatternSprite.global_rotation_degrees = 0
-
+		
+		if cometCount > 1:
+			if duration > 0:
+				duration -= 1
+			else:
+				if deleteDuration > 0:
+					deleteDuration -= 1
+				else:
+					deleteDuration = 120
+					deleteComet()
+	
 
 func addComet():
+	duration = 240 * 4
+	deleteDuration = 120
 	if cometCount < 6:
 		cometCount += 1
 		
-	$PatternSprite.texture = load("res://sprites/towers/tower6/tower6_on_" + str(cometCount) + ".svg")
+		$PatternSprite.texture = \
+			load("res://sprites/towers/tower6/tower6_on_" + str(cometCount) + ".svg")
+			
+		for comet in $Comets.get_children():
+			comet.queue_free()
 		
-	for comet in $Comets.get_children():
-		comet.queue_free()
-	
-	var degreeDiff: int = 360 / cometCount
-	for i in range(cometCount):
-		var cometInstance := comet.instantiate()
-		cometInstance.position = \
-		Vector2( \
-			200 * cos(deg_to_rad(degreeDiff * (i - 1))), \
-			200 * sin(deg_to_rad(degreeDiff * (i - 1))))
-		$Comets.call_deferred("add_child", cometInstance)
+		var degreeDiff: int = 360 / cometCount
+		for i in range(cometCount):
+			var cometInstance := comet.instantiate()
+			cometInstance.position = \
+			Vector2( \
+				200 * cos(deg_to_rad(degreeDiff * (i - 1))), \
+				200 * sin(deg_to_rad(degreeDiff * (i - 1))))
+			$Comets.call_deferred("add_child", cometInstance)
+		
+
+func deleteComet():
+	if cometCount > 1:
+		cometCount -= 1
+		
+		$PatternSprite.texture = \
+			load("res://sprites/towers/tower6/tower6_on_" + str(cometCount) + ".svg")
+			
+		for comet in $Comets.get_children():
+			comet.queue_free()
+		
+		var degreeDiff: int = 360 / cometCount
+		for i in range(cometCount):
+			var cometInstance := comet.instantiate()
+			cometInstance.position = \
+			Vector2( \
+				200 * cos(deg_to_rad(degreeDiff * (i - 1))), \
+				200 * sin(deg_to_rad(degreeDiff * (i - 1))))
+			$Comets.call_deferred("add_child", cometInstance)
 
 
 func _on_base_body_entered(body):
