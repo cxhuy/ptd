@@ -16,4 +16,5 @@ func _ready():
 func _on_body_entered(body):
 	var randomNumber = randf_range(0, 1)
 	if randomNumber <= 0.35:
-		body.get_parent().set_progress(body.get_parent().get_progress() - 300)
+		body.get_parent().set_progress(body.get_parent().get_progress() - \
+			Data.towerData[7]["stats"]["distance"][Data.towerData[7]["level"]])

@@ -131,7 +131,9 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 0,
 		
-		"stats": {},
+		"stats": {
+			"distance": [0, 300, 325, 350, 375, 400, 450, 500, 550, 600],
+		},
 		
 		"unlocked": false
 	},
