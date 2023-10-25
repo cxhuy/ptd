@@ -20,7 +20,9 @@ const rewards: Dictionary = {
 		},
 		9: {
 			"totalTowersReward": 30,
-			"towerLimitIncrease": 1
+			"towerLimitIncrease": 1,
+			"ballDamageIncrease": 5,
+			"tankLimitIncrease": 1
 		}
 	},
 	2: {

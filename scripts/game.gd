@@ -60,7 +60,28 @@ func giveReward():
 			
 	if Data.rewards[Data.currentStage][Data.currentWave].has("towerLimitIncrease"):
 		Data.towerLimit += Data.rewards[Data.currentStage][Data.currentWave]["towerLimitIncrease"]
-			
+		
+		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.get_node("RewardSprite").texture = \
+			load("res://sprites/ui/specials/tower_limit.png")
+		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
+		
+	if Data.rewards[Data.currentStage][Data.currentWave].has("ballDamageIncrease"):
+		# TODO: increase ball damage
+		
+		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.get_node("RewardSprite").texture = \
+			load("res://sprites/ui/specials/ball_damage.png")
+		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
+		
+	if Data.rewards[Data.currentStage][Data.currentWave].has("tankLimitIncrease"):
+		# TODO: increase tank limit
+		
+		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.get_node("RewardSprite").texture = \
+			load("res://sprites/ui/specials/tank_limit.png")
+		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
+		
 	var towerRewardLeft: int = Data.rewards[Data.currentStage][Data.currentWave]["totalTowersReward"]
 	var unlockedTowersSize: int = unlockedTowers.size()
 	for i in range(unlockedTowersSize):
