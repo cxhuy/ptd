@@ -34,5 +34,41 @@ var towerData: Dictionary = {
 			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
 			"targetEnemies": [3, 3, 4, 4, 5, 6, 7, 8, 10],
 		}
-	}
+	},
+	3: {
+		"name": "Light Tower",
+		"description": "Shoots a beam of light",
+		
+		"level": 1,
+		"quantity": 1000,
+		
+		"stats": {}
+	},
+	4: {
+		"name": "Sniper Tower",
+		"description": "Fires a bullet that becomes stronger as it travels (Max 2X)",
+		
+		"level": 1,
+		"quantity": 1000,
+		
+		"stats": {}
+	},
+	5: {
+		"name": "Poison Tower",
+		"description": "Poisons nearby enemies",
+		
+		"level": 1,
+		"quantity": 1000,
+		
+		"stats": {}
+	},
+	6: {
+		"name": "Comet Tower",
+		"description": "Adds a comet to its orbit (Max 6 stacks)",
+		
+		"level": 1,
+		"quantity": 1000,
+		
+		"stats": {}
+	},
 }

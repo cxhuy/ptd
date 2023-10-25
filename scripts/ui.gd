@@ -7,7 +7,7 @@ var towerToDelete
 
 
 func _ready():
-	for i in range(2):
+	for i in range(6):
 		var towerAddInstance = towerAdd.instantiate()
 		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
 		towerAddInstance.tower = tower		
