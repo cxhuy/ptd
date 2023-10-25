@@ -7,7 +7,7 @@ var towerPlaced: bool = false
 
 # Tower unique variables
 @onready var anim := $PatternSprite
-var poison := preload("res://scenes/tower/tower5/poison.tscn")
+var teleport := preload("res://scenes/tower/tower7/teleport.tscn")
 
 
 func _ready():
@@ -41,8 +41,8 @@ func _on_base_body_entered(body):
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20
 		
-		var poisonInstance := poison.instantiate()
-		call_deferred("add_child", poisonInstance)		
+		var teleportInstance := teleport.instantiate()
+		call_deferred("add_child", teleportInstance)		
 			
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.3, 0.3), 0.07)	
