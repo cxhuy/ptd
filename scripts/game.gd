@@ -48,9 +48,21 @@ func giveReward():
 			unlockedTowers.append(towerUnlocked)
 			Data.towerData[towerUnlocked]["unlocked"] = true
 			$UI.updateTowerData(towerUnlocked)
+			
+	var towerRewardLeft: int = Data.rewards[Data.currentStage][Data.currentWave]["totalTowersReward"]
+	var unlockedTowersSize: int = unlockedTowers.size()
+	for i in range(unlockedTowersSize):
+		if i != unlockedTowersSize - 1:	
+			var pickRandomIndex: int = randi_range(0, unlockedTowers.size() - 1)
+			var towerRewarded: int = unlockedTowers.pop_at(pickRandomIndex)
+			var rewardAmount: int = randi_range(1, towerRewardLeft)
+			Data.towerData[towerRewarded]["quantity"] += rewardAmount
+			$UI.updateTowerData(towerRewarded)
+			towerRewardLeft -= rewardAmount
+		else:
+			Data.towerData[unlockedTowers[0]]["quantity"] += towerRewardLeft
+			$UI.updateTowerData(unlockedTowers[0])
 	
-	
-
 
 func _process(delta):
 	# If wave finished
