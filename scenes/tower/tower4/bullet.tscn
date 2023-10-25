@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb03omhayvod"]
+
+[ext_resource type="Texture2D" uid="uid://cc0lndl3ej0md" path="res://sprites/towers/tower4/tower4_bullet.svg" id="1_7w8gc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i54sj"]
+radius = 8.0
+height = 50.0
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_7w8gc")
+
+[node name="BulletCollision" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i54sj")
