@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://8bxwryys5cba"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower6/tower6.gd" id="1_8ryqi"]
+[ext_resource type="Texture2D" uid="uid://bntfd0gd0cthx" path="res://sprites/towers/tower6/tower6_on_1.svg" id="1_vrksy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3jrt"]
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[node name="Tower6" type="Node2D" groups=["Towers"]]
+script = ExtResource("1_8ryqi")
+
+[node name="PatternSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_vrksy")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_k3jrt")
