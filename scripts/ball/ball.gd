@@ -21,4 +21,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_damage_area_body_entered(body):
-	body.damage(10)
+	body.damage(Data.ballDamage)
