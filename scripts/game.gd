@@ -15,7 +15,7 @@ func _input(event):
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
 		
-	elif Input.is_action_pressed("emptyTank"):
+	elif Input.is_action_pressed("emptyTank") and $Tank.emptyTank == false:
 		$Tank.emptyTank = true
 		$Tank/SendBottom.show()
 		$Tank/SendTop.show()
