@@ -52,7 +52,7 @@ var towerData: Dictionary = {
 		"quantity": 3,
 		
 		"stats": {
-			"damage": [10, 15, 20, 25, 30, 40, 55, 75, 100]
+			"damage": [0, 10, 15, 20, 25, 30, 40, 55, 75, 100]
 		},
 		
 		"unlocked": true
@@ -65,7 +65,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
 			"targetEnemies": [3, 3, 4, 4, 5, 6, 7, 8, 10],
 		},
 		
@@ -79,7 +79,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
 		},
 		
 		"unlocked": false
@@ -92,7 +92,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
 		},
 		
 		"unlocked": false
