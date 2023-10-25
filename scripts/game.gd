@@ -32,7 +32,21 @@ func _ready():
 
 
 func giveReward():
-	print(Data.rewards[Data.currentStage][Data.currentWave])
+	var unlockedTowers: Array[int] = []
+	var lockedTowers: Array[int] = []
+	
+	for towerId in Data.towerData:
+		if Data.towerData[towerId]["unlocked"]:
+			unlockedTowers.append(towerId)
+		else:
+			lockedTowers.append(towerId)
+			
+	for i in range(Data.rewards[Data.currentStage][Data.currentWave]["totalTowersUnlocked"]):
+		var pickRandomIndex: int = randi_range(0, lockedTowers.size() - 1)
+		var towerUnlocked: int = lockedTowers.pop_at(pickRandomIndex)
+		unlockedTowers.append(towerUnlocked)
+		Data.towerData[towerUnlocked]["unlocked"] = true
+		$UI.updateTowerData(towerUnlocked)
 
 
 func _process(delta):
@@ -76,9 +90,9 @@ func startWave(wave):
 	var wavePattern: Array[Array]
 	match wave:
 		1: 
-			wavePattern = [[0, 5, 1]]
+			wavePattern = [[0, 0, 1]]
 		2: 
-			wavePattern = [[0, 10, 1]]
+			wavePattern = [[0, 0, 1]]
 	spawnEnemies(wavePattern)
 
 
