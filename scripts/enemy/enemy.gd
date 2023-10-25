@@ -8,6 +8,9 @@ var enemy: Dictionary = {
 var speed: int
 var health: int
 
+# Debuffs
+var poisonDuration: int = 0
+
 
 func _ready():
 	self.speed = enemy[enemyId]["speed"]
@@ -24,6 +27,14 @@ func _process(delta):
 		if Data.currentHealth == 0:
 			get_tree().paused = true
 		self.queue_free()
+
+
+func _physics_process(delta):
+	# Poison Damage
+	if poisonDuration >= 0:
+		if poisonDuration % 240 == 0: # Every 1 second
+			self.damage(Data.towerData[5]["stats"]["damage"][Data.towerData[5]["level"]])
+		poisonDuration -= 1
 
 
 func damage(damageAmount: int):
