@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7jvw7lca8yf"]
+
+[ext_resource type="Texture2D" uid="uid://jk7h7qg3onkj" path="res://sprites/towers/tower6/tower6_comet.png" id="1_p1q3g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gn3eo"]
+radius = 50.0
+
+[node name="Comet" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
+
+[node name="CometSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_p1q3g")
+
+[node name="CometCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gn3eo")
