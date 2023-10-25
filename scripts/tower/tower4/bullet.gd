@@ -13,3 +13,7 @@ func _process(delta):
 	self.global_position += \
 		Vector2(cos(deg_to_rad(self.global_rotation_degrees)), \
 				sin(deg_to_rad(self.global_rotation_degrees))) * speed * delta
+
+
+func _on_body_entered(body):
+	body.damage(Data.towerData[4]["stats"]["damage"][Data.towerData[4]["level"]])
