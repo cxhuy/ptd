@@ -6,8 +6,7 @@ var towerPlacementAllowed: bool = false
 var towerPlaced: bool = false
 
 # Tower unique variables
-@onready var anim := $PatternSprite
-var poison := preload("res://scenes/tower/tower5/poison.tscn")
+var blackhole := preload("res://scenes/tower/tower8/blackhole.tscn")
 
 
 func _ready():
@@ -35,12 +34,12 @@ func _on_base_body_entered(body):
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20
 		
-		var poisonInstance := poison.instantiate()
-		call_deferred("add_child", poisonInstance)		
-			
+		var blackholeInstance := blackhole.instantiate()
+		call_deferred("add_child", blackholeInstance)
+		
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
-		tween.tween_property(anim, "scale", Vector2(0.3, 0.3), 0.07)	
+		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)	
 		await get_tree().create_timer(0.2).timeout
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
-		tween.tween_property(anim, "scale", Vector2(0.35, 0.35), 0.28)	
+		tween.tween_property($PatternSprite, "scale", Vector2(0.35, 0.35), 0.28)	
 		await get_tree().create_timer(0.2).timeout
