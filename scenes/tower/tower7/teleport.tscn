@@ -7,6 +7,8 @@
 radius = 100.0
 
 [node name="Teleport" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
 script = ExtResource("1_5qucd")
 
 [node name="TeleportCollision" type="CollisionShape2D" parent="."]
@@ -15,3 +17,5 @@ shape = SubResource("CircleShape2D_5h3us")
 [node name="TeleportSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4fa21")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

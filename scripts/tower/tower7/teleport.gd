@@ -13,6 +13,7 @@ func _ready():
 	queue_free()
 
 
-#func _on_body_entered(body):
-#	if body.poisonDuration == -1:
-#		body.poisonDuration = 240 * Data.towerData[5]["stats"]["duration"][Data.towerData[5]["level"]]
+func _on_body_entered(body):
+	var randomNumber = randf_range(0, 1)
+	if randomNumber <= 0.35:
+		body.get_parent().set_progress(body.get_parent().get_progress() - 300)
