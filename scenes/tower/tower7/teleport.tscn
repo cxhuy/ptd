@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dus3n56mk63di"]
+[gd_scene load_steps=4 format=3 uid="uid://dus3n56mk63di"]
 
 [ext_resource type="Texture2D" uid="uid://vt4wmcpgkui7" path="res://sprites/towers/tower7/tower7_teleport.png" id="1_4fa21"]
+[ext_resource type="Script" path="res://scripts/tower/tower7/teleport.gd" id="1_5qucd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5h3us"]
 radius = 100.0
 
 [node name="Teleport" type="Area2D"]
+script = ExtResource("1_5qucd")
 
 [node name="TeleportCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5h3us")
