@@ -38,6 +38,7 @@ func updateTowerData(towerId: int, towerToDelete = null):
 			"damage": statString = "Damage: "
 			"targetEnemies": statString = "Target Enemies: "
 			"duration": statString = "Duration: "
+			"distance": statString = "Distance: "
 		towerStats += statString + str(towerData["stats"][stat][towerData["level"]]) + "\n"
 	$LeftUI/TowerData/TowerStats.text = towerStats
 	
