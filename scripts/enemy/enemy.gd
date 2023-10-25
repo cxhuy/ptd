@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var ball := preload("res://scenes/ball.tscn")
+var ball := preload("res://scenes/tankBall.tscn")
 var enemyId: int = 0
 var enemy: Dictionary = {
 	0: {"speed": 40, "health": 10},
@@ -34,7 +34,4 @@ func damage(damageAmount: int):
 			var ballInstance = ball.instantiate()
 			ballInstance.global_position = Vector2(1600, 450)
 			get_tree().get_root().get_node("Game").call_deferred("add_child", ballInstance)
-			var direction = Vector2(cos(deg_to_rad(randf_range(0, 360))), \
-									sin(deg_to_rad(randf_range(0, 360))))
-			ballInstance.apply_impulse(direction * -1000)
 		self.queue_free()
