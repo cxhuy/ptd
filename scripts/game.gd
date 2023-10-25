@@ -67,7 +67,7 @@ func giveReward():
 		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
 		
 	if Data.rewards[Data.currentStage][Data.currentWave].has("ballDamageIncrease"):
-		# TODO: increase ball damage
+		Data.ballDamage += Data.rewards[Data.currentStage][Data.currentWave]["ballDamageIncrease"]
 		
 		var rewardItemInstance = rewardItem.instantiate()
 		rewardItemInstance.get_node("RewardSprite").texture = \
