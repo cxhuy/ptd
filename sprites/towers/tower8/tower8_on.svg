@@ -1,1 +1,18 @@
-<svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style>.cls-1{fill:#f2f2f2;}.cls-2{fill:#7d7d7d;}.cls-3{fill:none;stroke:#484848;stroke-linecap:square;stroke-linejoin:round;stroke-width:24px;}</style></defs><circle class="cls-1" cx="128" cy="128" r="120"/><path class="cls-2" d="M128,16a112,112,0,0,1,79.2,191.2A112,112,0,0,1,48.8,48.8,111.29,111.29,0,0,1,128,16m0-16A128,128,0,1,0,256,128,128,128,0,0,0,128,0Z"/><polyline class="cls-3" points="85 190.5 85 65.5 171 190.5 171 65.5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="1" stop-opacity="0.502"/>
+    </radialGradient>
+    <clipPath id="clip-Web_1920_14">
+      <rect width="256" height="256"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_14" data-name="Web 1920 – 14" clip-path="url(#clip-Web_1920_14)">
+    <g id="tower11_art_off">
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="120" cy="120" r="120" transform="translate(8 8)" fill="#f2f2f2"/>
+      <path id="Path_21" data-name="Path 21" d="M128,16A112,112,0,1,1,48.8,48.8,112,112,0,0,1,128,16m0-16A128,128,0,1,0,256,128,128,128,0,0,0,128,0Z" fill="#7d7d7d"/>
+    </g>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="90" cy="90" r="90" transform="translate(38 38)" fill="url(#radial-gradient)"/>
+  </g>
+</svg>
