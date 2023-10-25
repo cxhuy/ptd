@@ -38,7 +38,7 @@ func updateTowerData(towerId: int, towerToDelete = null):
 			"damage": statString = "Damage: "
 			"targetEnemies": statString = "Target Enemies: "
 			"duration": statString = "Duration: "
-		towerStats += statString + str(towerData["stats"][stat][towerData["level"] - 1]) + "\n"
+		towerStats += statString + str(towerData["stats"][stat][towerData["level"]]) + "\n"
 	$LeftUI/TowerData/TowerStats.text = towerStats
 	
 	if towerData["level"] < 9:
