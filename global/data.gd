@@ -78,7 +78,9 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 0,
 		
-		"stats": {},
+		"stats": {
+			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
+		},
 		
 		"unlocked": false
 	},

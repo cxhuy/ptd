@@ -7,8 +7,12 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.150602), -1.92415, 0.0, 0, 
 point_count = 2
 
 [node name="Beam" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
 script = ExtResource("1_abcf3")
 
 [node name="BeamLine" type="Line2D" parent="."]
 width_curve = SubResource("Curve_yl8df")
 default_color = Color(1, 1, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
