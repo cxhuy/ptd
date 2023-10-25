@@ -23,7 +23,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rungb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwl6x"]
 radius = 200.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcf0v"]
@@ -47,7 +47,7 @@ collision_layer = 0
 collision_mask = 64
 
 [node name="AttackRangeCollision" type="CollisionShape2D" parent="AttackRange"]
-shape = SubResource("CircleShape2D_rungb")
+shape = SubResource("CircleShape2D_hwl6x")
 
 [node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
 offset_left = -200.0
