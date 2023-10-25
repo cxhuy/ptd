@@ -60,6 +60,11 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2wu3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y46hn"]
+load_path = "res://.godot/imported/5.svg-1d2ff56b0499e63d83e0db2240199e1e.ctex"
+
 [sub_resource type="SystemFont" id="SystemFont_spiv3"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
@@ -69,11 +74,6 @@ subpixel_positioning = 0
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
 subpixel_positioning = 0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y46hn"]
-load_path = "res://.godot/imported/5.svg-1d2ff56b0499e63d83e0db2240199e1e.ctex"
 
 [sub_resource type="SystemFont" id="SystemFont_vnuum"]
 font_names = PackedStringArray("SF Pro Rounded")
@@ -276,6 +276,16 @@ offset_top = 40.0
 offset_right = 467.0
 offset_bottom = 164.0
 
+[node name="Health" type="Panel" parent="RightUI/RightUIContainer"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
+
+[node name="HealthSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Health"]
+position = Vector2(175, 50)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("CompressedTexture2D_y46hn")
+
 [node name="Stage" type="Label" parent="RightUI/RightUIContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -295,23 +305,13 @@ text = "Wave 1"
 horizontal_alignment = 1
 
 [node name="Tank" type="Panel" parent="RightUI/RightUIContainer"]
-custom_minimum_size = Vector2(350, 400)
+custom_minimum_size = Vector2(350, 450)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
 
 [node name="TankSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Tank"]
 position = Vector2(175, 225)
 texture = ExtResource("3_1643c")
-
-[node name="Health" type="Panel" parent="RightUI/RightUIContainer"]
-custom_minimum_size = Vector2(350, 150)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_7jgx3")
-
-[node name="HealthSprite" type="Sprite2D" parent="RightUI/RightUIContainer/Health"]
-position = Vector2(175, 100)
-scale = Vector2(0.8, 0.8)
-texture = SubResource("CompressedTexture2D_y46hn")
 
 [node name="WaveStartButton" type="Button" parent="RightUI/RightUIContainer"]
 custom_minimum_size = Vector2(350, 150)
