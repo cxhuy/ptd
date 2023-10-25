@@ -31,6 +31,8 @@ func damage(damageAmount: int):
 	if self.health <= 0:
 		var randomNumber = randf_range(0, 1)
 		if randomNumber <= 0.05 and get_tree().get_nodes_in_group("TankBalls").size() < Data.tankLimit: 
+			if get_tree().get_nodes_in_group("TankBalls").size() == Data.tankLimit - 1:
+				get_node("../../../..//Tank/TankFullLabel").show()
 			var ballInstance = ball.instantiate()
 			ballInstance.global_position = Vector2(1600, 450)
 			get_tree().get_root().get_node("Game").call_deferred("add_child", ballInstance)

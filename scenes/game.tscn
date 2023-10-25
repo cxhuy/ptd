@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=21 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
@@ -33,6 +33,10 @@ size = Vector2(122, 344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqpt5"]
 size = Vector2(122, 344)
+
+[sub_resource type="SystemFont" id="SystemFont_n3km8"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3va3b"]
 size = Vector2(585, 1080)
@@ -114,6 +118,19 @@ visible = false
 position = Vector2(959.5, 30)
 scale = Vector2(1.004, 1)
 texture = ExtResource("6_miqox")
+
+[node name="TankFullLabel" type="Label" parent="Tank"]
+visible = false
+offset_left = 1453.0
+offset_top = 390.0
+offset_right = 1803.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_n3km8")
+theme_override_font_sizes/font_size = 100
+text = "Full"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(773.53, 928)

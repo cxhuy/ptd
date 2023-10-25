@@ -16,6 +16,7 @@ func _input(event):
 		add_child(ballInstance)
 		
 	elif Input.is_action_pressed("emptyTank") and $Tank.emptyTank == false:
+		$Tank/TankFullLabel.hide()
 		$Tank.emptyTank = true
 		$Tank/SendBottom.show()
 		$Tank/SendTop.show()
