@@ -7,7 +7,7 @@ var towerPlaced: bool = false
 
 # Tower unique variables
 @onready var anim := $PatternSprite
-var explosion := preload("res://scenes/tower/tower1/explosion.tscn")
+var poison := preload("res://scenes/tower/tower5/poison.tscn")
 
 
 func _ready():
@@ -40,8 +40,10 @@ func _on_base_body_entered(body):
 		var direction: Vector2 = (self.global_position - body.global_position).normalized()
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20
-		var explosionInstance := explosion.instantiate()
-		call_deferred("add_child", explosionInstance)			
+		
+		var poisonInstance := poison.instantiate()
+		call_deferred("add_child", poisonInstance)		
+			
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.3, 0.3), 0.07)	
 		await get_tree().create_timer(0.2).timeout
