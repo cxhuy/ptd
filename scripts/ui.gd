@@ -55,7 +55,7 @@ func updateTowerData(towerId: int, towerToDelete = null):
 	if towerToDelete == null:
 		$LeftUI/TowerData/Buttons/DeleteButton.disabled = true
 	else:
-		$LeftUI/TowerData/Buttons/DeleteButton.disabled = false		
+		$LeftUI/TowerData/Buttons/DeleteButton.disabled = false
 	self.towerToDelete = towerToDelete
 	
 
@@ -64,6 +64,13 @@ func updateRightUI():
 	$RightUI/RightUIContainer/Wave.text = "Wave " + str(Data.currentWave)
 	$RightUI/RightUIContainer/Health/HealthSprite.texture = \
 		load("res://sprites/ui/health/" + str(Data.currentHealth) + ".svg")
+
+
+func clearRewards():
+	for child in $Rewards/RewardsContainer/Unlocked.get_children():
+		child.queue_free()
+	for child in $Rewards/RewardsContainer/TowerRewards.get_children():
+		child.queue_free()
 
 
 func _on_upgrade_button_pressed():

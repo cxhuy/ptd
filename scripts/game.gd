@@ -35,6 +35,8 @@ func giveReward():
 	var unlockedTowers: Array[int] = []
 	var lockedTowers: Array[int] = []
 	
+	$UI.clearRewards()
+	
 	for towerId in Data.towerData:
 		if Data.towerData[towerId]["unlocked"]:
 			unlockedTowers.append(towerId)
