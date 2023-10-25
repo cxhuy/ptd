@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxdtvk33jecgr"]
 
-[ext_resource type="Script" path="res://scripts/tower/tower2/tower2.gd" id="1_eb0j2"]
+[ext_resource type="Script" path="res://scripts/tower/tower3/tower3.gd" id="1_bd5dt"]
 [ext_resource type="Texture2D" uid="uid://d4gsgqvh55mkl" path="res://sprites/towers/tower3/tower3_off.svg" id="2_l41il"]
 [ext_resource type="Texture2D" uid="uid://bgm2hhqkugakw" path="res://sprites/towers/tower3/tower3_on.svg" id="3_1c60c"]
 
@@ -34,7 +34,7 @@ corner_radius_bottom_right = 250
 corner_radius_bottom_left = 250
 
 [node name="Tower3" type="Node2D" groups=["Towers"]]
-script = ExtResource("1_eb0j2")
+script = ExtResource("1_bd5dt")
 
 [node name="PatternSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
