@@ -115,4 +115,59 @@ var towerData: Dictionary = {
 		
 		"unlocked": false
 	},
+	7: {
+		"name": "Fountain Tower",
+		"description": "Shoots out small balls that can trigger towers",
+		
+		"level": 1,
+		"quantity": 0,
+		
+		"stats": {},
+		
+		"unlocked": false
+	},
+	8: {
+		"name": "Teleport Tower",
+		"description": "Has a chance of teleporting enemies",
+		
+		"level": 1,
+		"quantity": 0,
+		
+		"stats": {},
+		
+		"unlocked": false
+	},
+	9: {
+		"name": "Ice Tower",
+		"description": "Slows down nearby enemies",
+		
+		"level": 1,
+		"quantity": 0,
+		
+		"stats": {},
+		
+		"unlocked": false
+	},
+	10: {
+		"name": "Shotgun Tower",
+		"description": "Shoots three powerful bullets",
+		
+		"level": 1,
+		"quantity": 0,
+		
+		"stats": {},
+		
+		"unlocked": false
+	},
+	11: {
+		"name": "Comet Tower",
+		"description": "Damages every enemy on the screen when the number hits zero",
+		
+		"level": 1,
+		"quantity": 0,
+		
+		"stats": {},
+		
+		"unlocked": false
+	},
 }
