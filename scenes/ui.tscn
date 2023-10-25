@@ -63,7 +63,6 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y46hn"]
-load_path = "res://.godot/imported/5.svg-1d2ff56b0499e63d83e0db2240199e1e.ctex"
 
 [sub_resource type="SystemFont" id="SystemFont_spiv3"]
 font_names = PackedStringArray("SF Pro Rounded")
@@ -124,6 +123,7 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_31l8p"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
+subpixel_positioning = 0
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")

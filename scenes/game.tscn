@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d23liiq5o3xd" path="res://scenes/flipper/rightFlipper.tscn" id="3_mdsrv"]
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
+[ext_resource type="Script" path="res://scripts/environment/tank.gd" id="4_p81kp"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
@@ -18,10 +19,6 @@ size = Vector2(100, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jarcq"]
 size = Vector2(1920, 50)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_57go1"]
-friction = 0.0
-bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg38t"]
 size = Vector2(580, 120)
@@ -85,8 +82,11 @@ polygon = PackedVector2Array(1335, 785, 1146.53, 903, 1146.53, 1080, 1335, 1080)
 [node name="Tank" type="RigidBody2D" parent="."]
 visible = false
 collision_mask = 4
-physics_material_override = SubResource("PhysicsMaterial_57go1")
+max_contacts_reported = 100
+contact_monitor = true
 freeze = true
+freeze_mode = 1
+script = ExtResource("4_p81kp")
 
 [node name="TankTop" type="CollisionShape2D" parent="Tank"]
 position = Vector2(1630, 336)
@@ -134,3 +134,5 @@ shape = SubResource("RectangleShape2D_3va3b")
 [node name="GameBottom" type="CollisionShape2D" parent="NoTowerArea"]
 position = Vector2(960, 916)
 shape = SubResource("RectangleShape2D_1scik")
+
+[connection signal="body_shape_entered" from="Tank" to="Tank" method="_on_body_shape_entered"]
