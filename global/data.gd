@@ -18,7 +18,10 @@ const rewards: Dictionary = {
 			"totalTowersReward": 20,
 			"totalTowersUnlocked": 2
 		},
-		9: {}
+		9: {
+			"totalTowersReward": 30,
+			"towerLimitIncrease": 1
+		}
 	},
 	2: {
 		3: {
@@ -41,7 +44,7 @@ var towerData: Dictionary = {
 		"description": "Causes an explosion that damages nearby enemies",
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 3,
 		
 		"stats": {
 			"damage": [10, 15, 20, 25, 30, 40, 55, 75, 100]
@@ -54,7 +57,7 @@ var towerData: Dictionary = {
 		"description": "Shoots a chain of lightning that damages multiple enemies",	
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 0,
 		
 		"stats": {
 			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
@@ -68,7 +71,7 @@ var towerData: Dictionary = {
 		"description": "Shoots a beam of light",
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 0,
 		
 		"stats": {},
 		
@@ -79,7 +82,7 @@ var towerData: Dictionary = {
 		"description": "Fires a bullet that becomes stronger as it travels (Max 2X)",
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 0,
 		
 		"stats": {},
 		
@@ -90,7 +93,7 @@ var towerData: Dictionary = {
 		"description": "Poisons nearby enemies",
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 0,
 		
 		"stats": {},
 		
@@ -101,7 +104,7 @@ var towerData: Dictionary = {
 		"description": "Adds a comet to its orbit (Max 6 stacks)",
 		
 		"level": 1,
-		"quantity": 1000,
+		"quantity": 0,
 		
 		"stats": {},
 		

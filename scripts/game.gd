@@ -49,6 +49,9 @@ func giveReward():
 			Data.towerData[towerUnlocked]["unlocked"] = true
 			$UI.updateTowerData(towerUnlocked)
 			
+	if Data.rewards[Data.currentStage][Data.currentWave].has("towerLimitIncrease"):
+		Data.towerLimit += Data.rewards[Data.currentStage][Data.currentWave]["towerLimitIncrease"]
+			
 	var towerRewardLeft: int = Data.rewards[Data.currentStage][Data.currentWave]["totalTowersReward"]
 	var unlockedTowersSize: int = unlockedTowers.size()
 	for i in range(unlockedTowersSize):
