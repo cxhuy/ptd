@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=20 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bhfj71qo8alo3" path="res://scenes/flipper/leftFlipper.tscn" id="3_mqu62"]
 [ext_resource type="Script" path="res://scripts/environment/walls.gd" id="3_pflrw"]
 [ext_resource type="Script" path="res://scripts/environment/tank.gd" id="4_p81kp"]
+[ext_resource type="Texture2D" uid="uid://0xchmf71wh5r" path="res://sprites/environment/tank/send_bottom.svg" id="5_ltt6r"]
+[ext_resource type="Texture2D" uid="uid://c4f1il05bj7m3" path="res://sprites/environment/tank/send_top.svg" id="6_miqox"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6bn6"]
@@ -46,7 +48,6 @@ position = Vector2(960, 540)
 texture = ExtResource("2_0ejdm")
 
 [node name="Walls" type="RigidBody2D" parent="."]
-visible = false
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_u6bn6")
 max_contacts_reported = 1
@@ -68,7 +69,6 @@ position = Vector2(960, -25)
 shape = SubResource("RectangleShape2D_jarcq")
 
 [node name="Slopes" type="RigidBody2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 4
 freeze = true
@@ -80,7 +80,6 @@ polygon = PackedVector2Array(585, 785, 773.53, 903, 773.53, 1080, 585, 1080)
 polygon = PackedVector2Array(1335, 785, 1146.53, 903, 1146.53, 1080, 1335, 1080)
 
 [node name="Tank" type="RigidBody2D" parent="."]
-visible = false
 collision_mask = 4
 max_contacts_reported = 1
 contact_monitor = true
@@ -103,6 +102,18 @@ shape = SubResource("RectangleShape2D_nqqdi")
 [node name="TankLeft" type="CollisionShape2D" parent="Tank"]
 position = Vector2(1398, 564)
 shape = SubResource("RectangleShape2D_sqpt5")
+
+[node name="SendBottom" type="Sprite2D" parent="Tank"]
+visible = false
+position = Vector2(1628, 704)
+scale = Vector2(0.965714, 1)
+texture = ExtResource("5_ltt6r")
+
+[node name="SendTop" type="Sprite2D" parent="Tank"]
+visible = false
+position = Vector2(959.5, 30)
+scale = Vector2(1.004, 1)
+texture = ExtResource("6_miqox")
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
 position = Vector2(773.53, 928)

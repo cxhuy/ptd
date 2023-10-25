@@ -14,6 +14,15 @@ func _input(event):
 		var ballInstance = ball.instantiate()
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
+		
+	elif Input.is_action_pressed("emptyTank"):
+		$Tank.emptyTank = true
+		$Tank/SendBottom.show()
+		$Tank/SendTop.show()
+		await get_tree().create_timer(2).timeout
+		$Tank.emptyTank = false
+		$Tank/SendBottom.hide()
+		$Tank/SendTop.hide()		
 
 
 func loadStage(stageId: int):
