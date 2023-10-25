@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=27 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -118,6 +118,12 @@ corner_radius_bottom_left = 10
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 500
 subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_31l8p"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c08v8"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -335,5 +341,53 @@ text = "1 / 9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Rewards" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RewardsContainer" type="VFlowContainer" parent="Rewards"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="UnlockedLabel" type="Label" parent="Rewards/RewardsContainer"]
+custom_minimum_size = Vector2(1920, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
+theme_override_fonts/font = SubResource("SystemFont_31l8p")
+theme_override_font_sizes/font_size = 100
+text = "Unlocked"
+horizontal_alignment = 1
+
+[node name="Unlocked" type="HFlowContainer" parent="Rewards/RewardsContainer"]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="Gap" type="Panel" parent="Rewards/RewardsContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c08v8")
+
+[node name="TowerRewardsLabel" type="Label" parent="Rewards/RewardsContainer"]
+custom_minimum_size = Vector2(1920, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
+theme_override_fonts/font = SubResource("SystemFont_31l8p")
+theme_override_font_sizes/font_size = 100
+text = "Rewards"
+horizontal_alignment = 1
+
+[node name="TowerRewards" type="HFlowContainer" parent="Rewards/RewardsContainer"]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+alignment = 1
+
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="gui_input" from="Rewards" to="." method="_on_rewards_gui_input"]

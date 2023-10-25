@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh55tbglicb0u"]
+
+[ext_resource type="Texture2D" uid="uid://cbys1ljvp4xcs" path="res://sprites/towers/tower2/tower2_on.svg" id="1_pixdn"]
+
+[sub_resource type="SystemFont" id="SystemFont_hdely"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
+
+[node name="RewardItem" type="Panel"]
+custom_minimum_size = Vector2(150, 150)
+
+[node name="RewardSprite" type="Sprite2D" parent="."]
+position = Vector2(75, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_pixdn")
+
+[node name="RewardQuantity" type="Label" parent="."]
+custom_minimum_size = Vector2(145, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = SubResource("SystemFont_hdely")
+theme_override_font_sizes/font_size = 25
+text = "x99"
+horizontal_alignment = 2
+vertical_alignment = 2
