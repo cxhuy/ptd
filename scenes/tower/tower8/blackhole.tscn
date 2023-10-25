@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ijeebgs3gqvy"]
+[gd_scene load_steps=3 format=3 uid="uid://ijeebgs3gqvy"]
 
 [ext_resource type="Texture2D" uid="uid://dpkbkb107qpfj" path="res://sprites/towers/tower8/blackhole.png" id="1_fk10n"]
+[ext_resource type="Script" path="res://scripts/tower/tower8/blackhole.gd" id="2_admq4"]
 
 [node name="Blackhole" type="Sprite2D"]
 texture = ExtResource("1_fk10n")
+script = ExtResource("2_admq4")
