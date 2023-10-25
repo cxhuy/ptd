@@ -3,7 +3,7 @@ extends CharacterBody2D
 var ball := preload("res://scenes/tankBall.tscn")
 var enemyId: int = 0
 var enemy: Dictionary = {
-	0: {"speed": 40, "health": 10},
+	0: {"speed": 400, "health": 10},
 }
 var speed: int
 var health: int
@@ -30,7 +30,9 @@ func damage(damageAmount: int):
 	self.health -= damageAmount
 	if self.health <= 0:
 		var randomNumber = randf_range(0, 1)
-		if randomNumber <= 0.05 and get_tree().get_nodes_in_group("TankBalls").size() < Data.tankLimit: 
+		if randomNumber <= 0.05 and \
+		get_tree().get_nodes_in_group("TankBalls").size() < Data.tankLimit and \
+		!get_node("../../../..//Tank/TankCooldownLabel").inCooldown: 
 			if get_tree().get_nodes_in_group("TankBalls").size() == Data.tankLimit - 1:
 				get_node("../../../..//Tank/TankFullLabel").show()
 			var ballInstance = ball.instantiate()

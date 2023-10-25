@@ -15,12 +15,14 @@ func _input(event):
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
 		
-	elif Input.is_action_pressed("emptyTank") and $Tank.emptyTank == false:
+	elif Input.is_action_pressed("emptyTank") and $Tank.emptyTank == false and \
+	!$Tank/TankCooldownLabel.inCooldown:
 		$Tank/TankFullLabel.hide()
 		$Tank.emptyTank = true
 		$Tank/SendBottom.show()
 		$Tank/SendTop.show()
 		await get_tree().create_timer(2).timeout
+		$Tank/TankCooldownLabel.startCooldown()
 		$Tank.emptyTank = false
 		$Tank/SendBottom.hide()
 		$Tank/SendTop.hide()		
@@ -158,7 +160,7 @@ func startWave(wave):
 	var wavePattern: Array[Array]
 	match wave:
 		1: 
-			wavePattern = [[0, 0, 1]]
+			wavePattern = [[0, 500, 0.1]]
 		2: 
 			wavePattern = [[0, 0, 1]]
 	spawnEnemies(wavePattern)
