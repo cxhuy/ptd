@@ -41,6 +41,8 @@ func addComet():
 	if cometCount < 6:
 		cometCount += 1
 		
+	$PatternSprite.texture = load("res://sprites/towers/tower6/tower6_on_" + str(cometCount) + ".svg")
+		
 	for comet in $Comets.get_children():
 		comet.queue_free()
 	
