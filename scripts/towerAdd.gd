@@ -6,8 +6,7 @@ var towerId
 
 func _ready():
 	$TowerSprite.texture = \
-		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.png")
-	$TowerQuantity.text = "x" + str(Data.towerData[towerId]["quantity"])
+		load("res://sprites/towers/locked.svg")
 
 
 func _on_gui_input(event):

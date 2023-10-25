@@ -3,8 +3,11 @@ extends Node2D
 var currentStage: int = 1
 var currentWave: int = 1
 var currentHealth: int = 5
-
 var towerLimit: int = 3
+
+# Tower unlock state
+var towerUnlocked: Array[bool] = \
+	[true, false, false, false, false, false, false, false, false, false, false, false]
 
 # Number of towers required for upgrading level
 const upgradeRequired: Array[int] = [0, 2, 4, 10, 20, 50, 100, 200, 400]
