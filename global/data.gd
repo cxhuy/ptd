@@ -126,13 +126,14 @@ var towerData: Dictionary = {
 	},
 	7: {
 		"name": "Teleport Tower",
-		"description": "Has a chance of teleporting enemies",
+		"description": "Has a chance of teleporting enemies behind",
 		
 		"level": 1,
 		"quantity": 0,
 		
 		"stats": {
 			"distance": [0, 300, 325, 350, 375, 400, 450, 500, 550, 600],
+			"probability": [0, 35, 40, 45, 50, 55, 60, 65, 70, 75],
 		},
 		
 		"unlocked": false
