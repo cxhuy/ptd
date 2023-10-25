@@ -1,7 +1,6 @@
 extends Area2D
 
 var speed: int = 2000
-var damage: int = 10
 
 
 func _ready():
@@ -17,3 +16,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	body.damage(Data.towerData[4]["stats"]["damage"][Data.towerData[4]["level"]])
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	self.queue_free()
