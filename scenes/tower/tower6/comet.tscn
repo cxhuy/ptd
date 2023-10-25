@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu7jvw7lca8yf"]
+[gd_scene load_steps=4 format=3 uid="uid://cu7jvw7lca8yf"]
 
+[ext_resource type="Script" path="res://scripts/tower/tower6/comet.gd" id="1_5iuvp"]
 [ext_resource type="Texture2D" uid="uid://jk7h7qg3onkj" path="res://sprites/towers/tower6/tower6_comet.png" id="1_p1q3g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gn3eo"]
@@ -9,9 +10,12 @@ radius = 50.0
 scale = Vector2(0.35, 0.35)
 collision_layer = 128
 collision_mask = 64
+script = ExtResource("1_5iuvp")
 
 [node name="CometSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_p1q3g")
 
 [node name="CometCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gn3eo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
