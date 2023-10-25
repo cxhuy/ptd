@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://0bwnm12tplio"]
+
+[node name="Beam" type="Area2D"]
+
+[node name="BeamLine" type="Line2D" parent="."]
