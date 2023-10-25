@@ -5,10 +5,6 @@ var currentWave: int = 1
 var currentHealth: int = 5
 var towerLimit: int = 3
 
-# Tower unlock state
-var towerUnlocked: Array[bool] = \
-	[true, false, false, false, false, false, false, false, false, false, false, false]
-
 # Number of towers required for upgrading level
 const upgradeRequired: Array[int] = [0, 2, 4, 10, 20, 50, 100, 200, 400]
 
@@ -24,7 +20,9 @@ var towerData: Dictionary = {
 		
 		"stats": {
 			"damage": [10, 15, 20, 25, 30, 40, 55, 75, 100]
-		}
+		},
+		
+		"unlocked": true
 	},
 	2: {
 		"name": "Lightning Tower",
@@ -36,7 +34,9 @@ var towerData: Dictionary = {
 		"stats": {
 			"damage": [10, 12, 15, 18, 22, 27, 33, 40, 50],
 			"targetEnemies": [3, 3, 4, 4, 5, 6, 7, 8, 10],
-		}
+		},
+		
+		"unlocked": false
 	},
 	3: {
 		"name": "Light Tower",
@@ -45,7 +45,9 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 1000,
 		
-		"stats": {}
+		"stats": {},
+		
+		"unlocked": false
 	},
 	4: {
 		"name": "Sniper Tower",
@@ -54,7 +56,9 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 1000,
 		
-		"stats": {}
+		"stats": {},
+		
+		"unlocked": false
 	},
 	5: {
 		"name": "Poison Tower",
@@ -63,7 +67,9 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 1000,
 		
-		"stats": {}
+		"stats": {},
+		
+		"unlocked": false
 	},
 	6: {
 		"name": "Comet Tower",
@@ -72,6 +78,8 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 1000,
 		
-		"stats": {}
+		"stats": {},
+		
+		"unlocked": false
 	},
 }

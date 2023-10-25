@@ -20,10 +20,10 @@ func _ready():
 
 func updateTowerData(towerId: int, towerToDelete = null):
 	currentTowerId = towerId
-	if Data.towerUnlocked[towerId - 1]:
+	var towerData: Dictionary =  Data.towerData[towerId]
+	if towerData["unlocked"]:
 		$LeftUI/Inventory.get_child(currentTowerId).get_node("TowerSprite").texture = \
 			load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.png")
-	var towerData: Dictionary =  Data.towerData[towerId]
 	$LeftUI/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
 	
 	$LeftUI/TowerData/TowerName.text = towerData["name"]
