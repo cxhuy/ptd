@@ -36,7 +36,7 @@ func _process(delta):
 
 
 func _on_base_body_entered(body):
-	if body.is_in_group("Balls"):
+	if body.is_in_group("Balls") or body.is_in_group("TankBalls"):
 		var direction: Vector2 = (self.global_position - body.global_position).normalized()
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20

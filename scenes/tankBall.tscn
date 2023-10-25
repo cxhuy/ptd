@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wdrdb"]
 radius = 12.5
 
-[node name="TankBall" type="RigidBody2D"]
+[node name="TankBall" type="RigidBody2D" groups=["TankBalls"]]
 collision_layer = 4
 collision_mask = 59
 gravity_scale = 2.0
