@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckan5kbk41p87"]
+[gd_scene load_steps=4 format=3 uid="uid://ckan5kbk41p87"]
 
 [ext_resource type="Texture2D" uid="uid://fepafjgt7r7q" path="res://sprites/towers/tower5/tower5_poison.png" id="1_4cxed"]
+[ext_resource type="Script" path="res://scripts/tower/tower5/poison.gd" id="1_tml2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_156nr"]
 radius = 200.0
 
 [node name="Poison" type="Area2D"]
+script = ExtResource("1_tml2u")
 
 [node name="PoisonSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_4cxed")
