@@ -1,7 +1,7 @@
 extends Node2D
 
 var switchDuration: int = 0
-var towerId: int = 1
+var towerId: int = 5
 var towerPlacementAllowed: bool = false
 var towerPlaced: bool = false
 
