@@ -16,7 +16,7 @@ func _on_gui_input(event):
 		if event is InputEventMouseButton:
 			towerInstance = tower.instantiate()
 			
-		if event is InputEventMouseButton and event.button_mask == 1:
+		if event is InputEventMouseButton and event.button_mask == 1 and Data.towerData[towerId]["quantity"] > 0:
 			get_node("../../../TowerLimit").show()
 			get_node("../../../TowerLimit").text = \
 				str(get_tree().get_nodes_in_group("Towers").size() + 1) + " / " + str(Data.towerLimit)	
