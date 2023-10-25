@@ -84,7 +84,7 @@ func giveReward():
 		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
 		
 	if Data.rewards[Data.currentStage][Data.currentWave].has("tankLimitIncrease"):
-		# TODO: increase tank limit
+		Data.tankLimit += Data.rewards[Data.currentStage][Data.currentWave]["tankLimitIncrease"]
 		
 		var rewardItemInstance = rewardItem.instantiate()
 		rewardItemInstance.get_node("RewardSprite").texture = \
