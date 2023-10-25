@@ -25,3 +25,5 @@ offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_k3jrt")
+
+[node name="Comets" type="Node2D" parent="."]

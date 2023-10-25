@@ -7,6 +7,7 @@ var towerPlaced: bool = false
 
 # Tower unique variables
 var comet := preload("res://scenes/tower/tower6/comet.tscn")
+var cometCount: int = 0
 
 
 func _ready():
@@ -17,9 +18,7 @@ func _ready():
 	var showOnUIButton = preload("res://scenes/tower/show_on_ui_button.tscn")
 	add_child(showOnUIButton.instantiate())
 	
-	var cometInstance := comet.instantiate()
-	cometInstance.position = Vector2(0, 200)
-	call_deferred("add_child", cometInstance)	
+	addComet()
 
 
 func _process(delta):		
@@ -38,11 +37,30 @@ func _physics_process(delta):
 		$PatternSprite.global_rotation_degrees = 0
 
 
+func addComet():
+	if cometCount < 6:
+		cometCount += 1
+		
+	for comet in $Comets.get_children():
+		comet.queue_free()
+	
+	var degreeDiff: int = 360 / cometCount
+	for i in range(cometCount):
+		var cometInstance := comet.instantiate()
+		cometInstance.position = \
+		Vector2( \
+			200 * cos(deg_to_rad(degreeDiff * (i - 1))), \
+			200 * sin(deg_to_rad(degreeDiff * (i - 1))))
+		$Comets.call_deferred("add_child", cometInstance)
+
+
 func _on_base_body_entered(body):
 	if body.is_in_group("Balls") or body.is_in_group("TankBalls"):
 		var direction: Vector2 = (self.global_position - body.global_position).normalized()
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20	
+			
+		addComet()	
 			
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)	
