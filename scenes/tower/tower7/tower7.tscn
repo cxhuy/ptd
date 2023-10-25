@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnmc344vl2q5r"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower7/tower7.gd" id="1_8r7rs"]
+[ext_resource type="Texture2D" uid="uid://ywfp1uxd1meq" path="res://sprites/towers/tower7/tower7_off.svg" id="1_yp1aj"]
+[ext_resource type="Texture2D" uid="uid://pgtjdk1s71kp" path="res://sprites/towers/tower7/tower7_on.svg" id="2_bjamy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvnpl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yp1aj")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bjamy")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640fx"]
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[node name="Tower7" type="Node2D" groups=["Towers"]]
+script = ExtResource("1_8r7rs")
+
+[node name="PatternSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_lvnpl")
+animation = &"on"
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_640fx")
