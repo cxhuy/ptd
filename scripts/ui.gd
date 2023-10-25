@@ -77,3 +77,8 @@ func _on_delete_button_pressed():
 	towerToDelete.queue_free()
 	towerToDelete = null
 	updateTowerData(currentTowerId)	
+
+
+func _on_rewards_gui_input(event):
+	if event is InputEventMouseButton and event.button_mask == 0:
+		$Rewards.hide()

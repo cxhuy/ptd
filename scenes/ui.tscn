@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=26 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -122,8 +122,6 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_31l8p"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c08v8"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -367,10 +365,9 @@ layout_mode = 2
 theme_override_constants/h_separation = 20
 alignment = 1
 
-[node name="Gap" type="Panel" parent="Rewards/RewardsContainer"]
+[node name="Gap" type="Container" parent="Rewards/RewardsContainer"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_c08v8")
 
 [node name="TowerRewardsLabel" type="Label" parent="Rewards/RewardsContainer"]
 custom_minimum_size = Vector2(1920, 150)
