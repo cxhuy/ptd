@@ -2,6 +2,7 @@ extends Node2D
 
 var ball := preload("res://scenes/ball.tscn")
 var enemy := preload("res://scenes/enemy/enemy.tscn")
+var rewardItem := preload("res://scenes/rewardItem.tscn")
 var enemySpawnFinish: bool = false
 var inGame: bool = false
 var waveStartButton
@@ -36,6 +37,7 @@ func giveReward():
 	var lockedTowers: Array[int] = []
 	
 	$UI.clearRewards()
+	get_node("UI/Rewards").show()
 	
 	for towerId in Data.towerData:
 		if Data.towerData[towerId]["unlocked"]:
@@ -57,6 +59,7 @@ func giveReward():
 	var towerRewardLeft: int = Data.rewards[Data.currentStage][Data.currentWave]["totalTowersReward"]
 	var unlockedTowersSize: int = unlockedTowers.size()
 	for i in range(unlockedTowersSize):
+		var rewardItemInstance = rewardItem.instantiate()
 		if i != unlockedTowersSize - 1:	
 			var pickRandomIndex: int = randi_range(0, unlockedTowers.size() - 1)
 			var towerRewarded: int = unlockedTowers.pop_at(pickRandomIndex)
@@ -64,9 +67,18 @@ func giveReward():
 			Data.towerData[towerRewarded]["quantity"] += rewardAmount
 			$UI.updateTowerData(towerRewarded)
 			towerRewardLeft -= rewardAmount
+			
+			rewardItemInstance.get_node("RewardSprite").texture = \
+				load("res://sprites/towers/tower" + str(towerRewarded) + "/tower" + str(towerRewarded) + "_on.svg")
+			rewardItemInstance.get_node("RewardQuantity").text = "x " + str(rewardAmount)
 		else:
 			Data.towerData[unlockedTowers[0]]["quantity"] += towerRewardLeft
 			$UI.updateTowerData(unlockedTowers[0])
+			
+			rewardItemInstance.get_node("RewardSprite").texture = \
+				load("res://sprites/towers/tower" + str(unlockedTowers[0]) + "/tower" + str(unlockedTowers[0]) + "_on.svg")
+			rewardItemInstance.get_node("RewardQuantity").text = "x " + str(towerRewardLeft)
+		get_node("UI/Rewards/RewardsContainer/TowerRewards").add_child(rewardItemInstance)
 	
 
 func _process(delta):
