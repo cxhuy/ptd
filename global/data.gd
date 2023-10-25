@@ -8,6 +8,31 @@ var towerLimit: int = 3
 # Number of towers required for upgrading level
 const upgradeRequired: Array[int] = [0, 2, 4, 10, 20, 50, 100, 200, 400]
 
+const rewards: Dictionary = {
+	1: {
+		3: {
+			"totalTowersReward": 10,
+			"totalTowersUnlocked": 1
+		},
+		6: {
+			"totalTowersReward": 20,
+			"totalTowersUnlocked": 2
+		},
+		9: {}
+	},
+	2: {
+		3: {
+			"totalTowersReward": 10,
+			"totalTowersUnlocked": 1
+		},
+		6: {
+			"totalTowersReward": 20,
+			"totalTowersUnlocked": 2
+		},
+		9: {}
+	},
+}
+
 
 # Tower Data
 var towerData: Dictionary = {

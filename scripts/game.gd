@@ -31,9 +31,15 @@ func _ready():
 	waveStartButton.connect("pressed", _on_wave_start_button_pressed)
 
 
+func giveReward():
+	print(Data.rewards[Data.currentStage][Data.currentWave])
+
+
 func _process(delta):
 	# If wave finished
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
+		if Data.currentWave % 3 == 0:
+			giveReward()
 		enemySpawnFinish = false
 		inGame = false
 		get_tree().call_group("Balls", "queue_free")
