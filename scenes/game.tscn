@@ -49,6 +49,7 @@ position = Vector2(960, 540)
 texture = ExtResource("2_0ejdm")
 
 [node name="Walls" type="RigidBody2D" parent="."]
+visible = false
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_u6bn6")
 max_contacts_reported = 1
@@ -65,11 +66,12 @@ shape = SubResource("RectangleShape2D_pyenq")
 position = Vector2(1385, 540)
 shape = SubResource("RectangleShape2D_iih53")
 
-[node name="TopWall(Test)" type="CollisionShape2D" parent="Walls"]
-position = Vector2(960, 25)
+[node name="TopWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(960, -25)
 shape = SubResource("RectangleShape2D_jarcq")
 
 [node name="Slopes" type="RigidBody2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 4
 freeze = true
@@ -81,6 +83,7 @@ polygon = PackedVector2Array(585, 785, 773.53, 903, 773.53, 1080, 585, 1080)
 polygon = PackedVector2Array(1335, 785, 1146.53, 903, 1146.53, 1080, 1335, 1080)
 
 [node name="Tank" type="RigidBody2D" parent="."]
+visible = false
 collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_57go1")
 freeze = true
