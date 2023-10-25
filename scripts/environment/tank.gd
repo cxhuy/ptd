@@ -14,4 +14,5 @@ func send(body: RigidBody2D, position):
 	body.physics_material_override = newPhysicsMaterial
 	body.sent = true
 	body.apply_impulse(body.velocity)
+	body.get_node("Duration").start(10)
 	body.global_position = position
