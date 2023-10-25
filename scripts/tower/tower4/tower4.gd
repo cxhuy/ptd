@@ -7,7 +7,7 @@ var towerPlaced: bool = false
 
 # Tower unique variables
 @onready var anim := $PatternSprite
-var beam := preload("res://scenes/tower/tower3/beam.tscn")
+var bullet := preload("res://scenes/tower/tower4/bullet.tscn")
 
 var enemiesInRange
 var isEnemyInRange: bool = false
@@ -55,17 +55,9 @@ func _on_base_body_entered(body):
 			var targetEnemy = getEnemiesSortedByProgress(enemiesInRange)
 			if targetEnemy != null:
 				var targetEnemyPos: Vector2 = targetEnemy.global_position
-				var beamInstance := beam.instantiate()
-				var beamCollision: CollisionShape2D = CollisionShape2D.new()
-				var beamSegment: SegmentShape2D = SegmentShape2D.new()
-				beamSegment.a = Vector2(0, 0)
-				beamSegment.b = targetEnemyPos - self.global_position
-				beamCollision.shape = beamSegment
-				beamInstance.call_deferred("add_child", beamCollision)
-				
-				beamInstance.get_node("BeamLine").add_point(Vector2(0, 0))
-				beamInstance.get_node("BeamLine").add_point(targetEnemyPos - self.global_position)
-				call_deferred("add_child", beamInstance)
+				var bulletInstance := bullet.instantiate()
+				self.look_at(targetEnemyPos)		
+				call_deferred("add_child", bulletInstance)
 			
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(anim, "scale", Vector2(0.3, 0.3), 0.07)	
