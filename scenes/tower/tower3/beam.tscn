@@ -1,5 +1,11 @@
-[gd_scene format=3 uid="uid://0bwnm12tplio"]
+[gd_scene load_steps=2 format=3 uid="uid://0bwnm12tplio"]
+
+[sub_resource type="Curve" id="Curve_yl8df"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.298832), -2.25703, 0.0, 0, 0]
+point_count = 2
 
 [node name="Beam" type="Area2D"]
 
 [node name="BeamLine" type="Line2D" parent="."]
+width_curve = SubResource("Curve_yl8df")
+default_color = Color(1, 1, 0, 1)
