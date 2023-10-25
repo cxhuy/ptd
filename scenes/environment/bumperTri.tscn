@@ -30,5 +30,12 @@ script = ExtResource("1_oye4p")
 [node name="BumperCollision" type="CollisionPolygon2D" parent="Bumper"]
 polygon = PackedVector2Array(-56, 98, 56, -98, 56, -86, -46, 92)
 
+[node name="TowerCollision" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="TowerCollisionBody" type="CollisionPolygon2D" parent="TowerCollision"]
+polygon = PackedVector2Array(56, -97, 56, 32, -56, 98)
+
 [node name="BumperTriSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_e4vip")
