@@ -82,7 +82,7 @@ polygon = PackedVector2Array(1335, 785, 1146.53, 903, 1146.53, 1080, 1335, 1080)
 [node name="Tank" type="RigidBody2D" parent="."]
 visible = false
 collision_mask = 4
-max_contacts_reported = 100
+max_contacts_reported = 1
 contact_monitor = true
 freeze = true
 freeze_mode = 1
