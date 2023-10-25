@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://b56fpbb30r4c1"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower4/tower4.gd" id="1_ggak2"]
+[ext_resource type="Texture2D" uid="uid://10ycm4df5kuw" path="res://sprites/towers/tower4/tower4_off.svg" id="1_lntq8"]
+[ext_resource type="Texture2D" uid="uid://ljkxykj24kjx" path="res://sprites/towers/tower4/tower4_on.svg" id="2_xehrg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7i66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lntq8")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xehrg")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0whvp"]
+radius = 500.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_db3me"]
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[node name="Tower4" type="Node2D" groups=["Towers"]]
+script = ExtResource("1_ggak2")
+
+[node name="PatternSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_i7i66")
+animation = &"off"
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="AttackRangeCollision" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_0whvp")
+
+[node name="AttackRangeVisual" type="Panel" parent="AttackRange"]
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_db3me")
