@@ -105,3 +105,10 @@ func _on_remove_button_pressed():
 func _on_rewards_gui_input(event):
 	if event is InputEventMouseButton and event.button_mask == 0:
 		$Rewards.hide()
+
+
+func _on_game_over_gui_input(event):
+	if event is InputEventMouseButton and event.button_mask == 0:
+		ResetData.resetData()
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		get_tree().reload_current_scene()

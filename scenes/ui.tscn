@@ -427,3 +427,4 @@ vertical_alignment = 2
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/RemoveButton" to="." method="_on_remove_button_pressed"]
 [connection signal="gui_input" from="Rewards" to="." method="_on_rewards_gui_input"]
+[connection signal="gui_input" from="GameOver" to="." method="_on_game_over_gui_input"]

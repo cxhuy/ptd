@@ -20,7 +20,7 @@ func _ready():
 	ballDamage = Data.ballDamage
 	tankLimit = Data.tankLimit
 	
-	towerData = Data.towerData
+	towerData = Data.towerData.duplicate(true)
 
 
 func resetData():
