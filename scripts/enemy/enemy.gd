@@ -14,7 +14,7 @@ func _ready():
 	self.speed = Data.enemyData[enemyType][enemyId]["speed"]
 	self.health = Data.enemyData[enemyType][enemyId]["health"]
 	$EnemySprite.texture = \
-		load("res://sprites/enemy/Enemy_" + str(enemyType) + "_" + str(enemyId) + ".svg")
+		load("res://sprites/enemy/Enemy_" + str(enemyType) + "_" + str(enemyId) + ".png")
 
 
 func _process(delta):	
