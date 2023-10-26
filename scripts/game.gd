@@ -160,21 +160,27 @@ func startWave(wave):
 	var wavePattern: Array[Array]
 	match wave:
 		1: 
-			wavePattern = [[0, 500, 0.1]]
+			wavePattern = [[0, 0, 1]]
 		2: 
+			wavePattern = [[0, 0, 1]]
+		3: 
+			wavePattern = [[0, 0, 1]]
+		4: 
 			wavePattern = [[0, 0, 1]]
 	spawnEnemies(wavePattern)
 
 
 func spawnEnemies(wavePattern):
 	for pattern in wavePattern:
-		var enemyId: int = pattern[0]
-		var enemyCount: int = pattern[1]
-		var spawnDelay: float = pattern[2]
+		var enemyType: int = pattern[0]
+		var enemyId: int = pattern[1]
+		var enemyCount: int = pattern[2]
+		var spawnDelay: float = pattern[3]
 		for i in range(enemyCount):
 			var enemyPath: PathFollow2D = PathFollow2D.new()
 			enemyPath.set_loop(false)
 			var enemyInstance := enemy.instantiate()
+			enemyInstance.enemyType = enemyType
 			enemyInstance.enemyId = enemyId
 			enemyPath.add_child(enemyInstance)
 			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
