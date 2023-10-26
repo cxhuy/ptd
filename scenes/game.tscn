@@ -188,7 +188,7 @@ shape = SubResource("RectangleShape2D_3va3b")
 position = Vector2(960, 916)
 shape = SubResource("RectangleShape2D_1scik")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BallAddSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_34k13")
 
 [connection signal="body_shape_entered" from="Tank" to="Tank" method="_on_body_shape_entered"]

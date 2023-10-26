@@ -27,6 +27,7 @@ func _process(delta):
 			get_node("../../../../UI").updateRightUI()
 			if Data.currentHealth == 0:
 				get_node("../../../../UI/GameOver").show()
+				get_node("../../../../UI/GameOver/GameOverSound").play()
 		self.queue_free()
 
 

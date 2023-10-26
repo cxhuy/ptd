@@ -89,6 +89,7 @@ func clearRewards():
 
 
 func _on_upgrade_button_pressed():
+	$LeftUI/TowerData/UpgradeSound.play()
 	var towerData: Dictionary =  Data.towerData[currentTowerId]
 	towerData["quantity"] -= Data.upgradeRequired[towerData["level"]]
 	towerData["level"] += 1

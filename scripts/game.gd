@@ -53,6 +53,7 @@ func giveReward():
 	
 	$UI.clearRewards()
 	get_node("UI/Rewards").show()
+	get_node("UI/Rewards/RewardsSound").play()
 	
 	for towerId in Data.towerData:
 		if Data.towerData[towerId]["unlocked"]:
@@ -152,7 +153,7 @@ func _process(delta):
 		var ballInstance = ball.instantiate()
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
-		$AudioStreamPlayer2D.play()
+		$BallAddSound.play()
 
 
 func _on_wave_start_button_pressed():
@@ -161,7 +162,7 @@ func _on_wave_start_button_pressed():
 		var ballInstance := ball.instantiate()
 		ballInstance.set_global_position(Vector2(616, 583))
 		add_child(ballInstance)
-		$AudioStreamPlayer2D.play()
+		$BallAddSound.play()
 		inGame = true
 		waveStartButton.disabled = true
 
@@ -173,18 +174,18 @@ func startWave(wave):
 
 
 func spawnEnemies(wavePattern):
-#	for pattern in wavePattern:
-#		var enemyType: int = pattern[0]
-#		var enemyId: int = pattern[1]
-#		var enemyCount: int = pattern[2]
-#		var spawnDelay: float = pattern[3]
-#		for i in range(enemyCount):
-#			var enemyPath: PathFollow2D = PathFollow2D.new()
-#			enemyPath.set_loop(false)
-#			var enemyInstance := enemy.instantiate()
-#			enemyInstance.enemyType = enemyType
-#			enemyInstance.enemyId = enemyId
-#			enemyPath.add_child(enemyInstance)
-#			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
-#			await get_tree().create_timer(spawnDelay).timeout
+	for pattern in wavePattern:
+		var enemyType: int = pattern[0]
+		var enemyId: int = pattern[1]
+		var enemyCount: int = pattern[2]
+		var spawnDelay: float = pattern[3]
+		for i in range(enemyCount):
+			var enemyPath: PathFollow2D = PathFollow2D.new()
+			enemyPath.set_loop(false)
+			var enemyInstance := enemy.instantiate()
+			enemyInstance.enemyType = enemyType
+			enemyInstance.enemyId = enemyId
+			enemyPath.add_child(enemyInstance)
+			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
+			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true

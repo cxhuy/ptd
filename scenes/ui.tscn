@@ -1,8 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=30 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
 [ext_resource type="Texture2D" uid="uid://cb1e7vlfhcta8" path="res://sprites/ui/tank.svg" id="3_1643c"]
+[ext_resource type="AudioStream" uid="uid://bovb68n84ot6e" path="res://audio/upgrade.wav" id="3_fq1kj"]
+[ext_resource type="AudioStream" uid="uid://dtl0u6re321ri" path="res://audio/rewards.wav" id="5_na073"]
+[ext_resource type="AudioStream" uid="uid://bgqnw52up5jq7" path="res://audio/game_over.wav" id="6_u25hf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
@@ -266,6 +269,10 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2rjp5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
 text = "Remove"
 
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="LeftUI/TowerData"]
+stream = ExtResource("3_fq1kj")
+volume_db = -3.0
+
 [node name="BlockClick" type="Panel" parent="LeftUI"]
 visible = false
 layout_mode = 0
@@ -398,6 +405,10 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 alignment = 1
 
+[node name="RewardsSound" type="AudioStreamPlayer" parent="Rewards"]
+stream = ExtResource("5_na073")
+volume_db = -5.0
+
 [node name="GameOver" type="Panel" parent="."]
 visible = false
 offset_right = 1920.0
@@ -423,6 +434,10 @@ theme_override_font_sizes/font_size = 75
 text = "Click to try again"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="GameOver"]
+stream = ExtResource("6_u25hf")
+volume_db = -5.0
 
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/RemoveButton" to="." method="_on_remove_button_pressed"]
