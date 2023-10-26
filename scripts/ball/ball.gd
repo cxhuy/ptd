@@ -1,7 +1,20 @@
 extends RigidBody2D
 
 var ballSmall := preload("res://scenes/ballSmall.tscn")
+var initialBall: bool = false
 
+
+func _ready():
+	if !initialBall:
+		self.freeze = true
+		$BallSprite.hide()
+		$Delay.show()
+		for i in range(3):
+			$Delay.text = str(3 - i)
+			await get_tree().create_timer(1).timeout
+		self.freeze = false
+		$BallSprite.show()
+		$Delay.hide()
 
 #func _on_body_entered(body):
 #	shootBallSmall()

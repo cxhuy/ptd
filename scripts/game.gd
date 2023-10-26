@@ -166,6 +166,7 @@ func _on_wave_start_button_pressed():
 		startWave(Data.currentWave)
 		var ballInstance := ball.instantiate()
 		ballInstance.set_global_position(Vector2(616, 583))
+		ballInstance.initialBall = true
 		add_child(ballInstance)
 		$BallAddSound.play()
 		inGame = true
