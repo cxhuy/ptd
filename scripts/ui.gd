@@ -88,6 +88,7 @@ func _on_upgrade_button_pressed():
 
 
 func _on_delete_button_pressed():
+	Data.towerData[towerToDelete.towerId]["quantity"] += 1	
 	towerToDelete.queue_free()
 	towerToDelete = null
 	updateTowerData(currentTowerId)	
