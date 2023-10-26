@@ -19,7 +19,8 @@ const rewards: Dictionary = {
 		},
 		6: {
 			"totalTowersReward": 20,
-			"totalTowersUnlocked": 2
+			"totalTowersUnlocked": 2,
+			"towerLimitIncrease": 1
 		},
 		9: {
 			"totalTowersReward": 30,
@@ -30,12 +31,15 @@ const rewards: Dictionary = {
 	},
 	2: {
 		3: {
-			"totalTowersReward": 10,
-			"totalTowersUnlocked": 1
+			"totalTowersReward": 30,
+			"totalTowersUnlocked": 1,
+			"towerLimitIncrease": 1
 		},
 		6: {
-			"totalTowersReward": 20,
-			"totalTowersUnlocked": 2
+			"totalTowersReward": 40,
+			"totalTowersUnlocked": 1,
+			"towerLimitIncrease": 1,
+			"tankLimitIncrease": 1
 		},
 		9: {}
 	},
@@ -92,7 +96,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 20, 40, 60, 80, 110, 150, 200, 250, 300],
 		},
 		
 		"unlocked": false
@@ -105,7 +109,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 5, 10, 15, 15, 20, 25, 30, 40, 50],
 			"duration": [0, 3, 3, 3, 4, 4, 4, 5, 5, 6],
 		},
 		
@@ -178,34 +182,34 @@ var towerData: Dictionary = {
 
 var enemyData: Dictionary = {
 	1: {
-		1: {"speed": 100, "health": 100},
-		2: {"speed": 100, "health": 200},
-		3: {"speed": 100, "health": 300},
-		4: {"speed": 100, "health": 400},
-		5: {"speed": 100, "health": 500},
-		6: {"speed": 100, "health": 600},
-		7: {"speed": 100, "health": 700},
-		8: {"speed": 100, "health": 800},
+		1: {"speed": 40, "health": 100},
+		2: {"speed": 40, "health": 200},
+		3: {"speed": 40, "health": 400},
+		4: {"speed": 40, "health": 600},
+		5: {"speed": 40, "health": 1000},
+		6: {"speed": 40, "health": 1500},
+		7: {"speed": 40, "health": 2500},
+		8: {"speed": 40, "health": 4000},
 	},
 	2: {
-		1: {"speed": 400, "health": 30},
-		2: {"speed": 400, "health": 60},
-		3: {"speed": 400, "health": 90},
-		4: {"speed": 400, "health": 120},
-		5: {"speed": 400, "health": 150},
-		6: {"speed": 400, "health": 180},
-		7: {"speed": 400, "health": 210},
-		8: {"speed": 400, "health": 240},
+		1: {"speed": 350, "health": 5},
+		2: {"speed": 350, "health": 10},
+		3: {"speed": 350, "health": 20},
+		4: {"speed": 350, "health": 30},
+		5: {"speed": 350, "health": 50},
+		6: {"speed": 350, "health": 100},
+		7: {"speed": 350, "health": 150},
+		8: {"speed": 350, "health": 250},
 	},
 	3: {
-		1: {"speed": 200, "health": 50},
-		2: {"speed": 200, "health": 100},
-		3: {"speed": 200, "health": 150},
-		4: {"speed": 200, "health": 200},
-		5: {"speed": 200, "health": 250},
-		6: {"speed": 200, "health": 300},
-		7: {"speed": 200, "health": 350},
-		8: {"speed": 200, "health": 400},
+		1: {"speed": 80, "health": 10},
+		2: {"speed": 80, "health": 20},
+		3: {"speed": 80, "health": 40},
+		4: {"speed": 80, "health": 60},
+		5: {"speed": 80, "health": 100},
+		6: {"speed": 80, "health": 150},
+		7: {"speed": 80, "health": 250},
+		8: {"speed": 80, "health": 400},
 	}
 }
 
@@ -214,5 +218,23 @@ var waveData: Dictionary = {
 	1: {
 		1: [[3, 1, 5, 1]],
 		2: [[3, 1, 10, 1]],
+		3: [[3, 2, 10, 1]],
+		4: [[2, 1, 5, 1]],
+		5: [[2, 1, 10, 1]],
+		6: [[3, 1, 5, 1], [2, 1, 5, 1]],
+		7: [[3, 2, 5, 1], [2, 1, 10, 0.5], [3, 2, 5, 1]],
+		8: [[2, 2, 5, 0.5], [3, 2, 10, 0.5], [2, 2, 5, 0.5], [3, 2, 5, 0.5]],
+		9: [[3, 3, 10, 0.5], [2, 3, 10, 0.5], [3, 3, 10, 0.5], [2, 3, 10, 0.5]],
+	},
+	2: {
+		1: [[3, 3, 5, 1]],
+		2: [[3, 3, 10, 1]],
+		3: [[3, 4, 10, 1]],
+		4: [[2, 3, 5, 1]],
+		5: [[2, 3, 10, 1]],
+		6: [[3, 3, 5, 1], [2, 3, 5, 1]],
+		7: [[3, 4, 5, 1], [2, 3, 10, 0.5], [3, 4, 5, 1]],
+		8: [[2, 4, 5, 0.5], [3, 4, 10, 0.5], [2, 4, 5, 0.5], [3, 4, 5, 0.5]],
+		9: [[3, 5, 10, 0.5], [2, 5, 10, 0.5], [3, 5, 10, 0.5], [2, 5, 10, 0.5]],
 	}
 }
