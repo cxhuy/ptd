@@ -175,3 +175,36 @@ var towerData: Dictionary = {
 #		"unlocked": false
 #	},
 }
+
+var enemyData: Dictionary = {
+	1: {
+		1: {"speed": 100, "health": 100},
+		2: {"speed": 100, "health": 200},
+		3: {"speed": 100, "health": 300},
+		4: {"speed": 100, "health": 400},
+		5: {"speed": 100, "health": 500},
+		6: {"speed": 100, "health": 600},
+		7: {"speed": 100, "health": 700},
+		8: {"speed": 100, "health": 800},
+	},
+	2: {
+		1: {"speed": 400, "health": 30},
+		2: {"speed": 400, "health": 60},
+		3: {"speed": 400, "health": 90},
+		4: {"speed": 400, "health": 120},
+		5: {"speed": 400, "health": 150},
+		6: {"speed": 400, "health": 180},
+		7: {"speed": 400, "health": 210},
+		8: {"speed": 400, "health": 240},
+	},
+	3: {
+		1: {"speed": 200, "health": 50},
+		2: {"speed": 200, "health": 100},
+		3: {"speed": 200, "health": 150},
+		4: {"speed": 200, "health": 200},
+		5: {"speed": 200, "health": 250},
+		6: {"speed": 200, "health": 300},
+		7: {"speed": 200, "health": 350},
+		8: {"speed": 200, "health": 400},
+	}
+}
