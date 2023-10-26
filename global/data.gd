@@ -41,7 +41,7 @@ const rewards: Dictionary = {
 		},
 		9: {
 			"totalTowersReward": 50,
-			"totalTowersUnlocked": 2,
+			"totalTowersUnlocked": 1,
 		}
 	},
 	3: {
@@ -56,8 +56,34 @@ const rewards: Dictionary = {
 		},
 		9: {
 			"totalTowersReward": 70,
-			"totalTowersUnlocked": 2,
+			"totalTowersUnlocked": 1,
 		}
+	},
+	4: {
+		3: {
+			"totalTowersReward": 70,
+		},
+		6: {
+			"totalTowersReward": 80,
+			"towerLimitIncrease": 1,
+			"tankLimitIncrease": 1,
+		},
+		9: {
+			"totalTowersReward": 90,
+		}
+	},
+	5: {
+		3: {
+			"totalTowersReward": 90,
+		},
+		6: {
+			"totalTowersReward": 100,
+			"towerLimitIncrease": 1,
+			"tankLimitIncrease": 1,
+		},
+#		9: {
+#			"totalTowersReward": 90,
+#		}
 	},
 }
 
