@@ -2,6 +2,8 @@ extends Sprite2D
 
 
 func _ready():
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+		enemy.damage(Data.towerData[8]["stats"]["damage"][Data.towerData[8]["level"]])
 	self.global_position = get_parent().global_position
 	self.scale = Vector2(0, 0)
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC)
