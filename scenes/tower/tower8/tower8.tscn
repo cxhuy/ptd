@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsisyl24nlemy"]
+[gd_scene load_steps=5 format=3 uid="uid://bsisyl24nlemy"]
 
 [ext_resource type="Script" path="res://scripts/tower/tower8/tower8.gd" id="1_dwm6e"]
 [ext_resource type="Texture2D" uid="uid://ndy0oxna3554" path="res://sprites/towers/tower8/tower8_on.svg" id="2_harcf"]
@@ -9,6 +9,10 @@ corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
+
+[sub_resource type="SystemFont" id="SystemFont_g6kh5"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
 
 [node name="Tower8" type="Node2D" groups=["Towers"]]
 script = ExtResource("1_dwm6e")
@@ -21,3 +25,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5mr3a")
 [node name="PatternSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_harcf")
+
+[node name="HitsLeft" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+theme_override_fonts/font = SubResource("SystemFont_g6kh5")
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
