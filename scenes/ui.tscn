@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=32 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -132,6 +132,10 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_lkxje"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_1ipbq"]
+font_names = PackedStringArray("SF Pro Rounded")
 subpixel_positioning = 0
 
 [node name="UI" type="CanvasLayer"]
@@ -442,7 +446,6 @@ stream = ExtResource("6_u25hf")
 volume_db = -5.0
 
 [node name="GameClear" type="Panel" parent="."]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_default_cursor_shape = 2
@@ -466,6 +469,18 @@ theme_override_font_sizes/font_size = 75
 text = "You cleared the game!"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Credits" type="Label" parent="GameClear"]
+layout_mode = 0
+offset_top = 650.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_fonts/font = SubResource("SystemFont_1ipbq")
+theme_override_font_sizes/font_size = 75
+text = "Programmed by cxhuy
+Art by chwaaak"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameClearSound" type="AudioStreamPlayer" parent="GameClear"]
 stream = ExtResource("7_e8lkv")
