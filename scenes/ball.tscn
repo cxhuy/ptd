@@ -17,6 +17,7 @@ physics_material_override = SubResource("PhysicsMaterial_tb1tu")
 gravity_scale = 2.0
 max_contacts_reported = 1
 contact_monitor = true
+linear_damp = 1.0
 script = ExtResource("1_agjdh")
 
 [node name="BallCollision" type="CollisionShape2D" parent="."]
