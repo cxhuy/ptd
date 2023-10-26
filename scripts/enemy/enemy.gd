@@ -22,10 +22,11 @@ func _process(delta):
 	self.global_rotation_degrees = 0
 	
 	if get_parent().get_progress_ratio() == 1:
-		Data.currentHealth -= 1
-		get_node("../../../../UI").updateRightUI()
-		if Data.currentHealth == 0:
-			get_node("../../../../UI/GameOver").show()
+		if Data.currentHealth > 0:
+			Data.currentHealth -= 1
+			get_node("../../../../UI").updateRightUI()
+			if Data.currentHealth == 0:
+				get_node("../../../../UI/GameOver").show()
 		self.queue_free()
 
 
