@@ -27,6 +27,7 @@ script = ExtResource("1_agjdh")
 shape = SubResource("CircleShape2D_ejfi7")
 
 [node name="BallSprite" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_87ljq")
 

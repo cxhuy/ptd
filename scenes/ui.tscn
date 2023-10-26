@@ -446,6 +446,7 @@ stream = ExtResource("6_u25hf")
 volume_db = -5.0
 
 [node name="GameClear" type="Panel" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_default_cursor_shape = 2
