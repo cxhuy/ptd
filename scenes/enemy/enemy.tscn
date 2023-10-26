@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_3xke4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwf5s"]
-load_path = "res://.godot/imported/enemy_1_1_old.png-cb9bed062517ac6b63927a0a0b519e4f.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ip4t1"]
 radius = 15.0

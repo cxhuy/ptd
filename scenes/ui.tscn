@@ -132,6 +132,7 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_lkxje"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
+subpixel_positioning = 0
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
