@@ -7,7 +7,7 @@ var towerToDelete
 
 
 func _ready():
-	for i in range(10):
+	for i in range(8):
 		var towerAddInstance = towerAdd.instantiate()
 		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
 		towerAddInstance.tower = tower		
@@ -40,6 +40,7 @@ func updateTowerData(towerId: int, towerToDelete = null):
 			"duration": statString = "Duration: "
 			"distance": statString = "Distance: "
 			"probability": statString = "Probability: "
+			"hitsNeeded": statString = "Hits needed: "
 		if stat == "probability":
 			towerStats += statString + str(towerData["stats"][stat][towerData["level"]]) + "%\n"
 		else:

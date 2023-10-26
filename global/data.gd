@@ -152,26 +152,26 @@ var towerData: Dictionary = {
 		
 		"unlocked": false
 	},
-	9: {
-		"name": "Ice Tower",
-		"description": "Slows down nearby enemies",
-		
-		"level": 1,
-		"quantity": 0,
-		
-		"stats": {},
-		
-		"unlocked": false
-	},
-	10: {
-		"name": "Shotgun Tower",
-		"description": "Shoots three powerful bullets",
-		
-		"level": 1,
-		"quantity": 0,
-		
-		"stats": {},
-		
-		"unlocked": false
-	},
+#	9: {
+#		"name": "Ice Tower",
+#		"description": "Slows down nearby enemies",
+#
+#		"level": 1,
+#		"quantity": 0,
+#
+#		"stats": {},
+#
+#		"unlocked": false
+#	},
+#	10: {
+#		"name": "Shotgun Tower",
+#		"description": "Shoots three powerful bullets",
+#
+#		"level": 1,
+#		"quantity": 0,
+#
+#		"stats": {},
+#
+#		"unlocked": false
+#	},
 }
