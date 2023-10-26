@@ -125,6 +125,7 @@ texture = ExtResource("6_miqox")
 
 [node name="TankFullLabel" type="Label" parent="Tank"]
 visible = false
+z_index = 1
 offset_left = 1453.0
 offset_top = 390.0
 offset_right = 1803.0
@@ -138,6 +139,7 @@ vertical_alignment = 1
 
 [node name="TankCooldownLabel" type="Label" parent="Tank"]
 visible = false
+z_index = 1
 offset_left = 1453.0
 offset_top = 390.0
 offset_right = 1803.0
