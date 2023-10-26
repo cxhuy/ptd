@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://ecywexra8fla"]
+
+[ext_resource type="Texture2D" uid="uid://cwkvcxa15ihye" path="res://sprites/grid.png" id="1_v23l0"]
+[ext_resource type="Texture2D" uid="uid://bjtft6qdn6gun" path="res://sprites/ui/buttons/Web 1920 – 17.png" id="2_acm1q"]
+[ext_resource type="Texture2D" uid="uid://b8nk5cuse3n6s" path="res://sprites/ui/buttons/Web 1920 – 18.png" id="3_3an5i"]
+
+[sub_resource type="SystemFont" id="SystemFont_wbpe0"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 700
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbdw8"]
+texture = ExtResource("2_acm1q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8cj7"]
+texture = ExtResource("3_3an5i")
+
+[node name="MainScreen" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_v23l0")
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wbpe0")
+theme_override_font_sizes/font_size = 200
+text = "PTD
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 800.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wbpe0")
+theme_override_font_sizes/font_size = 100
+text = "
+Pinball Tower Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 550.0
+offset_right = 1210.0
+offset_bottom = 700.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_mbdw8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c8cj7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c8cj7")
