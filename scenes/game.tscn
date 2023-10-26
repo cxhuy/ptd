@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4thv8xq7r6q"]
+[gd_scene load_steps=24 format=3 uid="uid://b4thv8xq7r6q"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_81tkb"]
 [ext_resource type="Texture2D" uid="uid://iaf4cd80xd6r" path="res://sprites/stages/stage1.png" id="2_0ejdm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/environment/tank.gd" id="4_p81kp"]
 [ext_resource type="Texture2D" uid="uid://0xchmf71wh5r" path="res://sprites/environment/tank/send_bottom.svg" id="5_ltt6r"]
 [ext_resource type="Texture2D" uid="uid://c4f1il05bj7m3" path="res://sprites/environment/tank/send_top.svg" id="6_miqox"]
+[ext_resource type="Script" path="res://scripts/environment/tankFullLabel.gd" id="7_fexg3"]
 [ext_resource type="Script" path="res://scripts/environment/tankCooldownLabel.gd" id="7_yx27v"]
 [ext_resource type="AudioStream" uid="uid://bxhrdhs1pxxdr" path="res://audio/ballAdd.wav" id="11_34k13"]
 [ext_resource type="PackedScene" uid="uid://c0fnpip3uuqqb" path="res://scenes/ui.tscn" id="11_tjs23"]
@@ -137,6 +138,7 @@ theme_override_font_sizes/font_size = 100
 text = "Full"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("7_fexg3")
 
 [node name="TankCooldownLabel" type="Label" parent="Tank"]
 visible = false
