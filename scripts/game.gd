@@ -77,6 +77,7 @@ func giveReward():
 		Data.towerLimit += Data.rewards[Data.currentStage][Data.currentWave]["towerLimitIncrease"]
 		
 		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.tooltip_text = "Tower limit increased to " + str(Data.towerLimit)
 		rewardItemInstance.get_node("RewardSprite").texture = \
 			load("res://sprites/ui/specials/tower_limit.png")
 		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
@@ -85,6 +86,7 @@ func giveReward():
 		Data.ballDamage += Data.rewards[Data.currentStage][Data.currentWave]["ballDamageIncrease"]
 		
 		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.tooltip_text = "Ball damage increased to " + str(Data.ballDamage)
 		rewardItemInstance.get_node("RewardSprite").texture = \
 			load("res://sprites/ui/specials/ball_damage.png")
 		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
@@ -93,6 +95,7 @@ func giveReward():
 		Data.tankLimit += Data.rewards[Data.currentStage][Data.currentWave]["tankLimitIncrease"]
 		
 		var rewardItemInstance = rewardItem.instantiate()
+		rewardItemInstance.tooltip_text = "Tank limit increased to " + str(Data.tankLimit)
 		rewardItemInstance.get_node("RewardSprite").texture = \
 			load("res://sprites/ui/specials/tank_limit.png")
 		get_node("UI/Rewards/RewardsContainer/Unlocked").add_child(rewardItemInstance)
@@ -170,18 +173,18 @@ func startWave(wave):
 
 
 func spawnEnemies(wavePattern):
-	for pattern in wavePattern:
-		var enemyType: int = pattern[0]
-		var enemyId: int = pattern[1]
-		var enemyCount: int = pattern[2]
-		var spawnDelay: float = pattern[3]
-		for i in range(enemyCount):
-			var enemyPath: PathFollow2D = PathFollow2D.new()
-			enemyPath.set_loop(false)
-			var enemyInstance := enemy.instantiate()
-			enemyInstance.enemyType = enemyType
-			enemyInstance.enemyId = enemyId
-			enemyPath.add_child(enemyInstance)
-			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
-			await get_tree().create_timer(spawnDelay).timeout
+#	for pattern in wavePattern:
+#		var enemyType: int = pattern[0]
+#		var enemyId: int = pattern[1]
+#		var enemyCount: int = pattern[2]
+#		var spawnDelay: float = pattern[3]
+#		for i in range(enemyCount):
+#			var enemyPath: PathFollow2D = PathFollow2D.new()
+#			enemyPath.set_loop(false)
+#			var enemyInstance := enemy.instantiate()
+#			enemyInstance.enemyType = enemyType
+#			enemyInstance.enemyId = enemyId
+#			enemyPath.add_child(enemyInstance)
+#			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
+#			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true
