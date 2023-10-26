@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/ball/tankBall.gd" id="1_n2cnk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wdrdb"]
-radius = 12.5
+radius = 15.0
 
 [node name="TankBall" type="RigidBody2D" groups=["TankBalls"]]
 collision_layer = 4
@@ -19,7 +19,7 @@ script = ExtResource("1_n2cnk")
 shape = SubResource("CircleShape2D_wdrdb")
 
 [node name="BallSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_44p0i")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
