@@ -145,7 +145,10 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 0,
 		
-		"stats": {},
+		"stats": {
+			"damage": [0, 50, 75, 100, 125, 150, 200, 250, 350, 400],
+			"hitsNeeded": [0, 6, 6, 6, 5, 5, 5, 4, 4, 3],
+		},
 		
 		"unlocked": false
 	},

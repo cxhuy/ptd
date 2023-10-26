@@ -18,7 +18,7 @@ func _ready():
 	var showOnUIButton = preload("res://scenes/tower/show_on_ui_button.tscn")
 	add_child(showOnUIButton.instantiate())
 	
-	hitsLeft = 2
+	hitsLeft = Data.towerData[8]["stats"]["hitsNeeded"][Data.towerData[8]["level"]]
 	$HitsLeft.text = str(hitsLeft)
 
 
@@ -43,7 +43,7 @@ func _on_base_body_entered(body):
 		if hitsLeft == 0:
 			var blackholeInstance := blackhole.instantiate()
 			call_deferred("add_child", blackholeInstance)
-			hitsLeft = 2
+			hitsLeft = Data.towerData[8]["stats"]["hitsNeeded"][Data.towerData[8]["level"]]
 			$HitsLeft.text = str(hitsLeft)
 			
 		
