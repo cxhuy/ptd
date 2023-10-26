@@ -30,6 +30,8 @@ func _input(event):
 
 func loadStage(stageId: int):
 	for tower in get_tree().get_nodes_in_group("Towers"):
+		Data.towerData[tower.towerId]["quantity"] += 1
+		$UI.updateTowerData(tower.towerId)
 		tower.queue_free()
 	
 	if stageId > 1:
