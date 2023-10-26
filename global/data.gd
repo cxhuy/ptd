@@ -16,14 +16,15 @@ const rewards: Dictionary = {
 		3: {
 			"totalTowersReward": 10,
 			"totalTowersUnlocked": 1,
+			"towerLimitIncrease": 1,
 		},
 		6: {
 			"totalTowersReward": 20,	
-			"towerLimitIncrease": 1,				
-			"totalTowersUnlocked": 2,
+			"totalTowersUnlocked": 1,
 		},
 		9: {
 			"totalTowersReward": 30,
+			"totalTowersUnlocked": 1,
 			"towerLimitIncrease": 1,
 			"ballDamageIncrease": 5,
 			"tankLimitIncrease": 1,
@@ -37,6 +38,7 @@ const rewards: Dictionary = {
 		6: {
 			"totalTowersReward": 40,
 			"towerLimitIncrease": 1,
+			"ballDamageIncrease": 5,
 			"tankLimitIncrease": 1,
 		},
 		9: {
@@ -62,23 +64,25 @@ const rewards: Dictionary = {
 	4: {
 		3: {
 			"totalTowersReward": 70,
+			"ballDamageIncrease": 5,			
 		},
 		6: {
 			"totalTowersReward": 80,
 			"towerLimitIncrease": 1,
-			"tankLimitIncrease": 1,
 		},
 		9: {
 			"totalTowersReward": 90,
+			"tankLimitIncrease": 1,			
 		}
 	},
 	5: {
 		3: {
 			"totalTowersReward": 90,
+			"towerLimitIncrease": 1,
 		},
 		6: {
 			"totalTowersReward": 100,
-			"towerLimitIncrease": 1,
+			"ballDamageIncrease": 5,
 			"tankLimitIncrease": 1,
 		},
 #		9: {
@@ -125,7 +129,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
+			"damage": [0, 10, 15, 20, 25, 30, 40, 55, 75, 100], 
 		},
 		
 		"unlocked": false
@@ -138,7 +142,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 20, 40, 60, 80, 110, 150, 200, 250, 300],
+			"damage": [0, 10, 15, 20, 35, 50, 70, 90, 120, 175],
 		},
 		
 		"unlocked": false
@@ -151,8 +155,8 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 5, 10, 15, 15, 20, 25, 30, 40, 50],
-			"duration": [0, 3, 3, 3, 4, 4, 4, 5, 5, 6],
+			"damage": [0, 3, 3, 4, 5, 6, 9, 12, 15, 20],
+			"duration": [0, 5, 6, 6, 6, 7, 7, 7, 8, 10],
 		},
 		
 		"unlocked": false
@@ -164,8 +168,8 @@ var towerData: Dictionary = {
 		"level": 1,
 		"quantity": 0,
 		
-		"stats": {
-			"damage": [0, 10, 12, 15, 18, 22, 27, 33, 40, 50],
+		"stats": {			
+			"damage": [0, 5, 6, 8, 10, 13, 16, 20, 24, 30],
 		},
 		
 		"unlocked": false
@@ -178,8 +182,8 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"distance": [0, 300, 325, 350, 375, 400, 450, 500, 550, 600],
-			"probability": [0, 35, 40, 45, 50, 55, 60, 65, 70, 75],
+			"distance": [0, 300, 320, 345, 375, 415, 460, 510, 565, 620],
+			"probability": [0, 35, 40, 40, 45, 45, 50, 50, 55, 60],
 		},
 		
 		"unlocked": false
@@ -192,7 +196,7 @@ var towerData: Dictionary = {
 		"quantity": 0,
 		
 		"stats": {
-			"damage": [0, 50, 75, 100, 125, 150, 200, 250, 350, 400],
+			"damage": [0, 20, 25, 30, 30, 40, 50, 55, 70, 80],
 			"hitsNeeded": [0, 6, 6, 6, 5, 5, 5, 4, 4, 3],
 		},
 		
@@ -224,14 +228,14 @@ var towerData: Dictionary = {
 
 var enemyData: Dictionary = {
 	1: {
-		1: {"speed": 100, "health": 30},
+		1: {"speed": 100, "health": 20},
 		2: {"speed": 100, "health": 40},
 		3: {"speed": 100, "health": 60},
 		4: {"speed": 100, "health": 80},
 		5: {"speed": 100, "health": 100}
 	},
 	2: {
-		1: {"speed": 200, "health": 20},
+		1: {"speed": 200, "health": 15},
 		2: {"speed": 200, "health": 30},
 		3: {"speed": 200, "health": 40},
 		4: {"speed": 200, "health": 50},
@@ -249,9 +253,9 @@ var enemyData: Dictionary = {
 # Enemy Type, Enemy Id, Enemy Count, Spawn Delay
 var waveData: Dictionary = {
 	1: {
-		1: [[1, 1, 20, 1]],
-		2: [[1, 1, 14, 1],[1, 1, 1, 3],[1, 1, 15, 1]],
-		3: [[1, 1, 19, 1],[1, 1, 1, 4],[2, 1, 5, 1]],
+		1: [[1, 1, 5, 1]],
+		2: [[1, 1, 4, 1],[1, 1, 1, 3],[1, 1, 5, 1]],
+		3: [[1, 1, 9, 1],[1, 1, 1, 4],[2, 1, 3, 1]],
 		4: [[2, 1, 24, 1],[2, 1, 1, 4],[1, 1, 10, 1]],
 		5: [[1, 1, 15, 0.8],[2, 1, 15, 0.8]],
 		6: [[2, 1, 9, 1],[2, 1, 1, 3],[1, 1, 9, 1],[1, 1, 1, 3],[3, 1, 3, 1]],
