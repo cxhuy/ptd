@@ -144,7 +144,8 @@ func _process(delta):
 		
 	
 	# If ball is dropped add a new one
-	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0:
+	if inGame and get_tree().get_nodes_in_group("Balls").size() == 0 and \
+	Data.currentHealth > 0:
 		var ballInstance = ball.instantiate()
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
