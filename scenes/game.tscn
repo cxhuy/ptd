@@ -49,6 +49,7 @@ size = Vector2(752, 328)
 script = ExtResource("1_81tkb")
 
 [node name="WallsSprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("2_0ejdm")
 

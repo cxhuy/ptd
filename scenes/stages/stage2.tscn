@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp1jb7wna0ubn"]
+[gd_scene load_steps=4 format=3 uid="uid://dp1jb7wna0ubn"]
 
 [ext_resource type="PackedScene" uid="uid://d4gh8a7lq7lqu" path="res://scenes/environment/bumperTri.tscn" id="1_fhht6"]
+[ext_resource type="Texture2D" uid="uid://cy0rk23b61i40" path="res://sprites/stages/stage2.png" id="1_o3eal"]
 
 [sub_resource type="Curve2D" id="Curve2D_13sw7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 960, 128, 0, 0, 0, 0, 866, 128, 0, 0, 0, 0, 866, 199, 0, 0, 0, 0, 1151, 198, 0, 0, 0, 0, 1150, 292, 0, 0, 0, 0, 700, 292, 0, 0, 0, 0, 700, 457, 0, 0, 0, 0, 1221, 457, 0, 0, 0, 0, 1221, 644, 0, 0, 0, 0, 818, 644, 0, 0, 0, 0, 818, 715, 0, 0, 0, 0, 1079, 715, 0, 0, 0, 0, 1079, 810, 0, 0, 0, 0, 961, 809, 0, 0, 0, 0, 961, 1082)
+"points": PackedVector2Array(0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 961, 646, 0, 0, 0, 0, 1128, 647, 0, 0, 0, 0, 795, 507, 0, 0, 0, 0, 1125, 365, 0, 0, 0, 0, 796, 225, 0, 0, 0, 0, 1125, 83, 0, 0, 0, 0, 797, 82, 0, 0, 0, 0, 1125, 223, 0, 0, 0, 0, 796, 365, 0, 0, 0, 0, 1126, 506, 0, 0, 0, 0, 795, 648, 0, 0, 0, 0, 960, 718, 0, 0, 0, 0, 961, 1081)
 }
-point_count = 16
+point_count = 14
 
-[node name="Stage1" type="Node2D"]
+[node name="Stage2" type="Node2D"]
+scale = Vector2(0.998748, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_o3eal")
 
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_13sw7")
@@ -18,13 +24,5 @@ position = Vector2(1227, 720)
 
 [node name="BumperTri2" parent="." instance=ExtResource("1_fhht6")]
 position = Vector2(693, 720)
-rotation = 3.14159
-scale = Vector2(1, -1)
-
-[node name="BumperTri3" parent="." instance=ExtResource("1_fhht6")]
-position = Vector2(1227, 400)
-
-[node name="BumperTri4" parent="." instance=ExtResource("1_fhht6")]
-position = Vector2(693, 400)
 rotation = 3.14159
 scale = Vector2(1, -1)
