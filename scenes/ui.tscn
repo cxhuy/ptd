@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=31 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bovb68n84ot6e" path="res://audio/upgrade.wav" id="3_fq1kj"]
 [ext_resource type="AudioStream" uid="uid://dtl0u6re321ri" path="res://audio/rewards.wav" id="5_na073"]
 [ext_resource type="AudioStream" uid="uid://bgqnw52up5jq7" path="res://audio/game_over.wav" id="6_u25hf"]
+[ext_resource type="AudioStream" uid="uid://cueve5pbh8tdv" path="res://audio/game_clear.wav" id="7_e8lkv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
@@ -437,6 +438,36 @@ vertical_alignment = 2
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="GameOver"]
 stream = ExtResource("6_u25hf")
+volume_db = -5.0
+
+[node name="GameClear" type="Panel" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_default_cursor_shape = 2
+
+[node name="Congratulations!" type="Label" parent="GameClear"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 550.0
+theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_font_sizes/font_size = 150
+text = "Congratulations!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="You cleared the game!" type="Label" parent="GameClear"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 650.0
+theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_font_sizes/font_size = 75
+text = "You cleared the game!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="GameClearSound" type="AudioStreamPlayer" parent="GameClear"]
+stream = ExtResource("7_e8lkv")
 volume_db = -5.0
 
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

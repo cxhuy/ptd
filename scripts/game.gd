@@ -129,22 +129,27 @@ func giveReward():
 func _process(delta):
 	# If wave finished
 	if enemySpawnFinish and get_tree().get_nodes_in_group("Enemies").size() == 0:
-		if Data.currentWave % 3 == 0:
-			giveReward()
-		enemySpawnFinish = false
-		inGame = false
-		get_tree().call_group("Balls", "queue_free")
-		waveStartButton.disabled = false
-		
-		if Data.currentWave == 9:
-			Data.currentStage += 1
-			Data.currentWave = 1
-			loadStage(Data.currentStage)
+		if Data.currentStage == 5 and Data.currentWave == 9:
+			get_node("UI/GameClear").show()
+			get_node("UI/GameClear/GameClearSound").play()
+			get_tree().paused = true
 		else:
-			Data.currentWave += 1
-		
-		$UI.updateRightUI()
-		$UI.unblockLeftUI()
+			if Data.currentWave % 3 == 0:
+				giveReward()
+			enemySpawnFinish = false
+			inGame = false
+			get_tree().call_group("Balls", "queue_free")
+			waveStartButton.disabled = false
+			
+			if Data.currentWave == 9:
+				Data.currentStage += 1
+				Data.currentWave = 1
+				loadStage(Data.currentStage)
+			else:
+				Data.currentWave += 1
+			
+			$UI.updateRightUI()
+			$UI.unblockLeftUI()
 		
 	
 	# If ball is dropped add a new one
