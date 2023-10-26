@@ -157,16 +157,7 @@ func _on_wave_start_button_pressed():
 
 
 func startWave(wave):
-	var wavePattern: Array[Array]
-	match wave:
-		1: 
-			wavePattern = [[0, 0, 1]]
-		2: 
-			wavePattern = [[0, 0, 1]]
-		3: 
-			wavePattern = [[0, 0, 1]]
-		4: 
-			wavePattern = [[0, 0, 1]]
+	var wavePattern: Array = Data.waveData[Data.currentStage][Data.currentWave]
 	spawnEnemies(wavePattern)
 
 

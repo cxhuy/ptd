@@ -208,3 +208,11 @@ var enemyData: Dictionary = {
 		8: {"speed": 200, "health": 400},
 	}
 }
+
+# Enemy Type, Enemy Id, Enemy Count, Spawn Delay
+var waveData: Dictionary = {
+	1: {
+		1: [[3, 1, 5, 1]],
+		2: [[3, 1, 10, 1]],
+	}
+}
