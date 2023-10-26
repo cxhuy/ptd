@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=27 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
@@ -124,6 +124,10 @@ subpixel_positioning = 0
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
 subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_lkxje"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 600
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
@@ -393,6 +397,31 @@ layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 alignment = 1
+
+[node name="GameOver" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_default_cursor_shape = 2
+
+[node name="Game Over" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 550.0
+theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Click to try again" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 650.0
+theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_font_sizes/font_size = 75
+text = "Click to try again"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/RemoveButton" to="." method="_on_remove_button_pressed"]
