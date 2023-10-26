@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ecywexra8fla"]
+[gd_scene load_steps=8 format=3 uid="uid://ecywexra8fla"]
 
+[ext_resource type="Script" path="res://scripts/main_screen.gd" id="1_5sqes"]
 [ext_resource type="Texture2D" uid="uid://cwkvcxa15ihye" path="res://sprites/grid.png" id="1_v23l0"]
 [ext_resource type="Texture2D" uid="uid://bjtft6qdn6gun" path="res://sprites/ui/buttons/Web 1920 – 17.png" id="2_acm1q"]
 [ext_resource type="Texture2D" uid="uid://b8nk5cuse3n6s" path="res://sprites/ui/buttons/Web 1920 – 18.png" id="3_3an5i"]
@@ -15,6 +16,7 @@ texture = ExtResource("2_acm1q")
 texture = ExtResource("3_3an5i")
 
 [node name="MainScreen" type="Node2D"]
+script = ExtResource("1_5sqes")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -51,3 +53,5 @@ mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_mbdw8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c8cj7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c8cj7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
