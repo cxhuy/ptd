@@ -39,7 +39,9 @@ func _physics_process(delta):
 
 func damage(damageAmount: int):
 	self.health -= damageAmount
-	$HealthBar.size.x = 40 * self.health / Data.enemyData[enemyType][enemyId]["health"]
+	var healthPercentage: float = float(self.health) / Data.enemyData[enemyType][enemyId]["health"]
+	$HealthBar.size.x = 40 * healthPercentage
+	$HealthBar.set_color(Color((1 - healthPercentage), healthPercentage, 0, 1))
 	if self.health <= 0:
 		var randomNumber = randf_range(0, 1)
 		if randomNumber <= 0.05 and \
