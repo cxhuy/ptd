@@ -7,6 +7,7 @@ var towerPlaced: bool = false
 
 # Tower unique variables
 var blackhole := preload("res://scenes/tower/tower8/blackhole.tscn")
+var hitsLeft: int
 
 
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 	
 	var showOnUIButton = preload("res://scenes/tower/show_on_ui_button.tscn")
 	add_child(showOnUIButton.instantiate())
+	
+	hitsLeft = 2
 
 
 func _process(delta):
@@ -34,8 +37,11 @@ func _on_base_body_entered(body):
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20
 		
-		var blackholeInstance := blackhole.instantiate()
-		call_deferred("add_child", blackholeInstance)
+		hitsLeft -= 1
+		if hitsLeft == 0:
+			var blackholeInstance := blackhole.instantiate()
+			call_deferred("add_child", blackholeInstance)
+			hitsLeft = 2
 		
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)	
