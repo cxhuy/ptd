@@ -60,9 +60,9 @@ func updateTowerData(towerId: int, towerToDelete = null):
 		$LeftUI/TowerData/Buttons/UpgradeButton.disabled = false
 		
 	if towerToDelete == null:
-		$LeftUI/TowerData/Buttons/DeleteButton.disabled = true
+		$LeftUI/TowerData/Buttons/RemoveButton.disabled = true
 	else:
-		$LeftUI/TowerData/Buttons/DeleteButton.disabled = false
+		$LeftUI/TowerData/Buttons/RemoveButton.disabled = false
 	self.towerToDelete = towerToDelete
 	
 
@@ -87,7 +87,7 @@ func _on_upgrade_button_pressed():
 	updateTowerData(currentTowerId)
 
 
-func _on_delete_button_pressed():
+func _on_remove_button_pressed():
 	Data.towerData[towerToDelete.towerId]["quantity"] += 1	
 	towerToDelete.queue_free()
 	towerToDelete = null

@@ -246,7 +246,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_fnant")
 text = "Upgrade
 37 / 2"
 
-[node name="DeleteButton" type="Button" parent="LeftUI/TowerData/Buttons"]
+[node name="RemoveButton" type="Button" parent="LeftUI/TowerData/Buttons"]
 custom_minimum_size = Vector2(170, 70)
 layout_mode = 2
 focus_mode = 0
@@ -260,7 +260,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_n2bqs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n2bqs")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2rjp5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
-text = "Delete"
+text = "Remove"
 
 [node name="RightUI" type="Panel" parent="."]
 offset_left = 1336.0
@@ -389,5 +389,5 @@ theme_override_constants/v_separation = 20
 alignment = 1
 
 [connection signal="pressed" from="LeftUI/TowerData/Buttons/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="LeftUI/TowerData/Buttons/DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="LeftUI/TowerData/Buttons/RemoveButton" to="." method="_on_remove_button_pressed"]
 [connection signal="gui_input" from="Rewards" to="." method="_on_rewards_gui_input"]
