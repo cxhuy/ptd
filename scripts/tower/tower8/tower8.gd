@@ -19,6 +19,7 @@ func _ready():
 	add_child(showOnUIButton.instantiate())
 	
 	hitsLeft = 2
+	$HitsLeft.text = str(hitsLeft)
 
 
 func _process(delta):
@@ -38,10 +39,13 @@ func _on_base_body_entered(body):
 		switchDuration = 20
 		
 		hitsLeft -= 1
+		$HitsLeft.text = str(hitsLeft)
 		if hitsLeft == 0:
 			var blackholeInstance := blackhole.instantiate()
 			call_deferred("add_child", blackholeInstance)
 			hitsLeft = 2
+			$HitsLeft.text = str(hitsLeft)
+			
 		
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)	
