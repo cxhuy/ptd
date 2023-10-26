@@ -1,19 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://ecywexra8fla"]
+[gd_scene load_steps=13 format=3 uid="uid://ecywexra8fla"]
 
 [ext_resource type="Script" path="res://scripts/main_screen.gd" id="1_5sqes"]
 [ext_resource type="Texture2D" uid="uid://cwkvcxa15ihye" path="res://sprites/grid.png" id="1_v23l0"]
-[ext_resource type="Texture2D" uid="uid://bjtft6qdn6gun" path="res://sprites/ui/buttons/Web 1920 – 17.png" id="2_acm1q"]
-[ext_resource type="Texture2D" uid="uid://b8nk5cuse3n6s" path="res://sprites/ui/buttons/Web 1920 – 18.png" id="3_3an5i"]
+[ext_resource type="Texture2D" uid="uid://bjtft6qdn6gun" path="res://sprites/ui/buttons/playButtonNormal.png" id="3_ugoed"]
+[ext_resource type="Texture2D" uid="uid://b8nk5cuse3n6s" path="res://sprites/ui/buttons/playButtonHover.png" id="4_vicmi"]
+[ext_resource type="Texture2D" uid="uid://dtqbmtfnqxxwt" path="res://sprites/ui/buttons/howButtonNormal.png" id="5_3ihat"]
+[ext_resource type="Texture2D" uid="uid://6q8u56nq2yw" path="res://sprites/ui/buttons/howButtonHover.png" id="6_12oj7"]
 
 [sub_resource type="SystemFont" id="SystemFont_wbpe0"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 700
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbdw8"]
-texture = ExtResource("2_acm1q")
+texture = ExtResource("3_ugoed")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8cj7"]
-texture = ExtResource("3_3an5i")
+texture = ExtResource("4_vicmi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8e31"]
+texture = ExtResource("5_3ihat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g53xb"]
+texture = ExtResource("6_12oj7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pkfr"]
+texture = ExtResource("6_12oj7")
 
 [node name="MainScreen" type="Node2D"]
 script = ExtResource("1_5sqes")
@@ -53,5 +64,15 @@ mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_mbdw8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c8cj7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c8cj7")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 710.0
+offset_top = 750.0
+offset_right = 1210.0
+offset_bottom = 900.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_r8e31")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g53xb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2pkfr")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

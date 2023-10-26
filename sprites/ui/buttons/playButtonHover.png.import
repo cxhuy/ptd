@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8nk5cuse3n6s"
-path="res://.godot/imported/Web 1920 – 18.png-e2e3b1952d507c7173f4a0c5f922c265.ctex"
+path="res://.godot/imported/playButtonHover.png-273e3ca9672f4284853378b7c24b4258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/buttons/Web 1920 – 18.png"
-dest_files=["res://.godot/imported/Web 1920 – 18.png-e2e3b1952d507c7173f4a0c5f922c265.ctex"]
+source_file="res://sprites/ui/buttons/playButtonHover.png"
+dest_files=["res://.godot/imported/playButtonHover.png-273e3ca9672f4284853378b7c24b4258.ctex"]
 
 [params]
 
