@@ -25,7 +25,7 @@ func _process(delta):
 		Data.currentHealth -= 1
 		get_node("../../../../UI").updateRightUI()
 		if Data.currentHealth == 0:
-			get_tree().paused = true
+			get_node("../../../../UI/GameOver").show()
 		self.queue_free()
 
 

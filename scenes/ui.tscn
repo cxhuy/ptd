@@ -399,6 +399,7 @@ theme_override_constants/v_separation = 20
 alignment = 1
 
 [node name="GameOver" type="Panel" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_default_cursor_shape = 2
