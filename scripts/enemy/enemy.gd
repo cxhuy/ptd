@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 var ball := preload("res://scenes/tankBall.tscn")
-var enemyId: int = 0
+var enemyType: int
+var enemyId: int
 var enemy: Dictionary = {
 	0: {"speed": 400, "health": 10},
 }
@@ -15,6 +16,8 @@ var poisonDuration: int = -1
 func _ready():
 	self.speed = enemy[enemyId]["speed"]
 	self.health = enemy[enemyId]["health"]
+	$EnemySprite.texture = \
+		load("res://sprites/enemy/Enemy_" + str(enemyType) + "_" + str(enemyId) + ".svg")
 
 
 func _process(delta):	
