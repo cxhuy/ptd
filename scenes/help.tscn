@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfyobtli52fnt"]
 
 [ext_resource type="Script" path="res://scripts/help.gd" id="1_ugslg"]
-[ext_resource type="Texture2D" uid="uid://ef55cuenvbr" path="res://sprites/ui/help/help1.png" id="2_ybuci"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8gtbl"]
+load_path = "res://.godot/imported/help0.png-45ee5264cd43b6324430ee9bd6d8ac61.ctex"
 
 [sub_resource type="SystemFont" id="SystemFont_35n2m"]
 font_names = PackedStringArray("SF Pro Rounded")
@@ -12,7 +14,7 @@ script = ExtResource("1_ugslg")
 
 [node name="HelpImage" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_ybuci")
+texture = SubResource("CompressedTexture2D_8gtbl")
 
 [node name="NextButton" type="Button" parent="."]
 offset_left = 1400.0

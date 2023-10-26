@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var helpIndex: int = 1
+var helpIndex: int = 0
 
 
 func _on_next_button_pressed():
