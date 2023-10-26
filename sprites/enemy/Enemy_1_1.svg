@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="222" height="256.34" viewBox="0 0 222 256.34">
+  <defs>
+    <clipPath id="clip-Enemy_1_1">
+      <rect width="222" height="256.34"/>
+    </clipPath>
+  </defs>
+  <g id="Enemy_1_1" clip-path="url(#clip-Enemy_1_1)">
+    <g id="enemy_test">
+      <path id="Path_9" data-name="Path 9" d="M3,190.53V65.82L111,3.46,219,65.82V190.53L111,252.88Z" fill="#5aed4d"/>
+      <path id="Path_10" data-name="Path 10" d="M128,6.76,233,67.38V188.62L128,249.24,23,188.62V67.38L128,6.76m0-6.93L17,63.91V192.09l111,64.08,111-64.08V63.91L128-.17Z" transform="translate(-17 0.17)"/>
+      <rect id="Rectangle_20" data-name="Rectangle 20" width="164" height="7" transform="translate(29 98.17)"/>
+      <path id="Path_11" data-name="Path 11" d="M207,101v1H49v-1H207m6-6H43v13H213Z" transform="translate(-17 0.17)"/>
+      <rect id="Rectangle_21" data-name="Rectangle 21" width="164" height="24" transform="translate(29 116.17)"/>
+      <path id="Path_12" data-name="Path 12" d="M207,119v18H49V119H207m6-6H43v30H213Z" transform="translate(-17 0.17)"/>
+      <rect id="Rectangle_22" data-name="Rectangle 22" width="164" height="7" transform="translate(29 151.17)"/>
+      <path id="Path_13" data-name="Path 13" d="M207,154v1H49v-1H207m6-6H43v13H213Z" transform="translate(-17 0.17)"/>
+    </g>
+  </g>
+</svg>
