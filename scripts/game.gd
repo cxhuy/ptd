@@ -147,6 +147,7 @@ func _process(delta):
 		var ballInstance = ball.instantiate()
 		ballInstance.set_global_position(ballSpawnPos)
 		add_child(ballInstance)
+		$AudioStreamPlayer2D.play()
 
 
 func _on_wave_start_button_pressed():
@@ -155,6 +156,7 @@ func _on_wave_start_button_pressed():
 		var ballInstance := ball.instantiate()
 		ballInstance.set_global_position(Vector2(616, 583))
 		add_child(ballInstance)
+		$AudioStreamPlayer2D.play()
 		inGame = true
 		waveStartButton.disabled = true
 
