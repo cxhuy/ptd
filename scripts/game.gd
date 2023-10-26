@@ -16,7 +16,7 @@ func _input(event):
 		add_child(ballInstance)
 		
 	elif Input.is_action_pressed("emptyTank") and $Tank.emptyTank == false and \
-	!$Tank/TankCooldownLabel.inCooldown and inGame and \
+	!$Tank/TankCooldownLabel.inCooldown and inGame and Data.currentHealth > 0 and \
 	get_tree().get_nodes_in_group("TankBalls").size() > 0:
 		$Tank/TankFullLabel.hide()
 		$Tank.emptyTank = true
