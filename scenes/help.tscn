@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfyobtli52fnt"]
+
+[ext_resource type="Script" path="res://scripts/help.gd" id="1_ugslg"]
+[ext_resource type="Texture2D" uid="uid://d2ox2thgxwbmt" path="res://sprites/ui/help/help1.png" id="2_ybuci"]
+
+[node name="Help" type="Node2D"]
+script = ExtResource("1_ugslg")
+
+[node name="HelpImage" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_ybuci")
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 1400.0
+offset_top = 910.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+text = "Next"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
