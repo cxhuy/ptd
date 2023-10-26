@@ -149,11 +149,13 @@ vertical_alignment = 1
 script = ExtResource("7_yx27v")
 
 [node name="LeftFlipper" parent="." instance=ExtResource("3_mqu62")]
+z_index = 1
 position = Vector2(773.53, 928)
 rotation = 3.66519
 scale = Vector2(2, 2)
 
 [node name="RightFlipper" parent="." instance=ExtResource("3_mdsrv")]
+z_index = 1
 position = Vector2(1146.53, 928)
 rotation = -0.523599
 scale = Vector2(2, 2)
