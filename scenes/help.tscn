@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfyobtli52fnt"]
+[gd_scene load_steps=4 format=3 uid="uid://cfyobtli52fnt"]
 
 [ext_resource type="Script" path="res://scripts/help.gd" id="1_ugslg"]
 [ext_resource type="Texture2D" uid="uid://d2ox2thgxwbmt" path="res://sprites/ui/help/help1.png" id="2_ybuci"]
+
+[sub_resource type="SystemFont" id="SystemFont_35n2m"]
+font_names = PackedStringArray("SF Pro Rounded")
+font_weight = 500
 
 [node name="Help" type="Node2D"]
 script = ExtResource("1_ugslg")
@@ -15,6 +19,8 @@ offset_left = 1400.0
 offset_top = 910.0
 offset_right = 1900.0
 offset_bottom = 1060.0
-text = "Next"
+theme_override_fonts/font = SubResource("SystemFont_35n2m")
+theme_override_font_sizes/font_size = 75
+text = "Next >>"
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
