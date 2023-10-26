@@ -111,12 +111,14 @@ shape = SubResource("RectangleShape2D_sqpt5")
 
 [node name="SendBottom" type="Sprite2D" parent="Tank"]
 visible = false
+z_index = 1
 position = Vector2(1628, 704)
 scale = Vector2(0.965714, 1)
 texture = ExtResource("5_ltt6r")
 
 [node name="SendTop" type="Sprite2D" parent="Tank"]
 visible = false
+z_index = 1
 position = Vector2(959.5, 30)
 scale = Vector2(1.004, 1)
 texture = ExtResource("6_miqox")
