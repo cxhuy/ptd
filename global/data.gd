@@ -4,7 +4,7 @@ var currentStage: int = 1
 var currentWave: int = 1
 var currentHealth: int = 5
 
-var towerLimit: int = 3
+var towerLimit: int = 2
 var ballDamage: int = 5
 var tankLimit: int = 3
 
@@ -18,7 +18,8 @@ const rewards: Dictionary = {
 			"totalTowersUnlocked": 1,
 		},
 		6: {
-			"totalTowersReward": 20,		
+			"totalTowersReward": 20,	
+			"towerLimitIncrease": 1,				
 			"totalTowersUnlocked": 2,
 		},
 		9: {

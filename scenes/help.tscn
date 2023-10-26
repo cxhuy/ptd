@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfyobtli52fnt"]
 
 [ext_resource type="Script" path="res://scripts/help.gd" id="1_ugslg"]
-[ext_resource type="Texture2D" uid="uid://d2ox2thgxwbmt" path="res://sprites/ui/help/help1.png" id="2_ybuci"]
+[ext_resource type="Texture2D" uid="uid://ef55cuenvbr" path="res://sprites/ui/help/help1.png" id="2_ybuci"]
 
 [sub_resource type="SystemFont" id="SystemFont_35n2m"]
 font_names = PackedStringArray("SF Pro Rounded")
