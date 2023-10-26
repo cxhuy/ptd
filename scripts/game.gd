@@ -20,13 +20,14 @@ func _input(event):
 	get_tree().get_nodes_in_group("TankBalls").size() > 0:
 		$Tank/TankFullLabel.hide()
 		$Tank.emptyTank = true
-		$Tank/SendBottom.show()
-		$Tank/SendTop.show()
+		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
+		tween.tween_property($Tank/SendSprite, "modulate:a", 1, 0.4)	
 		await get_tree().create_timer(2).timeout
 		$Tank/TankCooldownLabel.startCooldown()
 		$Tank.emptyTank = false
-		$Tank/SendBottom.hide()
-		$Tank/SendTop.hide()		
+		tween = create_tween().set_trans(Tween.TRANS_CIRC)
+		tween.tween_property($Tank/SendSprite, "modulate:a", 0, 0.4)
+		await get_tree().create_timer(0.4).timeout
 
 
 func loadStage(stageId: int):
