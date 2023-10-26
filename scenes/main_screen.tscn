@@ -67,7 +67,7 @@ Flippers: Z and X
 Empty Tank: Space"
 vertical_alignment = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="GameStartButton" type="Button" parent="."]
 offset_left = 710.0
 offset_top = 550.0
 offset_right = 1210.0
@@ -77,7 +77,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_mbdw8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c8cj7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c8cj7")
 
-[node name="Button2" type="Button" parent="."]
+[node name="HelpButton" type="Button" parent="."]
 offset_left = 710.0
 offset_top = 750.0
 offset_right = 1210.0
@@ -87,4 +87,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_r8e31")
 theme_override_styles/hover = SubResource("StyleBoxTexture_g53xb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2pkfr")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GameStartButton" to="." method="_on_game_start_button_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
