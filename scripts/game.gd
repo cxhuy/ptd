@@ -139,6 +139,7 @@ func _process(delta):
 			Data.currentWave += 1
 		
 		$UI.updateRightUI()
+		$UI.unblockLeftUI()
 		
 	
 	# If ball is dropped add a new one
@@ -159,6 +160,7 @@ func _on_wave_start_button_pressed():
 
 
 func startWave(wave):
+	$UI.blockLeftUI()
 	var wavePattern: Array = Data.waveData[Data.currentStage][Data.currentWave]
 	spawnEnemies(wavePattern)
 

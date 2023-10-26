@@ -262,6 +262,12 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2rjp5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n2bqs")
 text = "Remove"
 
+[node name="BlockClick" type="Panel" parent="LeftUI"]
+visible = false
+layout_mode = 0
+offset_right = 584.0
+offset_bottom = 1080.0
+
 [node name="RightUI" type="Panel" parent="."]
 offset_left = 1336.0
 offset_right = 1920.0

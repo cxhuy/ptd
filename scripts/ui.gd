@@ -18,6 +18,14 @@ func _ready():
 	updateRightUI()
 
 
+func blockLeftUI():
+	$LeftUI/BlockClick.show()
+
+
+func unblockLeftUI():
+	$LeftUI/BlockClick.hide()	
+
+
 func updateTowerData(towerId: int, towerToDelete = null):
 	currentTowerId = towerId
 	var towerData: Dictionary =  Data.towerData[towerId]
