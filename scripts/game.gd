@@ -28,6 +28,10 @@ func _input(event):
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
 		tween.tween_property($Tank/SendSprite, "modulate:a", 0, 0.4)
 		await get_tree().create_timer(0.4).timeout
+	
+	elif Input.is_action_pressed("restartGame") and \
+	get_tree().get_current_scene().get_name() == "Game":
+		restartGame()
 
 
 func loadStage(stageId: int):
