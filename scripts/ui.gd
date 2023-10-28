@@ -112,4 +112,5 @@ func _on_game_over_gui_input(event):
 	if event is InputEventMouseButton and event.button_mask == 0:
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 		get_tree().reload_current_scene()
-		ResetData.resetData()		
+		ResetData.resetData()
+		updateTowerData(1)
