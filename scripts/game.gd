@@ -196,3 +196,10 @@ func spawnEnemies(wavePattern):
 			get_node("Stage" + str(Data.currentStage) + "/EnemyPath").add_child(enemyPath)
 			await get_tree().create_timer(spawnDelay).timeout
 	enemySpawnFinish = true
+
+
+func restartGame():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().reload_current_scene()
+	ResetData.resetData()
+	$UI.updateTowerData(1)
