@@ -13,7 +13,7 @@ const upgradeRequired: Array[int] = [0, 2, 4, 10, 20, 50, 100, 200, 400]
 
 const rewards: Dictionary = {
 	1: {
-		3: {
+		1: {
 			"totalTowersReward": 10,
 			"totalTowersUnlocked": 1,
 			"towerLimitIncrease": 1,
