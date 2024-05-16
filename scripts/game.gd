@@ -203,7 +203,5 @@ func spawnEnemies(wavePattern):
 
 
 func restartGame():
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	get_tree().reload_current_scene()
 	ResetData.resetData()
 	$UI.updateTowerData(1)
