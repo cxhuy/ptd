@@ -18,6 +18,9 @@ const rewards: Dictionary = {
 			"totalTowersUnlocked": 1,
 			"towerLimitIncrease": 1,
 		},
+		3: {
+			"totalTowersReward": 10,
+		},
 		6: {
 			"totalTowersReward": 20,
 			"totalTowersUnlocked": 1,

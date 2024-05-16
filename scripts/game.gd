@@ -139,7 +139,7 @@ func _process(delta):
 			get_node("UI/GameClear/GameClearSound").play()
 			get_tree().paused = true
 		else:
-			if Data.currentWave % 3 == 0 or Data.currentStage == 1 and Data.currentWave == 1:
+			if Data.currentWave % 3 == 0 or (Data.currentStage == 1 and Data.currentWave == 1):
 				giveReward()
 			enemySpawnFinish = false
 			inGame = false
