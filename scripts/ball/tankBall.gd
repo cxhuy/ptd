@@ -9,12 +9,12 @@ func _physics_process(delta):
 		var collision = move_and_collide(velocity * delta)
 
 		if collision:
-			velocity = velocity.bounce(collision.get_normal()) 
+			velocity = velocity.bounce(collision.get_normal())
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	self.queue_free()
-	
+
 
 func _on_duration_timeout():
 	self.queue_free()

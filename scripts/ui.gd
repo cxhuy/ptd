@@ -9,11 +9,11 @@ var towerToDelete
 func _ready():
 	for i in range(8):
 		var towerAddInstance = towerAdd.instantiate()
-		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")		
-		towerAddInstance.tower = tower		
+		var tower = load("res://scenes/tower/tower" + str(i + 1) + "/tower" + str(i + 1) + ".tscn")
+		towerAddInstance.tower = tower
 		towerAddInstance.towerId = i + 1
 		$LeftUI/Inventory.add_child(towerAddInstance)
-	
+
 	updateTowerData(1)
 	updateRightUI()
 
@@ -23,7 +23,7 @@ func blockLeftUI():
 
 
 func unblockLeftUI():
-	$LeftUI/BlockClick.hide()	
+	$LeftUI/BlockClick.hide()
 
 
 func updateTowerData(towerId: int, towerToDelete = null):
@@ -33,12 +33,12 @@ func updateTowerData(towerId: int, towerToDelete = null):
 		$LeftUI/Inventory.get_child(currentTowerId).get_node("TowerSprite").texture = \
 			load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_ui.png")
 	$LeftUI/Inventory.get_child(currentTowerId).get_node("TowerQuantity").text = "x" + str(towerData["quantity"])
-	
+
 	$LeftUI/TowerData/TowerName.text = towerData["name"]
 	$LeftUI/TowerData/TowerImage/TowerSprite.texture = \
 		load("res://sprites/towers/tower" + str(towerId) + "/tower" + str(towerId) + "_on.svg")
 	$LeftUI/TowerData/TowerImage/TowerLevel.text = "Lv." + str(towerData["level"])
-	$LeftUI/TowerData/TowerDesc.text = towerData["description"]	
+	$LeftUI/TowerData/TowerDesc.text = towerData["description"]
 	var towerStats: String
 	for stat in towerData["stats"]:
 		var statString: String
@@ -54,25 +54,25 @@ func updateTowerData(towerId: int, towerToDelete = null):
 		else:
 			towerStats += statString + str(towerData["stats"][stat][towerData["level"]]) + "\n"
 	$LeftUI/TowerData/TowerStats.text = towerStats
-	
+
 	if towerData["level"] < 9:
 		$LeftUI/TowerData/Buttons/UpgradeButton.text = \
 			"Upgrade\n" + str(towerData["quantity"]) + " / " + str(Data.upgradeRequired[towerData["level"]])
 	else:
 		$LeftUI/TowerData/Buttons/UpgradeButton.text = "Max Level"
-		
+
 	if towerData["level"] < 9 and towerData["quantity"] < Data.upgradeRequired[towerData["level"]] \
 	or towerData["level"] == 9:
 		$LeftUI/TowerData/Buttons/UpgradeButton.disabled = true
 	else:
 		$LeftUI/TowerData/Buttons/UpgradeButton.disabled = false
-		
+
 	if towerToDelete == null:
 		$LeftUI/TowerData/Buttons/RemoveButton.disabled = true
 	else:
 		$LeftUI/TowerData/Buttons/RemoveButton.disabled = false
 	self.towerToDelete = towerToDelete
-	
+
 
 func updateRightUI():
 	$RightUI/RightUIContainer/Stage.text = "Stage " + str(Data.currentStage)
@@ -97,10 +97,10 @@ func _on_upgrade_button_pressed():
 
 
 func _on_remove_button_pressed():
-	Data.towerData[towerToDelete.towerId]["quantity"] += 1	
+	Data.towerData[towerToDelete.towerId]["quantity"] += 1
 	towerToDelete.queue_free()
 	towerToDelete = null
-	updateTowerData(currentTowerId)	
+	updateTowerData(currentTowerId)
 
 
 func _on_rewards_gui_input(event):

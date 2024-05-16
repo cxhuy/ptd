@@ -14,10 +14,10 @@ func _ready():
 	var base = preload("res://scenes/tower/base.tscn")
 	add_child(base.instantiate())
 	get_node("Base").connect("body_entered", _on_base_body_entered)
-	
+
 	var showOnUIButton = preload("res://scenes/tower/show_on_ui_button.tscn")
 	add_child(showOnUIButton.instantiate())
-	
+
 	hitsLeft = Data.towerData[8]["stats"]["hitsNeeded"][Data.towerData[8]["level"]]
 	$HitsLeft.text = str(hitsLeft)
 
@@ -37,7 +37,7 @@ func _on_base_body_entered(body):
 		var direction: Vector2 = (self.global_position - body.global_position).normalized()
 		body.apply_impulse(direction * -1500)
 		switchDuration = 20
-		
+
 		hitsLeft -= 1
 		$HitsLeft.text = str(hitsLeft)
 		if hitsLeft == 0:
@@ -45,11 +45,11 @@ func _on_base_body_entered(body):
 			call_deferred("add_child", blackholeInstance)
 			hitsLeft = Data.towerData[8]["stats"]["hitsNeeded"][Data.towerData[8]["level"]]
 			$HitsLeft.text = str(hitsLeft)
-			
-		
+
+
 		var tween = create_tween().set_trans(Tween.TRANS_CIRC)
-		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)	
+		tween.tween_property($PatternSprite, "scale", Vector2(0.3, 0.3), 0.07)
 		await get_tree().create_timer(0.2).timeout
 		tween = create_tween().set_trans(Tween.TRANS_CIRC)
-		tween.tween_property($PatternSprite, "scale", Vector2(0.35, 0.35), 0.28)	
+		tween.tween_property($PatternSprite, "scale", Vector2(0.35, 0.35), 0.28)
 		await get_tree().create_timer(0.2).timeout

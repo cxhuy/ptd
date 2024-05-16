@@ -11,7 +11,7 @@ func _process(delta):
 		look_at(getFirstEnemy(enemiesInRange).global_position)
 	else:
 		isEnemyInRange = false
-		$BarrelSprite.position = Vector2(16, 0)		
+		$BarrelSprite.position = Vector2(16, 0)
 	get_node("SwitchSprite").global_rotation = 0
 
 
@@ -23,8 +23,8 @@ func getFirstEnemy(enemiesInRange):
 			firstEnemy = enemy
 
 	return firstEnemy
-	
-	
+
+
 #func getNearestEnemy(enemiesInRange):
 #	var nearestEnemy = enemiesInRange[0]
 #	var nearestDist: float = self.global_position.distance_squared_to(nearestEnemy.global_position)
@@ -36,4 +36,4 @@ func getFirstEnemy(enemiesInRange):
 #			nearestDist = enemyDist
 #
 #	return nearestEnemy
-	
+

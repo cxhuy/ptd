@@ -17,10 +17,10 @@ func _ready():
 		load("res://sprites/enemy/enemy_" + str(enemyType) + "_" + str(enemyId) + ".svg")
 
 
-func _process(delta):	
-	get_parent().set_progress(get_parent().get_progress() + speed * delta)	
+func _process(delta):
+	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 	self.global_rotation_degrees = 0
-	
+
 	if get_parent().get_progress_ratio() == 1:
 		if Data.currentHealth > 0:
 			Data.currentHealth -= 1
@@ -48,7 +48,7 @@ func damage(damageAmount: int):
 		var randomNumber = randf_range(0, 1)
 		if randomNumber <= 0.05 and \
 		get_tree().get_nodes_in_group("TankBalls").size() < Data.tankLimit and \
-		!get_node("../../../..//Tank/TankCooldownLabel").inCooldown: 
+		!get_node("../../../..//Tank/TankCooldownLabel").inCooldown:
 			var ballInstance = ball.instantiate()
 			ballInstance.global_position = Vector2(1600, 450)
 			get_tree().get_root().get_node("Game").call_deferred("add_child", ballInstance)
