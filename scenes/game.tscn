@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/environment/tank.gd" id="4_p81kp"]
 [ext_resource type="Texture2D" uid="uid://0xchmf71wh5r" path="res://sprites/environment/tank/send_bottom.svg" id="5_ltt6r"]
 [ext_resource type="Texture2D" uid="uid://c4f1il05bj7m3" path="res://sprites/environment/tank/send_top.svg" id="6_miqox"]
+[ext_resource type="FontFile" uid="uid://dhabkrdxepwog" path="res://ptd_font.ttf" id="7_5uo7f"]
 [ext_resource type="Script" path="res://scripts/environment/tankFullLabel.gd" id="7_fexg3"]
 [ext_resource type="Script" path="res://scripts/environment/tankCooldownLabel.gd" id="7_yx27v"]
 [ext_resource type="AudioStream" uid="uid://bxhrdhs1pxxdr" path="res://audio/ballAdd.wav" id="11_34k13"]
@@ -36,10 +37,6 @@ size = Vector2(122, 344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqpt5"]
 size = Vector2(122, 344)
-
-[sub_resource type="SystemFont" id="SystemFont_n3km8"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3va3b"]
 size = Vector2(585, 1080)
@@ -134,7 +131,7 @@ offset_top = 390.0
 offset_right = 1803.0
 offset_bottom = 740.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_n3km8")
+theme_override_fonts/font = ExtResource("7_5uo7f")
 theme_override_font_sizes/font_size = 100
 text = "Full"
 horizontal_alignment = 1
@@ -149,7 +146,7 @@ offset_top = 390.0
 offset_right = 1803.0
 offset_bottom = 740.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_n3km8")
+theme_override_fonts/font = ExtResource("7_5uo7f")
 theme_override_font_sizes/font_size = 100
 text = "30"
 horizontal_alignment = 1

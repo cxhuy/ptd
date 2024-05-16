@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ball/ball.gd" id="1_agjdh"]
 [ext_resource type="Texture2D" uid="uid://c83jvnqji8vyp" path="res://sprites/ball3.svg" id="2_87ljq"]
+[ext_resource type="FontFile" uid="uid://dhabkrdxepwog" path="res://ptd_font.ttf" id="3_5aiwk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb1tu"]
 friction = 0.3
@@ -9,9 +10,6 @@ bounce = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejfi7"]
 radius = 15.0
-
-[sub_resource type="SystemFont" id="SystemFont_orf6s"]
-font_names = PackedStringArray("SF Pro Rounded")
 
 [node name="Ball" type="RigidBody2D" groups=["Balls"]]
 collision_layer = 4
@@ -47,7 +45,7 @@ offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_orf6s")
+theme_override_fonts/font = ExtResource("3_5aiwk")
 theme_override_font_sizes/font_size = 30
 text = "3"
 horizontal_alignment = 1

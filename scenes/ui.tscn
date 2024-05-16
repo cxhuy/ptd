@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://c0fnpip3uuqqb"]
+[gd_scene load_steps=21 format=3 uid="uid://c0fnpip3uuqqb"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_8qvsj"]
 [ext_resource type="Texture2D" uid="uid://b7tds42tkkpcm" path="res://sprites/towers/tower1/tower1_on.svg" id="2_nlksv"]
+[ext_resource type="FontFile" uid="uid://dhabkrdxepwog" path="res://ptd_font.ttf" id="2_x8i8y"]
 [ext_resource type="Texture2D" uid="uid://cb1e7vlfhcta8" path="res://sprites/ui/tank.svg" id="3_1643c"]
 [ext_resource type="AudioStream" uid="uid://bovb68n84ot6e" path="res://audio/upgrade.wav" id="3_fq1kj"]
 [ext_resource type="AudioStream" uid="uid://dtl0u6re321ri" path="res://audio/rewards.wav" id="5_na073"]
@@ -10,33 +11,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txrlt"]
 
-[sub_resource type="SystemFont" id="SystemFont_yroje"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 600
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_q4rks"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
-subpixel_positioning = 0
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ash"]
 
 [sub_resource type="SystemFont" id="SystemFont_v2m7n"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 600
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_o2kyr"]
-font_names = PackedStringArray("SF Pro Rounded")
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_34k4l"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_4mbwx"]
 font_names = PackedStringArray("SF Pro Rounded")
 font_weight = 600
 subpixel_positioning = 0
@@ -67,21 +44,6 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jgx3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y46hn"]
-
-[sub_resource type="SystemFont" id="SystemFont_spiv3"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 600
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_j5hns"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_vnuum"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
-subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h0e8"]
 bg_color = Color(0, 0, 0, 0)
@@ -119,25 +81,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="SystemFont" id="SystemFont_kmjkp"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 500
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_31l8p"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 600
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_lkxje"]
-font_names = PackedStringArray("SF Pro Rounded")
-font_weight = 600
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_1ipbq"]
-font_names = PackedStringArray("SF Pro Rounded")
-subpixel_positioning = 0
-
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8qvsj")
 
@@ -159,7 +102,7 @@ theme_override_constants/v_separation = 10
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_yroje")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 70
 text = "Inventory"
 horizontal_alignment = 1
@@ -178,7 +121,7 @@ theme_override_constants/v_separation = 0
 custom_minimum_size = Vector2(350, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_q4rks")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 50
 text = "Explosion Tower"
 horizontal_alignment = 1
@@ -211,7 +154,7 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_o2kyr")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 25
 text = "Causes an explosion that damages nearby enemies"
 horizontal_alignment = 1
@@ -225,7 +168,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_34k4l")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 35
 text = "Damage: 10
 Target Enemies: 20
@@ -249,7 +192,7 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.662745, 0.662745, 0.662745, 1)
-theme_override_fonts/font = SubResource("SystemFont_4mbwx")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_fnant")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fnant")
@@ -266,7 +209,7 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.662745, 0.662745, 0.662745, 1)
-theme_override_fonts/font = SubResource("SystemFont_4mbwx")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_n2bqs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n2bqs")
@@ -313,7 +256,7 @@ texture = SubResource("CompressedTexture2D_y46hn")
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_spiv3")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 100
 text = "Stage 1"
 horizontal_alignment = 1
@@ -322,7 +265,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_j5hns")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 50
 text = "Wave 1"
 horizontal_alignment = 1
@@ -344,7 +287,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0.588235)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.196078)
-theme_override_fonts/font = SubResource("SystemFont_vnuum")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_6h0e8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yehqe")
@@ -358,7 +301,7 @@ modulate = Color(0, 0, 0, 0.392157)
 offset_left = 585.0
 offset_right = 1335.0
 offset_bottom = 1080.0
-theme_override_fonts/font = SubResource("SystemFont_kmjkp")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 100
 text = "1 / 9"
 horizontal_alignment = 1
@@ -380,7 +323,7 @@ alignment = 1
 custom_minimum_size = Vector2(1920, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
-theme_override_fonts/font = SubResource("SystemFont_31l8p")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 100
 text = "Unlocked"
 horizontal_alignment = 1
@@ -399,7 +342,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(1920, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
-theme_override_fonts/font = SubResource("SystemFont_31l8p")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 100
 text = "Rewards"
 horizontal_alignment = 1
@@ -425,7 +368,7 @@ mouse_default_cursor_shape = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 550.0
-theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 150
 text = "Game Over"
 horizontal_alignment = 1
@@ -435,7 +378,7 @@ vertical_alignment = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 650.0
-theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 75
 text = "Click to try again"
 horizontal_alignment = 1
@@ -455,7 +398,7 @@ mouse_default_cursor_shape = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 550.0
-theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 150
 text = "Congratulations!"
 horizontal_alignment = 1
@@ -465,7 +408,7 @@ vertical_alignment = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 650.0
-theme_override_fonts/font = SubResource("SystemFont_lkxje")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 75
 text = "You cleared the game!"
 horizontal_alignment = 1
@@ -476,7 +419,7 @@ layout_mode = 0
 offset_top = 650.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-theme_override_fonts/font = SubResource("SystemFont_1ipbq")
+theme_override_fonts/font = ExtResource("2_x8i8y")
 theme_override_font_sizes/font_size = 75
 text = "Programmed by cxhuy
 Art by chwaaak"
